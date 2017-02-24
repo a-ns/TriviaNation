@@ -1,0 +1,11 @@
+D:\Documents\Docs\Visual Studio 2015\Projects\socketIOCSharpClient\socketIOCSharpClient\bin\Debug\socketIOCSharpClient.exe.config
+D:\Documents\Docs\Visual Studio 2015\Projects\socketIOCSharpClient\socketIOCSharpClient\bin\Debug\socketIOCSharpClient.exe
+D:\Documents\Docs\Visual Studio 2015\Projects\socketIOCSharpClient\socketIOCSharpClient\bin\Debug\socketIOCSharpClient.pdb
+D:\Documents\Docs\Visual Studio 2015\Projects\socketIOCSharpClient\socketIOCSharpClient\bin\Debug\EngineIoClientDotNet.dll
+D:\Documents\Docs\Visual Studio 2015\Projects\socketIOCSharpClient\socketIOCSharpClient\bin\Debug\Newtonsoft.Json.dll
+D:\Documents\Docs\Visual Studio 2015\Projects\socketIOCSharpClient\socketIOCSharpClient\bin\Debug\SocketIoClientDotNet.dll
+D:\Documents\Docs\Visual Studio 2015\Projects\socketIOCSharpClient\socketIOCSharpClient\bin\Debug\WebSocket4Net.dll
+D:\Documents\Docs\Visual Studio 2015\Projects\socketIOCSharpClient\socketIOCSharpClient\bin\Debug\Newtonsoft.Json.xml
+D:\Documents\Docs\Visual Studio 2015\Projects\socketIOCSharpClient\socketIOCSharpClient\obj\Debug\socketIOCSharpClient.csprojResolveAssemblyReference.cache
+D:\Documents\Docs\Visual Studio 2015\Projects\socketIOCSharpClient\socketIOCSharpClient\obj\Debug\socketIOCSharpClient.exe
+D:\Documents\Docs\Visual Studio 2015\Projects\socketIOCSharpClient\socketIOCSharpClient\obj\Debug\socketIOCSharpClient.pdb
