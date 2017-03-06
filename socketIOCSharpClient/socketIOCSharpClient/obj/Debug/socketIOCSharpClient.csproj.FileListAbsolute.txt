@@ -20,3 +20,14 @@ D:\Documents\School\Software Engineering II\SocketIO\socketIOCSharpClient\socket
 D:\Documents\School\Software Engineering II\SocketIO\socketIOCSharpClient\socketIOCSharpClient\bin\Debug\WebSocket4Net.dll
 D:\Documents\School\Software Engineering II\SocketIO\socketIOCSharpClient\socketIOCSharpClient\bin\Debug\Newtonsoft.Json.xml
 D:\Documents\School\Software Engineering II\SocketIO\socketIOCSharpClient\socketIOCSharpClient\obj\Debug\socketIOCSharpClient.csprojResolveAssemblyReference.cache
+D:\Documents\School\Software Engineering II\TriviaNation\socketIOCSharpClient\socketIOCSharpClient\bin\Debug\socketIOCSharpClient.exe.config
+D:\Documents\School\Software Engineering II\TriviaNation\socketIOCSharpClient\socketIOCSharpClient\obj\Debug\socketIOCSharpClient.exe
+D:\Documents\School\Software Engineering II\TriviaNation\socketIOCSharpClient\socketIOCSharpClient\obj\Debug\socketIOCSharpClient.pdb
+D:\Documents\School\Software Engineering II\TriviaNation\socketIOCSharpClient\socketIOCSharpClient\bin\Debug\socketIOCSharpClient.exe
+D:\Documents\School\Software Engineering II\TriviaNation\socketIOCSharpClient\socketIOCSharpClient\bin\Debug\socketIOCSharpClient.pdb
+D:\Documents\School\Software Engineering II\TriviaNation\socketIOCSharpClient\socketIOCSharpClient\bin\Debug\EngineIoClientDotNet.dll
+D:\Documents\School\Software Engineering II\TriviaNation\socketIOCSharpClient\socketIOCSharpClient\bin\Debug\Newtonsoft.Json.dll
+D:\Documents\School\Software Engineering II\TriviaNation\socketIOCSharpClient\socketIOCSharpClient\bin\Debug\SocketIoClientDotNet.dll
+D:\Documents\School\Software Engineering II\TriviaNation\socketIOCSharpClient\socketIOCSharpClient\bin\Debug\WebSocket4Net.dll
+D:\Documents\School\Software Engineering II\TriviaNation\socketIOCSharpClient\socketIOCSharpClient\bin\Debug\Newtonsoft.Json.xml
+D:\Documents\School\Software Engineering II\TriviaNation\socketIOCSharpClient\socketIOCSharpClient\obj\Debug\socketIOCSharpClient.csprojResolveAssemblyReference.cache

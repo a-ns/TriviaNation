@@ -1,10 +1,5 @@
 var server = require('http').createServer()
 
-var io = require('socket.io')(server)
-
-io.on('connection', function (client) {
-  console.log(client)
-  client.emit('message', {'message': 'hello world'})
-})
+var io = require('./socketio/ioserver.js')(server)
 
 server.listen(3000)
