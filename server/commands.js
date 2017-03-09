@@ -3,6 +3,9 @@ module.exports = function () {
   commands.push('connection')
   commands.push('message')
   commands.push('answerClicked')
+  commands.push('questionClicked')
   commands.push('scoreUpdate')
+  commands.push('login')
+  commands.push('signup')
   return commands
 }

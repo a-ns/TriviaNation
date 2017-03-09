@@ -1,0 +1,8 @@
+Nations take turns picking questions.
+If a nation answers a question correctly that they did not pick,
+they do not get that tile, but they block the other nation from getting
+it.
+If Nation X picks a tile, the nation with the next closest tile, Nation Y,
+will be the nation that is also able to answer the question on the tile that
+Nation X picked, giving Nation Y an opportunity to block Nation X
+from receiving that tile.
