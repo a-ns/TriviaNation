@@ -15,17 +15,20 @@ var answerClicked = function (data) {
   the other nation's answer doesn't matter, so kick everybody out
   and don't update anything
   */
-  //everybody.emit({the data})
+  //return theData
 }
 
 var questionClicked = function (data) {
   //data will have the question ID
   //send back the question associated with the tile they clicked
 
-  //everybody.emit({question data + nations_competing})
+
+
   //client side, they'll go "am i one of the nation's competing?"
   //if yes, they can click on the questions
   //if no, they can't click on the questions
+
+  //return {question data + nations competing}
 }
 
 var message = function (data) {
@@ -38,7 +41,7 @@ var login = function (data) {
   //data.password
 
   //find in database, that user
-  //data.emit({login successful})
+  //return {loginSuccessful}
 }
 
 var signup = function (data) {
@@ -49,11 +52,11 @@ var signup = function (data) {
   //if so , spit out an error
   //else, create that account
 
-  //data.emit({signup successful})
+  //return {signUpSuccessful}
 }
 
 var connection = function (client) {
-  client.emit(/*clients.push(client) maybe?*/)
+
 }
 
 module.exports = {login, signup, scoreUpdate, answerClicked, message, connection, questionClicked}
