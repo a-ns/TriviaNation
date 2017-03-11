@@ -3,8 +3,11 @@ var commands = require('./commands.js')()
 
 var create = function (server) {
   var io = require('socket.io')(server)
-  commands.map((command) => {
-    io.on(command, ioHandlers[command])
+  io.on('connection', function (client) {
+    commands.map((command) => {
+      client.on(command, ioHandlers[command])
+    })
+    io.emit('broadcast', client.id + ' has connected')
   })
   return io
 }

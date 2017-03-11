@@ -17,7 +17,9 @@ var questionClicked = function (data) {
 }
 
 var message = function (data) {
-  //console.log(data)
+  console.log('got here')
+  var theMessage = commandHandlers.message(data)
+  console.log(theMessage)
   //data.emit({})
 }
 
@@ -33,6 +35,8 @@ var signup = function (data) {
 }
 
 var connection = function (client) {
+  var theData = commandHandlers.connection(client)
+  client.emit('message', {message: client.id})
   //client.emit(/*clients.push(client) maybe?*/)
 }
 

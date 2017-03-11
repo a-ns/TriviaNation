@@ -56,7 +56,7 @@ var signup = function (data) {
 }
 
 var connection = function (client) {
-
+  console.log(client.id, 'has connected')
 }
 
 module.exports = {login, signup, scoreUpdate, answerClicked, message, connection, questionClicked}

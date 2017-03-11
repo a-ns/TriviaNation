@@ -21,7 +21,15 @@ namespace socketIOCSharpClient
             socket.On("message", (data) => 
             {
                 Message response = JsonConvert.DeserializeObject<Message>(data.ToString());
+                
                 Console.WriteLine(response.message);
+            });
+            Console.WriteLine("sending to the server now");
+            socket.Emit("scoreUpdate", "hey");
+            Console.WriteLine("sent to the server");
+            socket.On("broadcast", (data) =>
+            {
+                Console.WriteLine(data);
             });
             Console.ReadKey();
         }
