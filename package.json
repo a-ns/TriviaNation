@@ -11,5 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "socket.io": "^1.7.3"
+  },
+  "devDependencies": {
+    "mongoose": "^4.9.1"
   }
 }
