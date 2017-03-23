@@ -1,7 +1,4 @@
-
-let User = require('./models/User.js')
-let db = require('./database/db.js')
-
+var User = require('./models/User.js')
 
 var scoreUpdate = function (data) {
   console.log(data)
@@ -60,19 +57,17 @@ var signup = function (data) {
   var user = new User()
   user.password = data.password
   user.username = data.username
-  console.log(user)
+  //console.log(user)
   User.findOne({username: user.username}, function (err, userfound){
+    //console.log('yo dawg')
     if (err) {
       console.log(err)
       return false
     }
     if(!userfound) {
       user.save(function (err) {
-        if (err)
-          console.log(err)
-        else {
-          return true
-        }
+        console.log('saving')
+        return true
       })
     }
   })
