@@ -17,9 +17,9 @@ namespace WindowsFormsApplication1
         public TriviaNationMenu()
         {
             InitializeComponent();
-			this.SignIn.Click += new System.EventHandler(this.SignIn_Click);
+	        this.SignIn.Click += new System.EventHandler(this.SignIn_Click);
             this.SignUp.Click += new System.EventHandler(this.SignUp_Click);
-			this.CreateMatch.Click += new System.EventHandler(this.CreateMatch_Click);
+	        this.CreateMatch.Click += new System.EventHandler(this.CreateMatch_Click);
         }
 
         private void Form1_Load(object sender, EventArgs e)
