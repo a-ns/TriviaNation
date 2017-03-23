@@ -1,5 +1,5 @@
-let db = require('../database/db.js')
-let User = require('./models/')
+let db = require('./database/db.js')
+let User = require('./models/User.js')
 
 var scoreUpdate = function (data) {
   console.log(data)

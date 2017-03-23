@@ -13,6 +13,7 @@
     "socket.io": "^1.7.3"
   },
   "devDependencies": {
-    "mongoose": "^4.9.1"
+    "mongoose": "^4.9.1",
+    "socket.io": "^1.7.3"
   }
 }
