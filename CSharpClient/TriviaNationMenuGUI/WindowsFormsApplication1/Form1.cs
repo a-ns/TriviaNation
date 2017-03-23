@@ -19,6 +19,7 @@ namespace WindowsFormsApplication1
             InitializeComponent();
 			this.SignIn.Click += new System.EventHandler(this.SignIn_Click);
             this.SignUp.Click += new System.EventHandler(this.SignUp_Click);
+			this.CreateMatch.Click += new System.EventHandler(this.CreateMatch_Click);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -54,7 +55,9 @@ namespace WindowsFormsApplication1
 
         private void CreateMatch_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("Creating match");
+			String nickname = this.Nickname.Text;
+			String password = this.Password.Text;
+            Console.WriteLine("Creating match: " + nickname + " " + password);
             MessageBox.Show("Match creation successful");
         }
     }
