@@ -18,7 +18,7 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
 			this.SignIn.Click += new System.EventHandler(this.SignIn_Click);
-
+            this.SignUp.Click += new System.EventHandler(this.SignUp_Click);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -38,12 +38,24 @@ namespace WindowsFormsApplication1
 
 		private void SignIn_Click(object sender, EventArgs e)
 		{
-			String username = this.Nickname.Text;
+			String nickname = this.Nickname.Text;
 			String password = this.Password.Text;
-			Console.WriteLine(username + " " + password);
+			Console.WriteLine("Signing in: " + nickname + " " + password);
 			MessageBox.Show("Sign in successful");
 		}
 
+        private void SignUp_Click(object sender, EventArgs e)
+        {
+            String nickname = this.Nickname.Text;
+            String password = this.Password.Text;
+            Console.WriteLine("Signing up: " + nickname + " " + password);
+            MessageBox.Show("Sign up successful");
+        }
 
+        private void CreateMatch_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("Creating match");
+            MessageBox.Show("Match creation successful");
+        }
     }
 }
