@@ -1,0 +1,8 @@
+/home/alex/Documents/TriviaNation/CSharpClient/TriviaNationMenuGUI/WindowsFormsApplication1/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/alex/Documents/TriviaNation/CSharpClient/TriviaNationMenuGUI/WindowsFormsApplication1/obj/Debug/WindowsFormsApplication1.TriviaNationMenu.resources
+/home/alex/Documents/TriviaNation/CSharpClient/TriviaNationMenuGUI/WindowsFormsApplication1/obj/Debug/WindowsFormsApplication1.Properties.Resources.resources
+/home/alex/Documents/TriviaNation/CSharpClient/TriviaNationMenuGUI/WindowsFormsApplication1/bin/Debug/WindowsFormsApplication1.exe.config
+/home/alex/Documents/TriviaNation/CSharpClient/TriviaNationMenuGUI/WindowsFormsApplication1/bin/Debug/WindowsFormsApplication1.exe.mdb
+/home/alex/Documents/TriviaNation/CSharpClient/TriviaNationMenuGUI/WindowsFormsApplication1/bin/Debug/WindowsFormsApplication1.exe
+/home/alex/Documents/TriviaNation/CSharpClient/TriviaNationMenuGUI/WindowsFormsApplication1/obj/Debug/WindowsFormsApplication1.exe
+/home/alex/Documents/TriviaNation/CSharpClient/TriviaNationMenuGUI/WindowsFormsApplication1/obj/Debug/WindowsFormsApplication1.exe.mdb
