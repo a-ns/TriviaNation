@@ -29,7 +29,9 @@ var login = function (data) {
 }
 
 var signup = function (data) {
-  var signUpSuccess = commandHandlers.signup(data)
+  var theData = JSON.parse(data)
+  //console.log('request for signup')
+  var signUpSuccess = commandHandlers.signup(theData)
 
   //data.emit(signUpSuccess)
 }

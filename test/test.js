@@ -1,5 +1,6 @@
 var should = require('chai').should()
-var ioCommandHandlers = require('../server/ioCommandHandlers.js')
+var commandHandlers = require('../server/commandHandlers.js')
+
 
 describe('Example Tests', function (){
 
@@ -14,9 +15,30 @@ describe('Example Tests', function (){
     thing.should.be.a('number')
     thing.should.not.equal(1)
   })
+})
 
-  it('scoreUpdate should return status ok', function () {
-    var data = ioCommandHandlers.scoreUpdate({'data': 'some data'})
-    data.should.have.property('status').and.equal('ok')
+describe('Command Handlers', function () {
+
+  it('SignUp should return true for new user success', function(done){
+    var testSignup = {'username': 'testUser', 'password': 'testPassword'}
+    var sut = commandHandlers.signup(testSignup)
+    sut.should.equal(true)
+    done()
   })
+
+  it('SignUp should return false when trying to create an existing user', function(done){
+    var testSignup = {'username': 'testUser', 'password': 'testPassword'}
+    var sut = commandHandlers.signup(testSignup)
+    sut.should.equal(false)
+    done()
+  })
+
+  it('SignUp should return false when trying to create a user with no password', function(done){
+    var testSignup = {'username': 'testUser', 'password': ''}
+    var sut = commandHandlers.signup(testSignup)
+    sut.should.equal(false)
+    done()
+  })
+
+
 })

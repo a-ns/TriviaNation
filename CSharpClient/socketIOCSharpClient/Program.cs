@@ -17,20 +17,23 @@ namespace socketIOCSharpClient
         static void Main(string[] args)
         {
             Socket socket = IO.Socket("http://localhost:3000");
-            
+            /*
             socket.On("message", (data) => 
             {
                 Message response = JsonConvert.DeserializeObject<Message>(data.ToString());
+
                 
                 Console.WriteLine(response.message);
             });
+            
             Console.WriteLine("sending to the server now");
             socket.Emit("scoreUpdate", "hey");
             Console.WriteLine("sent to the server");
-            socket.On("broadcast", (data) =>
-            {
-                Console.WriteLine(data);
-            });
+            */
+            User newUser = new socketIOCSharpClient.User();
+            newUser.username = "Alex";
+            newUser.password = "supersecret";
+            socket.Emit("signup", JsonConvert.SerializeObject(newUser));
             Console.ReadKey();
         }
     }

@@ -1,5 +1,7 @@
-let db = require('./database/db.js')
+
 let User = require('./models/User.js')
+let db = require('./database/db.js')
+
 
 var scoreUpdate = function (data) {
   console.log(data)
@@ -49,35 +51,32 @@ var login = function (data) {
 }
 
 var signup = function (data) {
-  //data.username
-  //data.password
+  //console.log(data)
+  if (data["password"].length === 0)
+    return false
+  if (data["username"].length === 0)
+    return false
 
-  //check if that username is already existing
-  //if so , spit out an error
-  //else, create that account
-  if (data.password.length === 0) {
-    return false;
-  }
-  User.findOne({'username': data.username}, function(err, user){
-    if (err) { // user not found which is good
-      let user = new User()
-      user.username = data.username
-      user.password = data.password
+  var user = new User()
+  user.password = data.password
+  user.username = data.username
+  console.log(user)
+  User.findOne({username: user.username}, function (err, userfound){
+    if (err) {
+      console.log(err)
+      return false
+    }
+    if(!userfound) {
       user.save(function (err) {
-        if (err) {
-          return err
-        }
+        if (err)
+          console.log(err)
         else {
-          return true;
+          return true
         }
       })
     }
-    else {
-
-    }
   })
-
-  //return {signUpSuccessful}
+  return false
 }
 
 var connection = function (client) {

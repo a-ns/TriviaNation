@@ -1,4 +1,5 @@
-let db = require('mongoose')
+var db = require('mongoose')
+console.log('connecting to database')
 try {
   db.connect(process.env.MONGODB_URI)
 } catch (err) {
