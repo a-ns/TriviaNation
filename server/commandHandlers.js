@@ -42,9 +42,20 @@ var message = function (data) {
 var login = function (data) {
   //data.username
   //data.password
-
+  console.log(data)
+  User.findOne({username: data.username}, function (err, userfound) {
+    console.log('in login findOne')
+    if (err) {
+      console.log(err)
+      return false
+    }
+    if (userfound && (userfound.password === data.password)) {
+      return userfound
+    }
+  })
   //find in database, that user
   //return {loginSuccessful}
+  return false
 }
 
 var signup = function (data) {
@@ -59,7 +70,7 @@ var signup = function (data) {
   user.username = data.username
   //console.log(user)
   User.findOne({username: user.username}, function (err, userfound){
-    //console.log('yo dawg')
+    console.log('yo dawg')
     if (err) {
       console.log(err)
       return false
