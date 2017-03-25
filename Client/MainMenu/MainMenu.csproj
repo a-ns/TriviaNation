@@ -77,6 +77,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GameBoard\GameBoard.csproj">
+      <Project>{2682cf5d-0452-4d0a-9104-3b1ba48a8d50}</Project>
+      <Name>GameBoard</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NetworkLayer\NetworkLayer.csproj">
       <Project>{4f166dae-58df-4d91-9196-f130f66f6304}</Project>
       <Name>NetworkLayer</Name>

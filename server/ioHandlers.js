@@ -1,5 +1,5 @@
 var commandHandlers = require('./commandHandlers.js')
-
+var Promise = require('bluebird')
 var scoreUpdate = function (data) {
   var theData = commandHandlers.scoreUpdate(data)
   //emit theData
@@ -24,8 +24,15 @@ var message = function (data) {
 }
 
 var login = function (data) {
-  var loginSuccess = commandHandlers.login(data)
-  //data.emit(loginSuccess)
+  var that = this
+  var theData = JSON.parse(data)
+//  console.log('client', this)
+  commandHandlers.login(theData).then(function (loginSuccess){
+    console.log(loginSuccess, 'login Success')
+    that.emit('login', loginSuccess)
+  }).catch(function (){
+    that.emit('login', null)
+  })
 }
 
 var signup = function (data) {

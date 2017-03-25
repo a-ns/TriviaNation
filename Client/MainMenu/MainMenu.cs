@@ -46,6 +46,7 @@ namespace MainMenu
             String nickname = this.Nickname.Text;
             String password = this.Password.Text;
             Console.WriteLine("Signing in: " + nickname + " " + password);
+            this.endpoint.signin(nickname, password);
             MessageBox.Show("Sign in successful");
         }
 

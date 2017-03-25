@@ -1,5 +1,5 @@
 var User = require('./models/User.js')
-
+var Promise = require('bluebird')
 var scoreUpdate = function (data) {
   console.log(data)
   return {'status': 'ok'}
@@ -40,22 +40,20 @@ var message = function (data) {
 }
 
 var login = function (data) {
-  //data.username
-  //data.password
-  console.log(data)
-  User.findOne({username: data.username}, function (err, userfound) {
-    console.log('in login findOne')
-    if (err) {
-      console.log(err)
-      return false
-    }
-    if (userfound && (userfound.password === data.password)) {
-      return userfound
-    }
+  return new Promise(function (resolve, reject) {
+    console.log(data.username)
+    console.log(data.password)
+    User.findOne({username: data.username}, function (err, userfound) {
+      console.log('in login findOne')
+      if (err) {
+        console.log(err)
+        reject(err)
+      }
+
+    }).then(function (userfound) {
+      resolve(userfound)
+    })
   })
-  //find in database, that user
-  //return {loginSuccessful}
-  return false
 }
 
 var signup = function (data) {
@@ -70,14 +68,13 @@ var signup = function (data) {
   user.username = data.username
   //console.log(user)
   User.findOne({username: user.username}, function (err, userfound){
-    console.log('yo dawg')
     if (err) {
       console.log(err)
       return false
     }
     if(!userfound) {
       user.save(function (err) {
-        console.log('saving')
+        console.log('saving', user)
         return true
       })
     }
