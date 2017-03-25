@@ -17,7 +17,6 @@ var questionClicked = function (data) {
 }
 
 var message = function (data) {
-  console.log('got here')
   var theMessage = commandHandlers.message(data)
   console.log(theMessage)
   //data.emit({})
@@ -31,14 +30,21 @@ var login = function (data) {
     console.log(loginSuccess, 'login Success')
     that.emit('login', loginSuccess)
   }).catch(function (){
+    console.log('login not successful')
     that.emit('login', null)
   })
 }
 
 var signup = function (data) {
   var theData = JSON.parse(data)
-  //console.log('request for signup')
-  var signUpSuccess = commandHandlers.signup(theData)
+  var that = this
+  commandHandlers.signup(theData).then(function (signupSuccess) {
+    console.log(signupSuccess, 'signup success')
+    that.emit('signup', signupSuccess)
+  }).catch(function (err){
+    //do something on failure
+    console.log(err)
+  })
 
   //data.emit(signUpSuccess)
 }

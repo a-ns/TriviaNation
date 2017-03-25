@@ -56,6 +56,10 @@ namespace NetworkLayer
                     foundUser = JsonConvert.DeserializeObject<User.User>(data.ToString());
                     Console.WriteLine("The user is" + foundUser.username + " " + foundUser.password);
                 }
+                if(data == null)
+                {
+                    Console.WriteLine("The user is null");
+                }
             });
 
         }

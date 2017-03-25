@@ -41,45 +41,41 @@ var message = function (data) {
 
 var login = function (data) {
   return new Promise(function (resolve, reject) {
-    console.log(data.username)
-    console.log(data.password)
     User.findOne({username: data.username}, function (err, userfound) {
-      console.log('in login findOne')
       if (err) {
         console.log(err)
         reject(err)
       }
 
     }).then(function (userfound) {
-      resolve(userfound)
+      if (userfound)
+        resolve(userfound)
+      else reject(null)
     })
   })
 }
 
 var signup = function (data) {
-  //console.log(data)
-  if (data["password"].length === 0)
-    return false
-  if (data["username"].length === 0)
-    return false
+  return new Promise(function (resolve, reject) {
+    if (data["password"].length === 0 || (data["username"].length === 0))
+      reject(new Error('username or password is invalid'))
 
-  var user = new User()
-  user.password = data.password
-  user.username = data.username
-  //console.log(user)
-  User.findOne({username: user.username}, function (err, userfound){
-    if (err) {
-      console.log(err)
-      return false
-    }
-    if(!userfound) {
-      user.save(function (err) {
-        console.log('saving', user)
-        return true
-      })
-    }
+    var user = new User()
+    user.password = data.password
+    user.username = data.username
+    //console.log(user)
+    User.findOne({username: user.username}, function (err, userfound){
+      if (err) {
+        console.log(err)
+        reject(err)
+      }
+    }).then(function (userfound) {
+        user.save(function (err) {
+          console.log('saving', user)
+          resolve(true)
+        })
+    })
   })
-  return false
 }
 
 var connection = function (client) {
