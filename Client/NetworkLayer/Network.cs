@@ -42,6 +42,13 @@ namespace NetworkLayer
             this.socket.Emit("signup", JsonConvert.SerializeObject(user));
         }
 
+        public void login(String username, String password)
+        {
+            User.User user = new User.User();
+            user.username = username;
+            user.password = password;
+            this.socket.Emit("login", JsonConvert.SerializeObject(user));
+        }
 
         private Socket _socket;
         private static Network instance = new Network();

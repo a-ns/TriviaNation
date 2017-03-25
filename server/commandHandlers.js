@@ -49,7 +49,11 @@ var login = function (data) {
       console.log(err)
       return false
     }
+	if(!userfound){
+		console.log('did not find user')
+	}
     if (userfound && (userfound.password === data.password)) {
+	  console.log('user found, login success')
       return userfound
     }
   })
