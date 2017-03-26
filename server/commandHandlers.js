@@ -48,8 +48,14 @@ var login = function (data) {
       }
 
     }).then(function (userfound) {
-      if (userfound)
-        resolve(userfound)
+      if(!userfound){
+			console.log('username not found')
+			reject(null);
+		}
+		if(userfound && userfound.password === data.password){
+			console.log('username found and password matches')
+			resolve(userfound)
+		}
       else reject(null)
     })
   })
