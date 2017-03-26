@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using Quobject.SocketIoClientDotNet.Client;
-using User;
+using PUser;
 namespace NetworkLayer
 {
     public class Network
@@ -28,6 +28,33 @@ namespace NetworkLayer
             }
         }
 
+        public void SetupSocket(Action<String, String> MainMenuMessageBoxCallback)
+        {
+            this.socket.On("login", (data) =>
+            {
+                if (data != null)
+                {
+                    User foundUser = null;
+                    foundUser = JsonConvert.DeserializeObject<User>(data.ToString());
+                    Console.WriteLine("The user is " + foundUser.username + " " + foundUser.password);
+                    MainMenuMessageBoxCallback("login","success");
+
+                }
+                if (data == null)
+                {
+                    Console.WriteLine("The user is null");
+                    MainMenuMessageBoxCallback("login","failure");
+                }
+            });
+
+            this.socket.On("signup", (data) =>
+            {
+                Console.WriteLine(data);
+                Boolean success = (Boolean) data;
+                MainMenuMessageBoxCallback("signup", success.ToString());
+            });
+        }
+
         public bool SetEndPointLocation(String location)
         {
             this.socket = IO.Socket(location);
@@ -36,7 +63,7 @@ namespace NetworkLayer
 
         public void signup(String username, String password)
         {
-            User.User user = new User.User();
+            User user = new User();
             user.username = username;
             user.password = password;
             this.socket.Emit("signup", JsonConvert.SerializeObject(user));
@@ -44,24 +71,10 @@ namespace NetworkLayer
 
         public void signin(String username, String password)
         {
-            User.User user = new User.User();
+            User user = new User();
             user.username = username;
             user.password = password;
             this.socket.Emit("login", JsonConvert.SerializeObject(user));
-            User.User foundUser = null;
-            this.socket.On("login", (data) =>
-            {
-                if(data != null)
-                {
-                    foundUser = JsonConvert.DeserializeObject<User.User>(data.ToString());
-                    Console.WriteLine("The user is " + foundUser.username + " " + foundUser.password);
-                }
-                if(data == null)
-                {
-                    Console.WriteLine("The user is null");
-                }
-            });
-
         }
 
 

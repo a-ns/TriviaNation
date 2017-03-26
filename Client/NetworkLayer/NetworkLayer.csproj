@@ -65,9 +65,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\User\User.csproj">
+    <ProjectReference Include="..\User\PUser.csproj">
       <Project>{7f18323c-ca9c-402d-9a5c-5b9f909788a9}</Project>
-      <Name>User</Name>
+      <Name>PUser</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

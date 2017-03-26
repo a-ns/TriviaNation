@@ -41,10 +41,10 @@ var signup = function (data) {
   commandHandlers.signup(theData).then(function (signupSuccess) {
     console.log(signupSuccess, 'signup success')
     that.emit('signup', signupSuccess)
-  }).catch(function (err){
+  }).catch(function (signupSuccess){
     //do something on failure
-    console.log(err)
-  })
+    that.emit('signup', signupSuccess)
+  })//maybe a finally statement to reduce that.emit duplication?
 
   //data.emit(signUpSuccess)
 }

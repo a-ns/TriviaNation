@@ -44,7 +44,7 @@ var login = function (data) {
     User.findOne({username: data.username}, function (err, userfound) {
       if (err) {
         console.log(err)
-        reject(err)
+        reject(null)
       }
 
     }).then(function (userfound) {
@@ -64,7 +64,7 @@ var login = function (data) {
 var signup = function (data) {
   return new Promise(function (resolve, reject) {
     if (data["password"].length === 0 || (data["username"].length === 0))
-      reject(new Error('username or password is invalid'))
+      reject(false)
 
     var user = new User()
     user.password = data.password
@@ -73,13 +73,18 @@ var signup = function (data) {
     User.findOne({username: user.username}, function (err, userfound){
       if (err) {
         console.log(err)
-        reject(err)
+        reject(false)
       }
     }).then(function (userfound) {
+      if(userfound){
+        reject(false)
+      }
+      else {
         user.save(function (err) {
           console.log('saving', user)
           resolve(true)
         })
+      }
     })
   })
 }

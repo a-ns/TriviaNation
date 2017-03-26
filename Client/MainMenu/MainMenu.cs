@@ -18,13 +18,18 @@ namespace MainMenu
         {
             InitializeComponent();
             this.endpoint.SetEndPointLocation("http://localhost:3000");
-
+            this.endpoint.SetupSocket(NetworkMessageBoxCallback);
             this.SignIn.Click += new System.EventHandler(this.SignIn_Click);
             this.SignUp.Click += new System.EventHandler(this.SignUp_Click);
             this.CreateMatch.Click += new System.EventHandler(this.CreateMatch_Click);
             
             
         }
+        private void NetworkMessageBoxCallback(String eventType, String success)
+        {
+            MessageBox.Show( eventType + " "+ success);
+        }
+       
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -47,7 +52,6 @@ namespace MainMenu
             String password = this.Password.Text;
             Console.WriteLine("Signing in: " + nickname + " " + password);
             this.endpoint.signin(nickname, password);
-            MessageBox.Show("Sign in successful");
         }
 
         private void SignUp_Click(object sender, EventArgs e)
@@ -56,7 +60,6 @@ namespace MainMenu
             String password = this.Password.Text;
             Console.WriteLine("Signing up: " + nickname + " " + password);
             this.endpoint.signup(nickname, password);
-            MessageBox.Show("Sign up successful");
         }
 
         private void CreateMatch_Click(object sender, EventArgs e)
@@ -64,7 +67,6 @@ namespace MainMenu
             String nickname = this.Nickname.Text;
             String password = this.Password.Text;
             Console.WriteLine("Creating match: " + nickname + " " + password);
-            MessageBox.Show("Match creation successful");
         }
     }
 }

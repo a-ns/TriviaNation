@@ -1,0 +1,5 @@
+D:\Documents\School\Software Engineering II\TriviaNation\Client\User\bin\Debug\User.dll
+D:\Documents\School\Software Engineering II\TriviaNation\Client\User\bin\Debug\User.pdb
+D:\Documents\School\Software Engineering II\TriviaNation\Client\User\obj\Debug\PUser.csprojResolveAssemblyReference.cache
+D:\Documents\School\Software Engineering II\TriviaNation\Client\User\obj\Debug\User.dll
+D:\Documents\School\Software Engineering II\TriviaNation\Client\User\obj\Debug\User.pdb

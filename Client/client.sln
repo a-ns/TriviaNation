@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainMenu", "MainMenu\MainMe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetworkLayer", "NetworkLayer\NetworkLayer.csproj", "{4F166DAE-58DF-4D91-9196-F130F66F6304}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "User", "User\User.csproj", "{7F18323C-CA9C-402D-9A5C-5B9F909788A9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PUser", "User\PUser.csproj", "{7F18323C-CA9C-402D-9A5C-5B9F909788A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

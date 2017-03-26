@@ -1,18 +1,12 @@
-var should = require('chai').should()
+var chai = require('chai')
+var chaiAsPromised = require('chai-as-promised')
+chai.use(chaiAsPromised)
+var should = chai.should()
 var commandHandlers = require('../server/commandHandlers.js')
-var Mongoose = require('mongoose').Mongoose
-var mongoose = new Mongoose()
+var db = require('../server/database/db.js')
+var User = require('../server/models/User.js')
 
-var Mockgoose = require('mockgoose').Mockgoose
-var mockgoose = new Mockgoose(mongoose)
 
-before(function(done) {
-  mockgoose.prepareStorage().then(function () {
-    mongoose.connect(process.env.MONGODB_URI, function (err) {
-      done(err)
-    })
-  })
-})
 
 describe('Example Tests', function () {
   it('1 should equal 1', function () {
@@ -29,49 +23,35 @@ describe('Example Tests', function () {
 })
 
 describe('SignUp', function () {
-  it('SignUp should return true for new user success', function (done) {
+  it('SignUp should return true for new user success', function () {
     var testSignup = {'username': 'testUser', 'password': 'testPassword'}
-    var sut = commandHandlers.signup(testSignup)
-
-    sut.should.equal(true)
-    done()
-
+    return commandHandlers.signup(testSignup).should.eventually.equal(true)
   })
 
-  it('SignUp should return false when trying to create an existing user', function (done ) {
+  it('SignUp should return false when trying to create an existing user', function () {
     var testSignup = {'username': 'testUser', 'password': 'testPassword'}
-    var sut = commandHandlers.signup(testSignup)
-
-    sut.should.equal(false)
-    done()
+    return commandHandlers.signup(testSignup).should.be.rejectedWith(false)
   })
 
-  it('SignUp should return false when trying to create a user with no password', function (done) {
+  it('SignUp should return false when trying to create a user with no password', function () {
     var testSignup = {'username': 'testUser', 'password': ''}
-    var sut = commandHandlers.signup(testSignup)
-
-    sut.should.equal(false)
-    done()
+    return commandHandlers.signup(testSignup).should.be.rejectedWith(false)
   })
 })
 
 describe('SignIn', function () {
-  it('SignIn should return true if user was found', function (done) {
+
+  it('SignIn should return object if user was found', function () {
     var testSignIn = {'username': 'testUser', 'password': 'testPassword'}
-    var sut = commandHandlers.login(testSignIn, done)
-    console.log(sut)
-
-
-    sut.should.equal(true)
-    done()
+    return commandHandlers.login(testSignIn).should.eventually.be.a('object')
   })
 
-  it('SignIn should return false if user was not found', function (done) {
+  it('SignIn should return null if user was not found', function () {
     var testSignIn = {'username': 'notFoundUser', 'password': 'test'}
-    var sut = commandHandlers.login(testSignIn)
-    console.log(sut)
-    sut.should.equal(false)
-    done()
+    return commandHandlers.login(testSignIn).should.be.rejectedWith(null)
   })
 })
-mockgoose.helper.reset()
+
+after(function () {
+  User.remove({'username': 'testUser'}).exec()
+})
