@@ -1,11 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Quobject.SocketIoClientDotNet.Client;
-using User;
+
+using NetworkLayerInterfaces;
+
 namespace NetworkLayer
 {
-    public class Network
+    public class Network : INetwork
     {
         private Network() { }
         public static Network Instance
@@ -16,7 +21,17 @@ namespace NetworkLayer
             }
         }
 
-        private Socket socket
+        public Socket getSocket()
+        {
+            return _socket;
+        }
+
+        public void setSocket(Socket value)
+        {
+            this._socket = value;
+        }
+
+        public Socket socket
         {
             get
             {
@@ -28,29 +43,13 @@ namespace NetworkLayer
             }
         }
 
-        public bool SetEndPointLocation(String location)
+        public bool SetEndPointLocation(string location)
         {
             this.socket = IO.Socket(location);
             return true;
         }
 
-        public void signup(String username, String password)
-        {
-            User.User user = new User.User();
-            user.username = username;
-            user.password = password;
-            this.socket.Emit("signup", JsonConvert.SerializeObject(user));
-        }
-
-        public void login(String username, String password)
-        {
-            User.User user = new User.User();
-            user.username = username;
-            user.password = password;
-            this.socket.Emit("login", JsonConvert.SerializeObject(user));
-        }
-
-        private Socket _socket;
+        public Socket _socket;
         private static Network instance = new Network();
     }
 }
