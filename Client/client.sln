@@ -7,9 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainMenu", "MainMenu\MainMe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetworkLayer", "NetworkLayer\NetworkLayer.csproj", "{4F166DAE-58DF-4D91-9196-F130F66F6304}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "User", "User\User.csproj", "{7F18323C-CA9C-402D-9A5C-5B9F909788A9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PUser", "User\PUser.csproj", "{7F18323C-CA9C-402D-9A5C-5B9F909788A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameBoard", "GameBoard\GameBoard.csproj", "{2682CF5D-0452-4D0A-9104-3B1BA48A8D50}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetworkLayerInterfaces", "NetworkLayerInterfaces\NetworkLayerInterfaces.csproj", "{D37BB702-93B0-4F2C-AFED-60322C05724B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{7F18323C-CA9C-402D-9A5C-5B9F909788A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F18323C-CA9C-402D-9A5C-5B9F909788A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F18323C-CA9C-402D-9A5C-5B9F909788A9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2682CF5D-0452-4D0A-9104-3B1BA48A8D50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2682CF5D-0452-4D0A-9104-3B1BA48A8D50}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2682CF5D-0452-4D0A-9104-3B1BA48A8D50}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2682CF5D-0452-4D0A-9104-3B1BA48A8D50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D37BB702-93B0-4F2C-AFED-60322C05724B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D37BB702-93B0-4F2C-AFED-60322C05724B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D37BB702-93B0-4F2C-AFED-60322C05724B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D37BB702-93B0-4F2C-AFED-60322C05724B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

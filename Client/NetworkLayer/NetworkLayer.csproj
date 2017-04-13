@@ -57,6 +57,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MainMenuNetwork.cs" />
     <Compile Include="Network.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -65,9 +66,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\User\User.csproj">
+    <ProjectReference Include="..\NetworkLayerInterfaces\NetworkLayerInterfaces.csproj">
+      <Project>{d37bb702-93b0-4f2c-afed-60322c05724b}</Project>
+      <Name>NetworkLayerInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\User\PUser.csproj">
       <Project>{7f18323c-ca9c-402d-9a5c-5b9f909788a9}</Project>
-      <Name>User</Name>
+      <Name>PUser</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

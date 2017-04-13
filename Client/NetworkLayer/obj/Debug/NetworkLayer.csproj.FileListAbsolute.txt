@@ -11,6 +11,19 @@ D:\Documents\Docs\Visual Studio 2015\Projects\WindowsFormsApplication1\ClassLibr
 D:\Documents\Docs\Visual Studio 2015\Projects\WindowsFormsApplication1\ClassLibrary1\obj\Debug\NetworkLayer.csprojResolveAssemblyReference.cache
 D:\Documents\Docs\Visual Studio 2015\Projects\WindowsFormsApplication1\ClassLibrary1\obj\Debug\ClassLibrary1.dll
 D:\Documents\Docs\Visual Studio 2015\Projects\WindowsFormsApplication1\ClassLibrary1\obj\Debug\ClassLibrary1.pdb
+D:\Documents\School\Software Engineering II\TriviaNation\Client\NetworkLayer\bin\Debug\ClassLibrary1.dll.config
+D:\Documents\School\Software Engineering II\TriviaNation\Client\NetworkLayer\bin\Debug\ClassLibrary1.dll
+D:\Documents\School\Software Engineering II\TriviaNation\Client\NetworkLayer\bin\Debug\ClassLibrary1.pdb
+D:\Documents\School\Software Engineering II\TriviaNation\Client\NetworkLayer\bin\Debug\EngineIoClientDotNet.dll
+D:\Documents\School\Software Engineering II\TriviaNation\Client\NetworkLayer\bin\Debug\Newtonsoft.Json.dll
+D:\Documents\School\Software Engineering II\TriviaNation\Client\NetworkLayer\bin\Debug\SocketIoClientDotNet.dll
+D:\Documents\School\Software Engineering II\TriviaNation\Client\NetworkLayer\bin\Debug\User.dll
+D:\Documents\School\Software Engineering II\TriviaNation\Client\NetworkLayer\bin\Debug\WebSocket4Net.dll
+D:\Documents\School\Software Engineering II\TriviaNation\Client\NetworkLayer\bin\Debug\User.pdb
+D:\Documents\School\Software Engineering II\TriviaNation\Client\NetworkLayer\bin\Debug\Newtonsoft.Json.xml
+D:\Documents\School\Software Engineering II\TriviaNation\Client\NetworkLayer\obj\Debug\NetworkLayer.csprojResolveAssemblyReference.cache
+D:\Documents\School\Software Engineering II\TriviaNation\Client\NetworkLayer\obj\Debug\ClassLibrary1.dll
+D:\Documents\School\Software Engineering II\TriviaNation\Client\NetworkLayer\obj\Debug\ClassLibrary1.pdb
 C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\NetworkLayer\bin\Debug\ClassLibrary1.dll.config
 C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\NetworkLayer\bin\Debug\ClassLibrary1.dll
 C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\NetworkLayer\bin\Debug\ClassLibrary1.pdb
@@ -24,3 +37,5 @@ C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\Tr
 C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\NetworkLayer\obj\Debug\NetworkLayer.csprojResolveAssemblyReference.cache
 C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\NetworkLayer\obj\Debug\ClassLibrary1.dll
 C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\NetworkLayer\obj\Debug\ClassLibrary1.pdb
+C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\NetworkLayer\bin\Debug\NetworkLayerInterfaces.dll
+C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\NetworkLayer\bin\Debug\NetworkLayerInterfaces.pdb

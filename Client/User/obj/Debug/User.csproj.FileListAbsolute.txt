@@ -3,8 +3,3 @@ D:\Documents\Docs\Visual Studio 2015\Projects\WindowsFormsApplication1\User\bin\
 D:\Documents\Docs\Visual Studio 2015\Projects\WindowsFormsApplication1\User\obj\Debug\User.csprojResolveAssemblyReference.cache
 D:\Documents\Docs\Visual Studio 2015\Projects\WindowsFormsApplication1\User\obj\Debug\User.dll
 D:\Documents\Docs\Visual Studio 2015\Projects\WindowsFormsApplication1\User\obj\Debug\User.pdb
-C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\User\bin\Debug\User.dll
-C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\User\bin\Debug\User.pdb
-C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\User\obj\Debug\User.csprojResolveAssemblyReference.cache
-C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\User\obj\Debug\User.dll
-C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\User\obj\Debug\User.pdb

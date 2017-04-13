@@ -1,5 +1,0 @@
-H:\TriviaNation\GameBoard\GameBoard\bin\Debug\GameBoard.exe.config
-C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\GameBoard\obj\Debug\GameBoard.csprojResolveAssemblyReference.cache
-C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\GameBoard\obj\Debug\GameBoard.GameBoard.resources
-C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\GameBoard\obj\Debug\GameBoard.Properties.Resources.resources
-C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\GameBoard\obj\Debug\GameBoard.csproj.GenerateResource.Cache

@@ -77,6 +77,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\NetworkLayerInterfaces\NetworkLayerInterfaces.csproj">
+      <Project>{d37bb702-93b0-4f2c-afed-60322c05724b}</Project>
+      <Name>NetworkLayerInterfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NetworkLayer\NetworkLayer.csproj">
       <Project>{4f166dae-58df-4d91-9196-f130f66f6304}</Project>
       <Name>NetworkLayer</Name>
