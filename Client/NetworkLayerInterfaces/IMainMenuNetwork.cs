@@ -14,7 +14,7 @@ namespace NetworkLayerInterfaces
 
         void MainMenuSignUp(String username, String password);
 
-        void MainMenuSignIn(String username, String password);
+        bool MainMenuSignIn(String username, String password);
 
         void setNetwork(INetwork network);
 

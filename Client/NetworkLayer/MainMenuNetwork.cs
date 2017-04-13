@@ -4,13 +4,17 @@ using Newtonsoft.Json;
 using Quobject.SocketIoClientDotNet.Client;
 using PUser;
 using NetworkLayerInterfaces;
+using System.Threading.Tasks;
 
 namespace NetworkLayer
 {
     public class MainMenuNetwork : IMainMenuNetwork
     {
-        
-        private MainMenuNetwork() { }
+        TaskCompletionSource<Boolean> promise;
+        private MainMenuNetwork()
+        {
+            
+        }
         public static MainMenuNetwork Instance
         {
 
@@ -37,12 +41,13 @@ namespace NetworkLayer
                     foundUser = JsonConvert.DeserializeObject<User>(data.ToString());
                     Console.WriteLine("The user is " + foundUser.username + " " + foundUser.password);
                     MainMenuMessageBoxCallback("login","success");
-
+                    promise.TrySetResult(true);
                 }
                 if (data == null)
                 {
                     Console.WriteLine("The user is null");
                     MainMenuMessageBoxCallback("login","failure");
+                        promise.TrySetResult(false);
                 }
             });
 
@@ -68,12 +73,25 @@ namespace NetworkLayer
             this._socket.Emit("signup", JsonConvert.SerializeObject(user));
         }
 
-        public void MainMenuSignIn(String username, String password)
+        public bool MainMenuSignIn(String username, String password)
         {
+            promise = new TaskCompletionSource<Boolean>();
             User user = new User();
             user.username = username;
             user.password = password;
             this._socket.Emit("login", JsonConvert.SerializeObject(user));
+            promise.Task.Wait();
+            if (this.promise.Task.Result)
+            {
+                promise = null;
+                return true;
+            }
+            else
+            {
+                promise = null;
+                return false;
+            }
+
         }
 
 

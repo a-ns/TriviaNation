@@ -28,6 +28,7 @@ namespace MainMenu
             this.SignIn.Click += new System.EventHandler(this.SignIn_Click);
             this.SignUp.Click += new System.EventHandler(this.SignUp_Click);
             this.CreateMatch.Click += new System.EventHandler(this.CreateMatch_Click);
+            this.CreateMatch.Visible = false;
         }
         private void NetworkMessageBoxCallback(String eventType, String success)
         {
@@ -55,7 +56,10 @@ namespace MainMenu
             String nickname = this.Nickname.Text;
             String password = this.Password.Text;
             Console.WriteLine("Signing in: " + nickname + " " + password);
-            this.mainMenu.MainMenuSignIn(nickname, password);
+            if (this.mainMenu.MainMenuSignIn(nickname, password))
+                this.CreateMatch.Visible = true;
+            else
+                this.CreateMatch.Visible = false;
         }
 
         private void SignUp_Click(object sender, EventArgs e)
@@ -63,7 +67,6 @@ namespace MainMenu
             String nickname = this.Nickname.Text;
             String password = this.Password.Text;
             Console.WriteLine("Signing up: " + nickname + " " + password);
-            this.mainMenu.MainMenuSignUp(nickname, password);
         }
 
         private void CreateMatch_Click(object sender, EventArgs e)
