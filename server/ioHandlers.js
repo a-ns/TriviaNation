@@ -1,5 +1,5 @@
 var commandHandlers = require('./commandHandlers.js')
-
+var Promise = require('bluebird')
 var scoreUpdate = function (data) {
   var theData = commandHandlers.scoreUpdate(data)
   //emit theData
@@ -17,21 +17,34 @@ var questionClicked = function (data) {
 }
 
 var message = function (data) {
-  console.log('got here')
   var theMessage = commandHandlers.message(data)
   console.log(theMessage)
   //data.emit({})
 }
 
 var login = function (data) {
-  var loginSuccess = commandHandlers.login(data)
-  //data.emit(loginSuccess)
+  var that = this
+  var theData = JSON.parse(data)
+//  console.log('client', this)
+  commandHandlers.login(theData).then(function (loginSuccess){
+    console.log(loginSuccess, 'login Success')
+    that.emit('login', loginSuccess)
+  }).catch(function (){
+    console.log('login not successful')
+    that.emit('login', null)
+  })
 }
 
 var signup = function (data) {
   var theData = JSON.parse(data)
-  //console.log('request for signup')
-  var signUpSuccess = commandHandlers.signup(theData)
+  var that = this
+  commandHandlers.signup(theData).then(function (signupSuccess) {
+    console.log(signupSuccess, 'signup success')
+    that.emit('signup', signupSuccess)
+  }).catch(function (signupSuccess){
+    //do something on failure
+    that.emit('signup', signupSuccess)
+  })//maybe a finally statement to reduce that.emit duplication?
 
   //data.emit(signUpSuccess)
 }

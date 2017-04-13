@@ -1,5 +1,5 @@
 var User = require('./models/User.js')
-
+var Promise = require('bluebird')
 var scoreUpdate = function (data) {
   console.log(data)
   return {'status': 'ok'}
@@ -40,53 +40,53 @@ var message = function (data) {
 }
 
 var login = function (data) {
-  //data.username
-  //data.password
-  console.log(data)
-  User.findOne({username: data.username}, function (err, userfound) {
-    console.log('in login findOne')
-    if (err) {
-      console.log(err)
-      return false
-    }
-	if(!userfound){
-		console.log('did not find user')
-	}
-    if (userfound && (userfound.password === data.password)) {
-	  console.log('user found, login success')
-      return userfound
-    }
+  return new Promise(function (resolve, reject) {
+    User.findOne({username: data.username}, function (err, userfound) {
+      if (err) {
+        console.log(err)
+        reject(null)
+      }
+
+    }).then(function (userfound) {
+      if(!userfound){
+			console.log('username not found')
+			reject(null);
+		}
+		if(userfound && userfound.password === data.password){
+			console.log('username found and password matches')
+			resolve(userfound)
+		}
+      else reject(null)
+    })
   })
-  //find in database, that user
-  //return {loginSuccessful}
-  return false
 }
 
 var signup = function (data) {
-  //console.log(data)
-  if (data["password"].length === 0)
-    return false
-  if (data["username"].length === 0)
-    return false
+  return new Promise(function (resolve, reject) {
+    if (data["password"].length === 0 || (data["username"].length === 0))
+      reject(false)
 
-  var user = new User()
-  user.password = data.password
-  user.username = data.username
-  //console.log(user)
-  User.findOne({username: user.username}, function (err, userfound){
-    console.log('yo dawg')
-    if (err) {
-      console.log(err)
-      return false
-    }
-    if(!userfound) {
-      user.save(function (err) {
-        console.log('saving')
-        return true
-      })
-    }
+    var user = new User()
+    user.password = data.password
+    user.username = data.username
+    //console.log(user)
+    User.findOne({username: user.username}, function (err, userfound){
+      if (err) {
+        console.log(err)
+        reject(false)
+      }
+    }).then(function (userfound) {
+      if(userfound){
+        reject(false)
+      }
+      else {
+        user.save(function (err) {
+          console.log('saving', user)
+          resolve(true)
+        })
+      }
+    })
   })
-  return false
 }
 
 var connection = function (client) {
