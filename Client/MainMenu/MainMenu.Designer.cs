@@ -39,9 +39,10 @@
             // CreateMatch
             // 
             this.CreateMatch.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreateMatch.Location = new System.Drawing.Point(18, 200);
+            this.CreateMatch.Location = new System.Drawing.Point(24, 246);
+            this.CreateMatch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CreateMatch.Name = "CreateMatch";
-            this.CreateMatch.Size = new System.Drawing.Size(229, 62);
+            this.CreateMatch.Size = new System.Drawing.Size(305, 76);
             this.CreateMatch.TabIndex = 0;
             this.CreateMatch.Text = "Create Session";
             this.CreateMatch.UseVisualStyleBackColor = true;
@@ -49,9 +50,10 @@
             // Nickname
             // 
             this.Nickname.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Nickname.Location = new System.Drawing.Point(18, 99);
+            this.Nickname.Location = new System.Drawing.Point(24, 122);
+            this.Nickname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Nickname.Name = "Nickname";
-            this.Nickname.Size = new System.Drawing.Size(229, 31);
+            this.Nickname.Size = new System.Drawing.Size(304, 37);
             this.Nickname.TabIndex = 1;
             this.Nickname.Text = "Enter Nickname";
             // 
@@ -59,9 +61,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Showcard Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(35, 9);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(229, 72);
+            this.label1.Size = new System.Drawing.Size(282, 92);
             this.label1.TabIndex = 2;
             this.label1.Text = "Welcome to\r\nTrivia Nation";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -70,9 +73,10 @@
             // SignIn
             // 
             this.SignIn.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SignIn.Location = new System.Drawing.Point(18, 336);
+            this.SignIn.Location = new System.Drawing.Point(24, 414);
+            this.SignIn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SignIn.Name = "SignIn";
-            this.SignIn.Size = new System.Drawing.Size(229, 62);
+            this.SignIn.Size = new System.Drawing.Size(305, 76);
             this.SignIn.TabIndex = 3;
             this.SignIn.Text = "Sign In To Match";
             this.SignIn.UseVisualStyleBackColor = true;
@@ -80,9 +84,10 @@
             // SignUp
             // 
             this.SignUp.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SignUp.Location = new System.Drawing.Point(18, 268);
+            this.SignUp.Location = new System.Drawing.Point(24, 330);
+            this.SignUp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SignUp.Name = "SignUp";
-            this.SignUp.Size = new System.Drawing.Size(229, 62);
+            this.SignUp.Size = new System.Drawing.Size(305, 76);
             this.SignUp.TabIndex = 4;
             this.SignUp.Text = "Sign Up";
             this.SignUp.UseVisualStyleBackColor = true;
@@ -90,24 +95,26 @@
             // Password
             // 
             this.Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Password.Location = new System.Drawing.Point(18, 149);
+            this.Password.Location = new System.Drawing.Point(24, 183);
+            this.Password.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Password.Name = "Password";
-            this.Password.Size = new System.Drawing.Size(229, 31);
+            this.Password.Size = new System.Drawing.Size(304, 37);
             this.Password.TabIndex = 5;
             this.Password.Text = "Enter Password";
             // 
-            // TriviaNationMenu
+            // MainMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(265, 422);
+            this.ClientSize = new System.Drawing.Size(353, 519);
             this.Controls.Add(this.Password);
             this.Controls.Add(this.SignUp);
             this.Controls.Add(this.SignIn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Nickname);
             this.Controls.Add(this.CreateMatch);
-            this.Name = "TriviaNationMenu";
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "MainMenu";
             this.Text = "Trivia Nation Menu";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);

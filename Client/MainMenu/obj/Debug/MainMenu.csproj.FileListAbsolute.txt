@@ -98,3 +98,4 @@ C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\GroupProject\Tri
 C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\GroupProject\TriviaNation\Client\MainMenu\obj\Debug\MainMenu.csproj.GenerateResource.Cache
 C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\GroupProject\TriviaNation\Client\MainMenu\obj\Debug\WindowsFormsApplication1.exe
 C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\GroupProject\TriviaNation\Client\MainMenu\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\GroupProject\TriviaNation\Client\MainMenu\obj\Debug\MainMenu.MainMenu.resources
