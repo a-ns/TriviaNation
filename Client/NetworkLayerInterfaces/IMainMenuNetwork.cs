@@ -12,7 +12,7 @@ namespace NetworkLayerInterfaces
 
         bool MainMenuSetEndPointLocation(String location);
 
-        void MainMenuSignUp(String username, String password);
+        bool MainMenuSignUp(String username, String password);
 
         bool MainMenuSignIn(String username, String password);
 

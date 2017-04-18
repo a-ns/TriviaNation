@@ -54,9 +54,15 @@ namespace MainMenu
             String password = this.Password.Text;
             Console.WriteLine("Signing in: " + nickname + " " + password);
             if (this.mainMenu.MainMenuSignIn(nickname, password))
+            {
+                MessageBox.Show("Login Success");
                 this.CreateMatch.Visible = true;
+            }
             else
+            {
                 this.CreateMatch.Visible = false;
+                MessageBox.Show("Login Failed, try again");
+            }
         }
 
         private void SignUp_Click(object sender, EventArgs e)
@@ -64,6 +70,10 @@ namespace MainMenu
             String nickname = this.Nickname.Text;
             String password = this.Password.Text;
             Console.WriteLine("Signing up: " + nickname + " " + password);
+            if (this.mainMenu.MainMenuSignUp(nickname, password))
+                MessageBox.Show("signup successful for " + nickname);
+            else
+                MessageBox.Show("signup failed for " + nickname);
         }
 
         private void CreateMatch_Click(object sender, EventArgs e)

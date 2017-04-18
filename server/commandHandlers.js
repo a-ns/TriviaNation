@@ -73,16 +73,16 @@ var signup = function (data) {
     User.findOne({username: user.username}, function (err, userfound){
       if (err) {
         console.log(err)
-        reject(false)
+        reject(null)
       }
     }).then(function (userfound) {
       if(userfound){
-        reject(false)
+        reject(null)
       }
       else {
         user.save(function (err) {
           console.log('saving', user)
-          resolve(true)
+          resolve(user)
         })
       }
     })

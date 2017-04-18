@@ -40,22 +40,35 @@ namespace NetworkLayer
                     User foundUser = null;
                     foundUser = JsonConvert.DeserializeObject<User>(data.ToString());
                     Console.WriteLine("The user is " + foundUser.username + " " + foundUser.password);
-                    MainMenuMessageBoxCallback("login","success");
                     promise.TrySetResult(true);
                 }
                 if (data == null)
                 {
                     Console.WriteLine("The user is null");
-                    MainMenuMessageBoxCallback("login","failure");
-                        promise.TrySetResult(false);
+                    promise.TrySetResult(false);
                 }
             });
 
             this._socket.On("signup", (data) =>
             {
-                Console.WriteLine(data);
-                Boolean success = (Boolean) data;
-                MainMenuMessageBoxCallback("signup", success.ToString());
+                if (data != null)
+                {
+                    User newUser = null;
+                    try {
+                        newUser = JsonConvert.DeserializeObject<User>(data.ToString());
+                        Console.WriteLine("Username " + newUser.username + " and login successfully created.");
+                        promise.TrySetResult(true);
+                    }
+                    catch (Newtonsoft.Json.JsonReaderException)
+                    {
+                        promise.TrySetResult(false);
+                    }
+                    }
+                else if(data==null)
+                {
+                    Console.WriteLine("Username is already taken.");
+                    promise.TrySetResult(false);
+                }
             });
         }
 
@@ -65,12 +78,18 @@ namespace NetworkLayer
             return true;
         }
 
-        public void MainMenuSignUp(String username, String password)
+        public bool MainMenuSignUp(String username, String password)
         {
+            promise = new TaskCompletionSource<Boolean>();
             User user = new User();
             user.username = username;
             user.password = password;
             this._socket.Emit("signup", JsonConvert.SerializeObject(user));
+            promise.Task.Wait();
+            if (this.promise.Task.Result)
+                return true;
+            else
+                return false;
         }
 
         public bool MainMenuSignIn(String username, String password)
@@ -82,15 +101,9 @@ namespace NetworkLayer
             this._socket.Emit("login", JsonConvert.SerializeObject(user));
             promise.Task.Wait();
             if (this.promise.Task.Result)
-            {
-                promise = null;
                 return true;
-            }
             else
-            {
-                promise = null;
                 return false;
-            }
 
         }
 
