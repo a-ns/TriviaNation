@@ -8,3 +8,8 @@ C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\Tr
 C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\User\obj\Debug\PUser.csprojResolveAssemblyReference.cache
 C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\User\obj\Debug\User.dll
 C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\User\obj\Debug\User.pdb
+C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\GroupProject\TriviaNation\Client\User\bin\Debug\User.dll
+C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\GroupProject\TriviaNation\Client\User\bin\Debug\User.pdb
+C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\GroupProject\TriviaNation\Client\User\obj\Debug\PUser.csprojResolveAssemblyReference.cache
+C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\GroupProject\TriviaNation\Client\User\obj\Debug\User.dll
+C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\GroupProject\TriviaNation\Client\User\obj\Debug\User.pdb

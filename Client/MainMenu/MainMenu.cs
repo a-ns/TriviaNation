@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using NetworkLayer;
 using NetworkLayerInterfaces;
 namespace MainMenu
 {
@@ -17,12 +16,10 @@ namespace MainMenu
         private IMainMenuNetwork mainMenu;
         
 
-        public MainMenu()
+        public MainMenu(INetwork endpoint, IMainMenuNetwork mainMenu)
         {
-            endpoint = Network.Instance;
-            this.endpoint.SetEndPointLocation("http://localhost:3000");
-            mainMenu = MainMenuNetwork.Instance;
-            mainMenu.setNetwork(endpoint);
+            this.endpoint = endpoint;
+            this.mainMenu = mainMenu;
             InitializeComponent();
             this.mainMenu.MainMenuSetupSocket(NetworkMessageBoxCallback);
             this.SignIn.Click += new System.EventHandler(this.SignIn_Click);
