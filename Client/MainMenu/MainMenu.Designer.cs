@@ -115,6 +115,7 @@
             this.Controls.Add(this.CreateMatch);
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Trivia Nation Menu";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
