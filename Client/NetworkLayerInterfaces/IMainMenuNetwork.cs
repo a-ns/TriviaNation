@@ -8,7 +8,7 @@ namespace NetworkLayerInterfaces
 {
     public interface IMainMenuNetwork
     {
-        void MainMenuSetupSocket(Action<String, String> MainMenuMessageBoxCallback);
+        void MainMenuSetupSocket();
 
         bool MainMenuSetEndPointLocation(String location);
 

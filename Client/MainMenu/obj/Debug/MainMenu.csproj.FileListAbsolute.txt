@@ -121,3 +121,6 @@ C:\Users\lak16\Downloads\TriviaNation-testingBranch\TriviaNation-testingBranch\C
 C:\Users\lak16\Downloads\TriviaNation-testingBranch\TriviaNation-testingBranch\Client\MainMenu\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
 C:\Users\lak16\Downloads\TriviaNation-testingBranch\TriviaNation-testingBranch\Client\MainMenu\obj\Debug\MainMenu.csproj.GenerateResource.Cache
 C:\Users\lak16\Downloads\TriviaNation-testingBranch\TriviaNation-testingBranch\Client\MainMenu\obj\Debug\MainMenu.GameBoard.resources
+H:\SEII\GroupProject\TriviaNation\Client\MainMenu\bin\Debug\WindowsFormsApplication1.exe.config
+H:\SEII\GroupProject\TriviaNation\Client\MainMenu\obj\Debug\WindowsFormsApplication1.exe
+H:\SEII\GroupProject\TriviaNation\Client\MainMenu\obj\Debug\WindowsFormsApplication1.pdb

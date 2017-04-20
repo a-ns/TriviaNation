@@ -31,7 +31,7 @@ namespace NetworkLayer
         }
 
 
-        public void MainMenuSetupSocket(Action<String, String> MainMenuMessageBoxCallback)
+        public void MainMenuSetupSocket()
         {
             this._socket.On("login", (data) =>
             {

@@ -57,6 +57,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IGameBoardNetwork.cs" />
     <Compile Include="IMainMenuNetwork.cs" />
     <Compile Include="INetwork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

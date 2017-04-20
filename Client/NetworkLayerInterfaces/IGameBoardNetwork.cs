@@ -8,5 +8,6 @@ namespace NetworkLayerInterfaces
 {
     public interface IGameBoardNetwork
     {
+        void setGameBoardNetwork(INetwork network);
     }
 }

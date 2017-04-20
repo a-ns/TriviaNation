@@ -4,15 +4,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NetworkLayerInterfaces;
+using Quobject.SocketIoClientDotNet.Client;
 
 namespace NetworkLayer
 {
     public class GameBoardNetwork : IGameBoardNetwork
     {
-        private INetwork network;
-        public GameBoardNetwork(Network endpoint)
+        private GameBoardNetwork()
         {
-            this.endpoint = endpoint;
+
         }
+        public static GameBoardNetwork Instance
+        {
+            get
+            {
+                return instance;
+            }
+        }
+        public void setGameBoardNetwork(INetwork network)
+        {
+            this.network = network;
+            this._socket = network.getSocket();
+        }
+
+        private Socket _socket;
+        private INetwork network;
+        private static GameBoardNetwork instance = new GameBoardNetwork();
     }
 }
