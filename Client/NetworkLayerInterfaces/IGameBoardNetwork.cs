@@ -9,5 +9,11 @@ namespace NetworkLayerInterfaces
     public interface IGameBoardNetwork
     {
         void setGameBoardNetwork(INetwork network);
+
+        void gameBoardSetupSocket();
+
+        void TileClick(int tileNum);
+
+        void AnswerClick(bool answer);
     }
 }

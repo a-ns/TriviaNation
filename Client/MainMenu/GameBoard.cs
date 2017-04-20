@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MainMenu
+namespace GUILayer
 {
     public partial class GameBoard : Form
     {

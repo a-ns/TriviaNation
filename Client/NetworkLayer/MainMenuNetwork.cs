@@ -72,12 +72,6 @@ namespace NetworkLayer
             });
         }
 
-        public bool MainMenuSetEndPointLocation(String location)
-        {
-            this._socket = IO.Socket(location);
-            return true;
-        }
-
         public bool MainMenuSignUp(String username, String password)
         {
             promise = new TaskCompletionSource<Boolean>();

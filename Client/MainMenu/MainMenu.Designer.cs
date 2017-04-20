@@ -1,4 +1,4 @@
-﻿namespace MainMenu
+﻿namespace GUILayer
 {
     partial class MainMenu
     {

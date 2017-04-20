@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using NetworkLayerInterfaces;
-namespace MainMenu
+namespace GUILayer
 {
     public partial class MainMenu : Form
     {
@@ -21,18 +21,13 @@ namespace MainMenu
             this.endpoint = endpoint;
             this.mainMenu = mainMenu;
             InitializeComponent();
-            this.mainMenu.MainMenuSetupSocket(NetworkMessageBoxCallback);
+            this.mainMenu.MainMenuSetupSocket();
             this.SignIn.Click += new System.EventHandler(this.SignIn_Click);
             this.SignUp.Click += new System.EventHandler(this.SignUp_Click);
             this.CreateMatch.Click += new System.EventHandler(this.CreateMatch_Click);
             this.CreateMatch.Visible = false;
         }
-        private void NetworkMessageBoxCallback(String eventType, String success)
-        {
-            MessageBox.Show( eventType + " "+ success);
-        }
        
-
         private void Form1_Load(object sender, EventArgs e)
         {
 

@@ -6,7 +6,7 @@ using System.Windows.Forms;
 using NetworkLayerInterfaces;
 using NetworkLayer;
 
-namespace MainMenu
+namespace GUILayer
 {
     static class Program
     {

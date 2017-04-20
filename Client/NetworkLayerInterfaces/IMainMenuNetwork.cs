@@ -9,9 +9,7 @@ namespace NetworkLayerInterfaces
     public interface IMainMenuNetwork
     {
         void MainMenuSetupSocket();
-
-        bool MainMenuSetEndPointLocation(String location);
-
+        
         bool MainMenuSignUp(String username, String password);
 
         bool MainMenuSignIn(String username, String password);

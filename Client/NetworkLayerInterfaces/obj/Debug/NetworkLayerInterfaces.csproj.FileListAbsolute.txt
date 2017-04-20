@@ -28,3 +28,13 @@ C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\GroupProject\Tri
 C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\GroupProject\TriviaNation\Client\NetworkLayerInterfaces\obj\Debug\NetworkLayerInterfaces.csprojResolveAssemblyReference.cache
 C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\GroupProject\TriviaNation\Client\NetworkLayerInterfaces\obj\Debug\NetworkLayerInterfaces.dll
 C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\GroupProject\TriviaNation\Client\NetworkLayerInterfaces\obj\Debug\NetworkLayerInterfaces.pdb
+H:\SEII\GroupProject\TriviaNation\Client\NetworkLayerInterfaces\bin\Debug\NetworkLayerInterfaces.dll
+H:\SEII\GroupProject\TriviaNation\Client\NetworkLayerInterfaces\bin\Debug\NetworkLayerInterfaces.pdb
+H:\SEII\GroupProject\TriviaNation\Client\NetworkLayerInterfaces\bin\Debug\EngineIoClientDotNet.dll
+H:\SEII\GroupProject\TriviaNation\Client\NetworkLayerInterfaces\bin\Debug\Newtonsoft.Json.dll
+H:\SEII\GroupProject\TriviaNation\Client\NetworkLayerInterfaces\bin\Debug\SocketIoClientDotNet.dll
+H:\SEII\GroupProject\TriviaNation\Client\NetworkLayerInterfaces\bin\Debug\WebSocket4Net.dll
+H:\SEII\GroupProject\TriviaNation\Client\NetworkLayerInterfaces\bin\Debug\Newtonsoft.Json.xml
+H:\SEII\GroupProject\TriviaNation\Client\NetworkLayerInterfaces\obj\Debug\NetworkLayerInterfaces.csprojResolveAssemblyReference.cache
+H:\SEII\GroupProject\TriviaNation\Client\NetworkLayerInterfaces\obj\Debug\NetworkLayerInterfaces.dll
+H:\SEII\GroupProject\TriviaNation\Client\NetworkLayerInterfaces\obj\Debug\NetworkLayerInterfaces.pdb
