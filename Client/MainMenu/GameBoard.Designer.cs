@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication1
+﻿namespace MainMenu
 {
     partial class GameBoard
     {
@@ -29,427 +29,511 @@
         private void InitializeComponent()
         {
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
-            this.button19 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
-            this.button21 = new System.Windows.Forms.Button();
-            this.button22 = new System.Windows.Forms.Button();
-            this.button23 = new System.Windows.Forms.Button();
-            this.button24 = new System.Windows.Forms.Button();
-            this.button25 = new System.Windows.Forms.Button();
-            this.button26 = new System.Windows.Forms.Button();
-            this.button27 = new System.Windows.Forms.Button();
-            this.button28 = new System.Windows.Forms.Button();
-            this.button29 = new System.Windows.Forms.Button();
-            this.button30 = new System.Windows.Forms.Button();
-            this.button31 = new System.Windows.Forms.Button();
-            this.button32 = new System.Windows.Forms.Button();
-            this.button33 = new System.Windows.Forms.Button();
-            this.button34 = new System.Windows.Forms.Button();
-            this.button35 = new System.Windows.Forms.Button();
-            this.button36 = new System.Windows.Forms.Button();
+            this.nation0 = new System.Windows.Forms.Button();
+            this.tile0 = new System.Windows.Forms.Button();
+            this.tile1 = new System.Windows.Forms.Button();
+            this.tile2 = new System.Windows.Forms.Button();
+            this.tile3 = new System.Windows.Forms.Button();
+            this.nation1 = new System.Windows.Forms.Button();
+            this.tile4 = new System.Windows.Forms.Button();
+            this.tile5 = new System.Windows.Forms.Button();
+            this.tile6 = new System.Windows.Forms.Button();
+            this.tile7 = new System.Windows.Forms.Button();
+            this.tile8 = new System.Windows.Forms.Button();
+            this.tile9 = new System.Windows.Forms.Button();
+            this.tile10 = new System.Windows.Forms.Button();
+            this.tile11 = new System.Windows.Forms.Button();
+            this.tile12 = new System.Windows.Forms.Button();
+            this.tile13 = new System.Windows.Forms.Button();
+            this.tile14 = new System.Windows.Forms.Button();
+            this.tile15 = new System.Windows.Forms.Button();
+            this.tile16 = new System.Windows.Forms.Button();
+            this.tile17 = new System.Windows.Forms.Button();
+            this.tile18 = new System.Windows.Forms.Button();
+            this.tile19 = new System.Windows.Forms.Button();
+            this.tile20 = new System.Windows.Forms.Button();
+            this.tile21 = new System.Windows.Forms.Button();
+            this.tile22 = new System.Windows.Forms.Button();
+            this.tile23 = new System.Windows.Forms.Button();
+            this.tile24 = new System.Windows.Forms.Button();
+            this.tile25 = new System.Windows.Forms.Button();
+            this.tile26 = new System.Windows.Forms.Button();
+            this.tile27 = new System.Windows.Forms.Button();
+            this.nation2 = new System.Windows.Forms.Button();
+            this.tile28 = new System.Windows.Forms.Button();
+            this.tile29 = new System.Windows.Forms.Button();
+            this.tile30 = new System.Windows.Forms.Button();
+            this.tile31 = new System.Windows.Forms.Button();
+            this.nation3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.answer0 = new System.Windows.Forms.Button();
+            this.answer1 = new System.Windows.Forms.Button();
+            this.answer2 = new System.Windows.Forms.Button();
+            this.answer3 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.button1);
-            this.flowLayoutPanel1.Controls.Add(this.button2);
-            this.flowLayoutPanel1.Controls.Add(this.button3);
-            this.flowLayoutPanel1.Controls.Add(this.button4);
-            this.flowLayoutPanel1.Controls.Add(this.button5);
-            this.flowLayoutPanel1.Controls.Add(this.button6);
-            this.flowLayoutPanel1.Controls.Add(this.button7);
-            this.flowLayoutPanel1.Controls.Add(this.button8);
-            this.flowLayoutPanel1.Controls.Add(this.button9);
-            this.flowLayoutPanel1.Controls.Add(this.button10);
-            this.flowLayoutPanel1.Controls.Add(this.button11);
-            this.flowLayoutPanel1.Controls.Add(this.button12);
-            this.flowLayoutPanel1.Controls.Add(this.button13);
-            this.flowLayoutPanel1.Controls.Add(this.button14);
-            this.flowLayoutPanel1.Controls.Add(this.button15);
-            this.flowLayoutPanel1.Controls.Add(this.button16);
-            this.flowLayoutPanel1.Controls.Add(this.button17);
-            this.flowLayoutPanel1.Controls.Add(this.button18);
-            this.flowLayoutPanel1.Controls.Add(this.button19);
-            this.flowLayoutPanel1.Controls.Add(this.button20);
-            this.flowLayoutPanel1.Controls.Add(this.button21);
-            this.flowLayoutPanel1.Controls.Add(this.button22);
-            this.flowLayoutPanel1.Controls.Add(this.button23);
-            this.flowLayoutPanel1.Controls.Add(this.button24);
-            this.flowLayoutPanel1.Controls.Add(this.button25);
-            this.flowLayoutPanel1.Controls.Add(this.button26);
-            this.flowLayoutPanel1.Controls.Add(this.button27);
-            this.flowLayoutPanel1.Controls.Add(this.button28);
-            this.flowLayoutPanel1.Controls.Add(this.button29);
-            this.flowLayoutPanel1.Controls.Add(this.button30);
-            this.flowLayoutPanel1.Controls.Add(this.button31);
-            this.flowLayoutPanel1.Controls.Add(this.button32);
-            this.flowLayoutPanel1.Controls.Add(this.button33);
-            this.flowLayoutPanel1.Controls.Add(this.button34);
-            this.flowLayoutPanel1.Controls.Add(this.button35);
-            this.flowLayoutPanel1.Controls.Add(this.button36);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(380, 119);
+            this.flowLayoutPanel1.Controls.Add(this.nation0);
+            this.flowLayoutPanel1.Controls.Add(this.tile0);
+            this.flowLayoutPanel1.Controls.Add(this.tile1);
+            this.flowLayoutPanel1.Controls.Add(this.tile2);
+            this.flowLayoutPanel1.Controls.Add(this.tile3);
+            this.flowLayoutPanel1.Controls.Add(this.nation1);
+            this.flowLayoutPanel1.Controls.Add(this.tile4);
+            this.flowLayoutPanel1.Controls.Add(this.tile5);
+            this.flowLayoutPanel1.Controls.Add(this.tile6);
+            this.flowLayoutPanel1.Controls.Add(this.tile7);
+            this.flowLayoutPanel1.Controls.Add(this.tile8);
+            this.flowLayoutPanel1.Controls.Add(this.tile9);
+            this.flowLayoutPanel1.Controls.Add(this.tile10);
+            this.flowLayoutPanel1.Controls.Add(this.tile11);
+            this.flowLayoutPanel1.Controls.Add(this.tile12);
+            this.flowLayoutPanel1.Controls.Add(this.tile13);
+            this.flowLayoutPanel1.Controls.Add(this.tile14);
+            this.flowLayoutPanel1.Controls.Add(this.tile15);
+            this.flowLayoutPanel1.Controls.Add(this.tile16);
+            this.flowLayoutPanel1.Controls.Add(this.tile17);
+            this.flowLayoutPanel1.Controls.Add(this.tile18);
+            this.flowLayoutPanel1.Controls.Add(this.tile19);
+            this.flowLayoutPanel1.Controls.Add(this.tile20);
+            this.flowLayoutPanel1.Controls.Add(this.tile21);
+            this.flowLayoutPanel1.Controls.Add(this.tile22);
+            this.flowLayoutPanel1.Controls.Add(this.tile23);
+            this.flowLayoutPanel1.Controls.Add(this.tile24);
+            this.flowLayoutPanel1.Controls.Add(this.tile25);
+            this.flowLayoutPanel1.Controls.Add(this.tile26);
+            this.flowLayoutPanel1.Controls.Add(this.tile27);
+            this.flowLayoutPanel1.Controls.Add(this.nation2);
+            this.flowLayoutPanel1.Controls.Add(this.tile28);
+            this.flowLayoutPanel1.Controls.Add(this.tile29);
+            this.flowLayoutPanel1.Controls.Add(this.tile30);
+            this.flowLayoutPanel1.Controls.Add(this.tile31);
+            this.flowLayoutPanel1.Controls.Add(this.nation3);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(11, 97);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(786, 654);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(596, 531);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 103);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Nation 1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(134, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(125, 103);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(265, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(125, 103);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(396, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(125, 103);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(527, 3);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(125, 103);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(658, 3);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(125, 103);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "Nation 2";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(3, 112);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(125, 103);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "button7";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(134, 112);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(125, 103);
-            this.button8.TabIndex = 7;
-            this.button8.Text = "button8";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(265, 112);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(125, 103);
-            this.button9.TabIndex = 8;
-            this.button9.Text = "button9";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(396, 112);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(125, 103);
-            this.button10.TabIndex = 9;
-            this.button10.Text = "button10";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(527, 112);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(125, 103);
-            this.button11.TabIndex = 10;
-            this.button11.Text = "button11";
-            this.button11.UseVisualStyleBackColor = true;
-            // 
-            // button12
-            // 
-            this.button12.Location = new System.Drawing.Point(658, 112);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(125, 103);
-            this.button12.TabIndex = 11;
-            this.button12.Text = "button12";
-            this.button12.UseVisualStyleBackColor = true;
-            // 
-            // button13
-            // 
-            this.button13.Location = new System.Drawing.Point(3, 221);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(125, 103);
-            this.button13.TabIndex = 12;
-            this.button13.Text = "button13";
-            this.button13.UseVisualStyleBackColor = true;
-            // 
-            // button14
-            // 
-            this.button14.Location = new System.Drawing.Point(134, 221);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(125, 103);
-            this.button14.TabIndex = 13;
-            this.button14.Text = "button14";
-            this.button14.UseVisualStyleBackColor = true;
-            // 
-            // button15
-            // 
-            this.button15.Location = new System.Drawing.Point(265, 221);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(125, 103);
-            this.button15.TabIndex = 14;
-            this.button15.Text = "button15";
-            this.button15.UseVisualStyleBackColor = true;
-            // 
-            // button16
-            // 
-            this.button16.Location = new System.Drawing.Point(396, 221);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(125, 103);
-            this.button16.TabIndex = 15;
-            this.button16.Text = "button16";
-            this.button16.UseVisualStyleBackColor = true;
-            // 
-            // button17
-            // 
-            this.button17.Location = new System.Drawing.Point(527, 221);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(125, 103);
-            this.button17.TabIndex = 16;
-            this.button17.Text = "button17";
-            this.button17.UseVisualStyleBackColor = true;
-            // 
-            // button18
-            // 
-            this.button18.Location = new System.Drawing.Point(658, 221);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(125, 103);
-            this.button18.TabIndex = 17;
-            this.button18.Text = "button18";
-            this.button18.UseVisualStyleBackColor = true;
-            // 
-            // button19
-            // 
-            this.button19.Location = new System.Drawing.Point(3, 330);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(125, 103);
-            this.button19.TabIndex = 18;
-            this.button19.Text = "button19";
-            this.button19.UseVisualStyleBackColor = true;
-            // 
-            // button20
-            // 
-            this.button20.Location = new System.Drawing.Point(134, 330);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(125, 103);
-            this.button20.TabIndex = 19;
-            this.button20.Text = "button20";
-            this.button20.UseVisualStyleBackColor = true;
-            // 
-            // button21
-            // 
-            this.button21.Location = new System.Drawing.Point(265, 330);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(125, 103);
-            this.button21.TabIndex = 20;
-            this.button21.Text = "button21";
-            this.button21.UseVisualStyleBackColor = true;
-            // 
-            // button22
-            // 
-            this.button22.Location = new System.Drawing.Point(396, 330);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(125, 103);
-            this.button22.TabIndex = 21;
-            this.button22.Text = "button22";
-            this.button22.UseVisualStyleBackColor = true;
-            // 
-            // button23
-            // 
-            this.button23.Location = new System.Drawing.Point(527, 330);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(125, 103);
-            this.button23.TabIndex = 22;
-            this.button23.Text = "button23";
-            this.button23.UseVisualStyleBackColor = true;
-            // 
-            // button24
-            // 
-            this.button24.Location = new System.Drawing.Point(658, 330);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(125, 103);
-            this.button24.TabIndex = 23;
-            this.button24.Text = "button24";
-            this.button24.UseVisualStyleBackColor = true;
-            // 
-            // button25
-            // 
-            this.button25.Location = new System.Drawing.Point(3, 439);
-            this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(125, 103);
-            this.button25.TabIndex = 24;
-            this.button25.Text = "button25";
-            this.button25.UseVisualStyleBackColor = true;
-            // 
-            // button26
-            // 
-            this.button26.Location = new System.Drawing.Point(134, 439);
-            this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(125, 103);
-            this.button26.TabIndex = 25;
-            this.button26.Text = "button26";
-            this.button26.UseVisualStyleBackColor = true;
-            // 
-            // button27
-            // 
-            this.button27.Location = new System.Drawing.Point(265, 439);
-            this.button27.Name = "button27";
-            this.button27.Size = new System.Drawing.Size(125, 103);
-            this.button27.TabIndex = 26;
-            this.button27.Text = "button27";
-            this.button27.UseVisualStyleBackColor = true;
-            // 
-            // button28
-            // 
-            this.button28.Location = new System.Drawing.Point(396, 439);
-            this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(125, 103);
-            this.button28.TabIndex = 27;
-            this.button28.Text = "button28";
-            this.button28.UseVisualStyleBackColor = true;
-            // 
-            // button29
-            // 
-            this.button29.Location = new System.Drawing.Point(527, 439);
-            this.button29.Name = "button29";
-            this.button29.Size = new System.Drawing.Size(125, 103);
-            this.button29.TabIndex = 28;
-            this.button29.Text = "button29";
-            this.button29.UseVisualStyleBackColor = true;
-            // 
-            // button30
-            // 
-            this.button30.Location = new System.Drawing.Point(658, 439);
-            this.button30.Name = "button30";
-            this.button30.Size = new System.Drawing.Size(125, 103);
-            this.button30.TabIndex = 29;
-            this.button30.Text = "button30";
-            this.button30.UseVisualStyleBackColor = true;
-            // 
-            // button31
-            // 
-            this.button31.Location = new System.Drawing.Point(3, 548);
-            this.button31.Name = "button31";
-            this.button31.Size = new System.Drawing.Size(125, 103);
-            this.button31.TabIndex = 30;
-            this.button31.Text = "Nation 3";
-            this.button31.UseVisualStyleBackColor = true;
-            // 
-            // button32
-            // 
-            this.button32.Location = new System.Drawing.Point(134, 548);
-            this.button32.Name = "button32";
-            this.button32.Size = new System.Drawing.Size(125, 103);
-            this.button32.TabIndex = 31;
-            this.button32.Text = "button32";
-            this.button32.UseVisualStyleBackColor = true;
-            // 
-            // button33
-            // 
-            this.button33.Location = new System.Drawing.Point(265, 548);
-            this.button33.Name = "button33";
-            this.button33.Size = new System.Drawing.Size(125, 103);
-            this.button33.TabIndex = 32;
-            this.button33.Text = "button33";
-            this.button33.UseVisualStyleBackColor = true;
-            // 
-            // button34
-            // 
-            this.button34.Location = new System.Drawing.Point(396, 548);
-            this.button34.Name = "button34";
-            this.button34.Size = new System.Drawing.Size(125, 103);
-            this.button34.TabIndex = 33;
-            this.button34.Text = "button34";
-            this.button34.UseVisualStyleBackColor = true;
-            // 
-            // button35
-            // 
-            this.button35.Location = new System.Drawing.Point(527, 548);
-            this.button35.Name = "button35";
-            this.button35.Size = new System.Drawing.Size(125, 103);
-            this.button35.TabIndex = 34;
-            this.button35.Text = "button35";
-            this.button35.UseVisualStyleBackColor = true;
-            // 
-            // button36
-            // 
-            this.button36.Location = new System.Drawing.Point(658, 548);
-            this.button36.Name = "button36";
-            this.button36.Size = new System.Drawing.Size(125, 103);
-            this.button36.TabIndex = 35;
-            this.button36.Text = "Nation 4";
-            this.button36.UseVisualStyleBackColor = true;
+            // nation0
+            // 
+            this.nation0.BackColor = System.Drawing.Color.OrangeRed;
+            this.nation0.Location = new System.Drawing.Point(2, 2);
+            this.nation0.Margin = new System.Windows.Forms.Padding(2);
+            this.nation0.Name = "nation0";
+            this.nation0.Size = new System.Drawing.Size(94, 84);
+            this.nation0.TabIndex = 0;
+            this.nation0.Text = "nation0";
+            this.nation0.UseVisualStyleBackColor = false;
+            this.nation0.Click += new System.EventHandler(this.nation0_Click);
+            // 
+            // tile0
+            // 
+            this.tile0.Location = new System.Drawing.Point(100, 2);
+            this.tile0.Margin = new System.Windows.Forms.Padding(2);
+            this.tile0.Name = "tile0";
+            this.tile0.Size = new System.Drawing.Size(94, 84);
+            this.tile0.TabIndex = 1;
+            this.tile0.Text = "tile0";
+            this.tile0.UseVisualStyleBackColor = true;
+            this.tile0.Click += new System.EventHandler(this.tile0_Click);
+            // 
+            // tile1
+            // 
+            this.tile1.Location = new System.Drawing.Point(198, 2);
+            this.tile1.Margin = new System.Windows.Forms.Padding(2);
+            this.tile1.Name = "tile1";
+            this.tile1.Size = new System.Drawing.Size(94, 84);
+            this.tile1.TabIndex = 2;
+            this.tile1.Text = "tile1";
+            this.tile1.UseVisualStyleBackColor = true;
+            this.tile1.Click += new System.EventHandler(this.tile1_Click);
+            // 
+            // tile2
+            // 
+            this.tile2.Location = new System.Drawing.Point(296, 2);
+            this.tile2.Margin = new System.Windows.Forms.Padding(2);
+            this.tile2.Name = "tile2";
+            this.tile2.Size = new System.Drawing.Size(94, 84);
+            this.tile2.TabIndex = 3;
+            this.tile2.Text = "tile2";
+            this.tile2.UseVisualStyleBackColor = true;
+            this.tile2.Click += new System.EventHandler(this.tile2_Click);
+            // 
+            // tile3
+            // 
+            this.tile3.Location = new System.Drawing.Point(394, 2);
+            this.tile3.Margin = new System.Windows.Forms.Padding(2);
+            this.tile3.Name = "tile3";
+            this.tile3.Size = new System.Drawing.Size(94, 84);
+            this.tile3.TabIndex = 4;
+            this.tile3.Text = "tile3";
+            this.tile3.UseVisualStyleBackColor = true;
+            this.tile3.Click += new System.EventHandler(this.tile3_Click);
+            // 
+            // nation1
+            // 
+            this.nation1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.nation1.Location = new System.Drawing.Point(492, 2);
+            this.nation1.Margin = new System.Windows.Forms.Padding(2);
+            this.nation1.Name = "nation1";
+            this.nation1.Size = new System.Drawing.Size(94, 84);
+            this.nation1.TabIndex = 5;
+            this.nation1.Text = "nation1";
+            this.nation1.UseVisualStyleBackColor = false;
+            this.nation1.Click += new System.EventHandler(this.nation1_Click);
+            // 
+            // tile4
+            // 
+            this.tile4.Location = new System.Drawing.Point(2, 90);
+            this.tile4.Margin = new System.Windows.Forms.Padding(2);
+            this.tile4.Name = "tile4";
+            this.tile4.Size = new System.Drawing.Size(94, 84);
+            this.tile4.TabIndex = 6;
+            this.tile4.Text = "tile4";
+            this.tile4.UseVisualStyleBackColor = true;
+            this.tile4.Click += new System.EventHandler(this.tile4_Click);
+            // 
+            // tile5
+            // 
+            this.tile5.Location = new System.Drawing.Point(100, 90);
+            this.tile5.Margin = new System.Windows.Forms.Padding(2);
+            this.tile5.Name = "tile5";
+            this.tile5.Size = new System.Drawing.Size(94, 84);
+            this.tile5.TabIndex = 7;
+            this.tile5.Text = "tile5";
+            this.tile5.UseVisualStyleBackColor = true;
+            this.tile5.Click += new System.EventHandler(this.tile5_Click);
+            // 
+            // tile6
+            // 
+            this.tile6.Location = new System.Drawing.Point(198, 90);
+            this.tile6.Margin = new System.Windows.Forms.Padding(2);
+            this.tile6.Name = "tile6";
+            this.tile6.Size = new System.Drawing.Size(94, 84);
+            this.tile6.TabIndex = 8;
+            this.tile6.Text = "tile6";
+            this.tile6.UseVisualStyleBackColor = true;
+            this.tile6.Click += new System.EventHandler(this.tile6_Click);
+            // 
+            // tile7
+            // 
+            this.tile7.Location = new System.Drawing.Point(296, 90);
+            this.tile7.Margin = new System.Windows.Forms.Padding(2);
+            this.tile7.Name = "tile7";
+            this.tile7.Size = new System.Drawing.Size(94, 84);
+            this.tile7.TabIndex = 9;
+            this.tile7.Text = "tile7";
+            this.tile7.UseVisualStyleBackColor = true;
+            this.tile7.Click += new System.EventHandler(this.tile7_Click);
+            // 
+            // tile8
+            // 
+            this.tile8.Location = new System.Drawing.Point(394, 90);
+            this.tile8.Margin = new System.Windows.Forms.Padding(2);
+            this.tile8.Name = "tile8";
+            this.tile8.Size = new System.Drawing.Size(94, 84);
+            this.tile8.TabIndex = 10;
+            this.tile8.Text = "tile8";
+            this.tile8.UseVisualStyleBackColor = true;
+            this.tile8.Click += new System.EventHandler(this.tile8_Click);
+            // 
+            // tile9
+            // 
+            this.tile9.Location = new System.Drawing.Point(492, 90);
+            this.tile9.Margin = new System.Windows.Forms.Padding(2);
+            this.tile9.Name = "tile9";
+            this.tile9.Size = new System.Drawing.Size(94, 84);
+            this.tile9.TabIndex = 11;
+            this.tile9.Text = "tile9";
+            this.tile9.UseVisualStyleBackColor = true;
+            this.tile9.Click += new System.EventHandler(this.tile9_Click);
+            // 
+            // tile10
+            // 
+            this.tile10.Location = new System.Drawing.Point(2, 178);
+            this.tile10.Margin = new System.Windows.Forms.Padding(2);
+            this.tile10.Name = "tile10";
+            this.tile10.Size = new System.Drawing.Size(94, 84);
+            this.tile10.TabIndex = 12;
+            this.tile10.Text = "tile10";
+            this.tile10.UseVisualStyleBackColor = true;
+            this.tile10.Click += new System.EventHandler(this.tile10_Click);
+            // 
+            // tile11
+            // 
+            this.tile11.Location = new System.Drawing.Point(100, 178);
+            this.tile11.Margin = new System.Windows.Forms.Padding(2);
+            this.tile11.Name = "tile11";
+            this.tile11.Size = new System.Drawing.Size(94, 84);
+            this.tile11.TabIndex = 13;
+            this.tile11.Text = "tile11";
+            this.tile11.UseVisualStyleBackColor = true;
+            this.tile11.Click += new System.EventHandler(this.tile11_Click);
+            // 
+            // tile12
+            // 
+            this.tile12.Location = new System.Drawing.Point(198, 178);
+            this.tile12.Margin = new System.Windows.Forms.Padding(2);
+            this.tile12.Name = "tile12";
+            this.tile12.Size = new System.Drawing.Size(94, 84);
+            this.tile12.TabIndex = 14;
+            this.tile12.Text = "tile12";
+            this.tile12.UseVisualStyleBackColor = true;
+            this.tile12.Click += new System.EventHandler(this.tile12_Click);
+            // 
+            // tile13
+            // 
+            this.tile13.Location = new System.Drawing.Point(296, 178);
+            this.tile13.Margin = new System.Windows.Forms.Padding(2);
+            this.tile13.Name = "tile13";
+            this.tile13.Size = new System.Drawing.Size(94, 84);
+            this.tile13.TabIndex = 15;
+            this.tile13.Text = "tile13";
+            this.tile13.UseVisualStyleBackColor = true;
+            this.tile13.Click += new System.EventHandler(this.tile13_Click);
+            // 
+            // tile14
+            // 
+            this.tile14.Location = new System.Drawing.Point(394, 178);
+            this.tile14.Margin = new System.Windows.Forms.Padding(2);
+            this.tile14.Name = "tile14";
+            this.tile14.Size = new System.Drawing.Size(94, 84);
+            this.tile14.TabIndex = 16;
+            this.tile14.Text = "tile14";
+            this.tile14.UseVisualStyleBackColor = true;
+            this.tile14.Click += new System.EventHandler(this.tile14_Click);
+            // 
+            // tile15
+            // 
+            this.tile15.Location = new System.Drawing.Point(492, 178);
+            this.tile15.Margin = new System.Windows.Forms.Padding(2);
+            this.tile15.Name = "tile15";
+            this.tile15.Size = new System.Drawing.Size(94, 84);
+            this.tile15.TabIndex = 17;
+            this.tile15.Text = "tile15";
+            this.tile15.UseVisualStyleBackColor = true;
+            this.tile15.Click += new System.EventHandler(this.tile15_Click);
+            // 
+            // tile16
+            // 
+            this.tile16.Location = new System.Drawing.Point(2, 266);
+            this.tile16.Margin = new System.Windows.Forms.Padding(2);
+            this.tile16.Name = "tile16";
+            this.tile16.Size = new System.Drawing.Size(94, 84);
+            this.tile16.TabIndex = 18;
+            this.tile16.Text = "tile16";
+            this.tile16.UseVisualStyleBackColor = true;
+            this.tile16.Click += new System.EventHandler(this.tile16_Click);
+            // 
+            // tile17
+            // 
+            this.tile17.Location = new System.Drawing.Point(100, 266);
+            this.tile17.Margin = new System.Windows.Forms.Padding(2);
+            this.tile17.Name = "tile17";
+            this.tile17.Size = new System.Drawing.Size(94, 84);
+            this.tile17.TabIndex = 19;
+            this.tile17.Text = "tile17";
+            this.tile17.UseVisualStyleBackColor = true;
+            this.tile17.Click += new System.EventHandler(this.tile17_Click);
+            // 
+            // tile18
+            // 
+            this.tile18.Location = new System.Drawing.Point(198, 266);
+            this.tile18.Margin = new System.Windows.Forms.Padding(2);
+            this.tile18.Name = "tile18";
+            this.tile18.Size = new System.Drawing.Size(94, 84);
+            this.tile18.TabIndex = 20;
+            this.tile18.Text = "tile18";
+            this.tile18.UseVisualStyleBackColor = true;
+            this.tile18.Click += new System.EventHandler(this.tile18_Click);
+            // 
+            // tile19
+            // 
+            this.tile19.Location = new System.Drawing.Point(296, 266);
+            this.tile19.Margin = new System.Windows.Forms.Padding(2);
+            this.tile19.Name = "tile19";
+            this.tile19.Size = new System.Drawing.Size(94, 84);
+            this.tile19.TabIndex = 21;
+            this.tile19.Text = "tile19";
+            this.tile19.UseVisualStyleBackColor = true;
+            this.tile19.Click += new System.EventHandler(this.tile19_Click);
+            // 
+            // tile20
+            // 
+            this.tile20.Location = new System.Drawing.Point(394, 266);
+            this.tile20.Margin = new System.Windows.Forms.Padding(2);
+            this.tile20.Name = "tile20";
+            this.tile20.Size = new System.Drawing.Size(94, 84);
+            this.tile20.TabIndex = 22;
+            this.tile20.Text = "tile20";
+            this.tile20.UseVisualStyleBackColor = true;
+            this.tile20.Click += new System.EventHandler(this.tile20_Click);
+            // 
+            // tile21
+            // 
+            this.tile21.Location = new System.Drawing.Point(492, 266);
+            this.tile21.Margin = new System.Windows.Forms.Padding(2);
+            this.tile21.Name = "tile21";
+            this.tile21.Size = new System.Drawing.Size(94, 84);
+            this.tile21.TabIndex = 23;
+            this.tile21.Text = "tile21";
+            this.tile21.UseVisualStyleBackColor = true;
+            this.tile21.Click += new System.EventHandler(this.tile21_Click);
+            // 
+            // tile22
+            // 
+            this.tile22.Location = new System.Drawing.Point(2, 354);
+            this.tile22.Margin = new System.Windows.Forms.Padding(2);
+            this.tile22.Name = "tile22";
+            this.tile22.Size = new System.Drawing.Size(94, 84);
+            this.tile22.TabIndex = 24;
+            this.tile22.Text = "tile22";
+            this.tile22.UseVisualStyleBackColor = true;
+            this.tile22.Click += new System.EventHandler(this.tile22_Click);
+            // 
+            // tile23
+            // 
+            this.tile23.Location = new System.Drawing.Point(100, 354);
+            this.tile23.Margin = new System.Windows.Forms.Padding(2);
+            this.tile23.Name = "tile23";
+            this.tile23.Size = new System.Drawing.Size(94, 84);
+            this.tile23.TabIndex = 25;
+            this.tile23.Text = "tile23";
+            this.tile23.UseVisualStyleBackColor = true;
+            this.tile23.Click += new System.EventHandler(this.tile23_Click);
+            // 
+            // tile24
+            // 
+            this.tile24.Location = new System.Drawing.Point(198, 354);
+            this.tile24.Margin = new System.Windows.Forms.Padding(2);
+            this.tile24.Name = "tile24";
+            this.tile24.Size = new System.Drawing.Size(94, 84);
+            this.tile24.TabIndex = 26;
+            this.tile24.Text = "tile24";
+            this.tile24.UseVisualStyleBackColor = true;
+            this.tile24.Click += new System.EventHandler(this.tile24_Click);
+            // 
+            // tile25
+            // 
+            this.tile25.Location = new System.Drawing.Point(296, 354);
+            this.tile25.Margin = new System.Windows.Forms.Padding(2);
+            this.tile25.Name = "tile25";
+            this.tile25.Size = new System.Drawing.Size(94, 84);
+            this.tile25.TabIndex = 27;
+            this.tile25.Text = "tile25";
+            this.tile25.UseVisualStyleBackColor = true;
+            this.tile25.Click += new System.EventHandler(this.tile25_Click);
+            // 
+            // tile26
+            // 
+            this.tile26.Location = new System.Drawing.Point(394, 354);
+            this.tile26.Margin = new System.Windows.Forms.Padding(2);
+            this.tile26.Name = "tile26";
+            this.tile26.Size = new System.Drawing.Size(94, 84);
+            this.tile26.TabIndex = 28;
+            this.tile26.Text = "tile26";
+            this.tile26.UseVisualStyleBackColor = true;
+            this.tile26.Click += new System.EventHandler(this.tile26_Click);
+            // 
+            // tile27
+            // 
+            this.tile27.Location = new System.Drawing.Point(492, 354);
+            this.tile27.Margin = new System.Windows.Forms.Padding(2);
+            this.tile27.Name = "tile27";
+            this.tile27.Size = new System.Drawing.Size(94, 84);
+            this.tile27.TabIndex = 29;
+            this.tile27.Text = "tile27";
+            this.tile27.UseVisualStyleBackColor = true;
+            this.tile27.Click += new System.EventHandler(this.tile27_Click);
+            // 
+            // nation2
+            // 
+            this.nation2.BackColor = System.Drawing.Color.Yellow;
+            this.nation2.Location = new System.Drawing.Point(2, 442);
+            this.nation2.Margin = new System.Windows.Forms.Padding(2);
+            this.nation2.Name = "nation2";
+            this.nation2.Size = new System.Drawing.Size(94, 84);
+            this.nation2.TabIndex = 30;
+            this.nation2.Text = "nation2";
+            this.nation2.UseVisualStyleBackColor = false;
+            this.nation2.Click += new System.EventHandler(this.nation2_Click);
+            // 
+            // tile28
+            // 
+            this.tile28.Location = new System.Drawing.Point(100, 442);
+            this.tile28.Margin = new System.Windows.Forms.Padding(2);
+            this.tile28.Name = "tile28";
+            this.tile28.Size = new System.Drawing.Size(94, 84);
+            this.tile28.TabIndex = 31;
+            this.tile28.Text = "tile28";
+            this.tile28.UseVisualStyleBackColor = true;
+            this.tile28.Click += new System.EventHandler(this.tile28_Click);
+            // 
+            // tile29
+            // 
+            this.tile29.Location = new System.Drawing.Point(198, 442);
+            this.tile29.Margin = new System.Windows.Forms.Padding(2);
+            this.tile29.Name = "tile29";
+            this.tile29.Size = new System.Drawing.Size(94, 84);
+            this.tile29.TabIndex = 32;
+            this.tile29.Text = "tile29";
+            this.tile29.UseVisualStyleBackColor = true;
+            this.tile29.Click += new System.EventHandler(this.tile29_Click);
+            // 
+            // tile30
+            // 
+            this.tile30.Location = new System.Drawing.Point(296, 442);
+            this.tile30.Margin = new System.Windows.Forms.Padding(2);
+            this.tile30.Name = "tile30";
+            this.tile30.Size = new System.Drawing.Size(94, 84);
+            this.tile30.TabIndex = 33;
+            this.tile30.Text = "tile30";
+            this.tile30.UseVisualStyleBackColor = true;
+            this.tile30.Click += new System.EventHandler(this.tile30_Click);
+            // 
+            // tile31
+            // 
+            this.tile31.Location = new System.Drawing.Point(394, 442);
+            this.tile31.Margin = new System.Windows.Forms.Padding(2);
+            this.tile31.Name = "tile31";
+            this.tile31.Size = new System.Drawing.Size(94, 84);
+            this.tile31.TabIndex = 34;
+            this.tile31.Text = "tile31";
+            this.tile31.UseVisualStyleBackColor = true;
+            this.tile31.Click += new System.EventHandler(this.tile31_Click);
+            // 
+            // nation3
+            // 
+            this.nation3.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.nation3.Location = new System.Drawing.Point(492, 442);
+            this.nation3.Margin = new System.Windows.Forms.Padding(2);
+            this.nation3.Name = "nation3";
+            this.nation3.Size = new System.Drawing.Size(94, 84);
+            this.nation3.TabIndex = 35;
+            this.nation3.Text = "nation3";
+            this.nation3.UseVisualStyleBackColor = false;
+            this.nation3.Click += new System.EventHandler(this.nation3_Click);
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(180, 0);
+            this.label1.Location = new System.Drawing.Point(120, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(420, 74);
+            this.label1.Size = new System.Drawing.Size(345, 60);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Game Name";
+            this.label1.Text = "Trivia Nation";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
@@ -459,27 +543,96 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 98.86793F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.132075F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(383, 12);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(15, 11);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.28571F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.71429F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(790, 84);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(592, 68);
             this.tableLayoutPanel1.TabIndex = 2;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.answer3);
+            this.panel1.Controls.Add(this.answer2);
+            this.panel1.Controls.Add(this.answer1);
+            this.panel1.Controls.Add(this.answer0);
+            this.panel1.Location = new System.Drawing.Point(625, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(344, 611);
+            this.panel1.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoEllipsis = true;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(0, 0);
+            this.label2.MaximumSize = new System.Drawing.Size(344, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(344, 124);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "This is a sample paragraph of what will be the spot for questions to be displayed" +
+    "... So cool, huh?";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // answer0
+            // 
+            this.answer0.Location = new System.Drawing.Point(30, 331);
+            this.answer0.Name = "answer0";
+            this.answer0.Size = new System.Drawing.Size(131, 125);
+            this.answer0.TabIndex = 1;
+            this.answer0.Text = "answer0";
+            this.answer0.UseVisualStyleBackColor = true;
+            // 
+            // answer1
+            // 
+            this.answer1.Location = new System.Drawing.Point(187, 331);
+            this.answer1.Name = "answer1";
+            this.answer1.Size = new System.Drawing.Size(131, 125);
+            this.answer1.TabIndex = 2;
+            this.answer1.Text = "answer1";
+            this.answer1.UseVisualStyleBackColor = true;
+            // 
+            // answer2
+            // 
+            this.answer2.Location = new System.Drawing.Point(30, 462);
+            this.answer2.Name = "answer2";
+            this.answer2.Size = new System.Drawing.Size(131, 125);
+            this.answer2.TabIndex = 3;
+            this.answer2.Text = "answer2";
+            this.answer2.UseVisualStyleBackColor = true;
+            // 
+            // answer3
+            // 
+            this.answer3.Location = new System.Drawing.Point(187, 462);
+            this.answer3.Name = "answer3";
+            this.answer3.Size = new System.Drawing.Size(131, 125);
+            this.answer3.TabIndex = 4;
+            this.answer3.Text = "answer3";
+            this.answer3.UseVisualStyleBackColor = true;
             // 
             // GameBoard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1525, 835);
+            this.ClientSize = new System.Drawing.Size(994, 650);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.flowLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "GameBoard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "GameBoard";
+            this.Text = "Trivia Nation Game Board";
+            this.Load += new System.EventHandler(this.GameBoard_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -487,43 +640,49 @@
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.Button button21;
-        private System.Windows.Forms.Button button22;
-        private System.Windows.Forms.Button button23;
-        private System.Windows.Forms.Button button24;
-        private System.Windows.Forms.Button button25;
-        private System.Windows.Forms.Button button26;
-        private System.Windows.Forms.Button button27;
-        private System.Windows.Forms.Button button28;
-        private System.Windows.Forms.Button button29;
-        private System.Windows.Forms.Button button30;
-        private System.Windows.Forms.Button button31;
-        private System.Windows.Forms.Button button32;
-        private System.Windows.Forms.Button button33;
-        private System.Windows.Forms.Button button34;
-        private System.Windows.Forms.Button button35;
-        private System.Windows.Forms.Button button36;
+        private System.Windows.Forms.Button nation0; // Nation 0
+        private System.Windows.Forms.Button tile0;
+        private System.Windows.Forms.Button tile1;
+        private System.Windows.Forms.Button tile2;
+        private System.Windows.Forms.Button tile3;
+        private System.Windows.Forms.Button nation1; // Nation 1
+        private System.Windows.Forms.Button tile4;
+        private System.Windows.Forms.Button tile5;
+        private System.Windows.Forms.Button tile6;
+        private System.Windows.Forms.Button tile7;
+        private System.Windows.Forms.Button tile8;
+        private System.Windows.Forms.Button tile9;
+        private System.Windows.Forms.Button tile10;
+        private System.Windows.Forms.Button tile11;
+        private System.Windows.Forms.Button tile12;
+        private System.Windows.Forms.Button tile13;
+        private System.Windows.Forms.Button tile14;
+        private System.Windows.Forms.Button tile15;
+        private System.Windows.Forms.Button tile16;
+        private System.Windows.Forms.Button tile17;
+        private System.Windows.Forms.Button tile18;
+        private System.Windows.Forms.Button tile19;
+        private System.Windows.Forms.Button tile20;
+        private System.Windows.Forms.Button tile21;
+        private System.Windows.Forms.Button tile22;
+        private System.Windows.Forms.Button tile23;
+        private System.Windows.Forms.Button tile24;
+        private System.Windows.Forms.Button tile25;
+        private System.Windows.Forms.Button tile26;
+        private System.Windows.Forms.Button tile27;
+        private System.Windows.Forms.Button nation2; // Nation 2
+        private System.Windows.Forms.Button tile28;
+        private System.Windows.Forms.Button tile29;
+        private System.Windows.Forms.Button tile30;
+        private System.Windows.Forms.Button tile31;
+        private System.Windows.Forms.Button nation3; // Nation 3
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button answer3;
+        private System.Windows.Forms.Button answer2;
+        private System.Windows.Forms.Button answer1;
+        private System.Windows.Forms.Button answer0;
+        private System.Windows.Forms.Label label2;
     }
 }

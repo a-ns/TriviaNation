@@ -23,6 +23,8 @@ namespace MainMenu
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainMenu(network, mainMenuNetwork));
+
+            Application.Run(new GameBoard());     // FOR TESTING GAME BOARD
         }
     }
 }
