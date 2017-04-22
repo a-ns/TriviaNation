@@ -24,7 +24,7 @@ namespace GUILayer
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainMenu(network, mainMenuNetwork));
 
-            Application.Run(new GameBoard());     // FOR TESTING GAME BOARD
+            Application.Run(new EditGameBoard());     // FOR TESTING GAME BOARD
         }
     }
 }

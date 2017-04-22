@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GameComponents;
 
 namespace NetworkLayerInterfaces
 {
@@ -12,7 +13,7 @@ namespace NetworkLayerInterfaces
 
         void gameBoardSetupSocket();
 
-        void TileClick(int tileNum);
+        void TileClick(Tile tile);
 
         void AnswerClick(bool answer);
     }

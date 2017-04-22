@@ -55,6 +55,12 @@
     <Compile Include="GameBoard.Designer.cs">
       <DependentUpon>GameBoard.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditGameBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditGameBoard.Designer.cs">
+      <DependentUpon>EditGameBoard.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +71,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GameBoard.resx">
       <DependentUpon>GameBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditGameBoard.resx">
+      <DependentUpon>EditGameBoard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
@@ -92,6 +101,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GameComponents\GameComponents.csproj">
+      <Project>{97e90657-ed7f-49e6-ba2b-9a29d45d9697}</Project>
+      <Name>GameComponents</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NetworkLayerInterfaces\NetworkLayerInterfaces.csproj">
       <Project>{d37bb702-93b0-4f2c-afed-60322c05724b}</Project>
       <Name>NetworkLayerInterfaces</Name>

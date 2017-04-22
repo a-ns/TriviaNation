@@ -8,8 +8,8 @@ namespace GameComponents
 {
     public class Answer
     {
-        string answer { get; set; }
+        public string answer { get; set; }
 
-        bool correct { get; set; }
+        public bool correct { get; set; }
     }
 }

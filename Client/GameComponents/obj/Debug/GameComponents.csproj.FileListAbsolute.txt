@@ -1,0 +1,5 @@
+C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\GameComponents\bin\Debug\GameComponents.dll
+C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\GameComponents\bin\Debug\GameComponents.pdb
+C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\GameComponents\obj\Debug\GameComponents.csprojResolveAssemblyReference.cache
+C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\GameComponents\obj\Debug\GameComponents.dll
+C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\GameComponents\obj\Debug\GameComponents.pdb

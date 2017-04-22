@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using NetworkLayerInterfaces;
 using Quobject.SocketIoClientDotNet.Client;
+using GameComponents;
 
 namespace NetworkLayer
 {
@@ -32,12 +33,26 @@ namespace NetworkLayer
 
         public void gameBoardSetupSocket()
         {
-            
+            this._socket.On("answerClicked", (data) =>
+            {
+
+            });
+
+            this._socket.On("questionClicked", (data) =>
+            {
+
+            });
+
+            this._socket.On("scoreUpdate", (data) =>
+            {
+
+            });
         }
 
-        public void TileClick(int tileNum)
+        public void TileClick(Tile tile)
         {
             //Emit the tile number so the server can broadcast the selection to the other users.
+            this._socket.Emit("questionClicked", JsonConvert.SerializeObject(tile));
         }
 
         public void AnswerClick(bool answer)

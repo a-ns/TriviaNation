@@ -13,3 +13,5 @@ C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\GroupProject\Tri
 C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\GroupProject\TriviaNation\Client\User\obj\Debug\PUser.csprojResolveAssemblyReference.cache
 C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\GroupProject\TriviaNation\Client\User\obj\Debug\User.dll
 C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\GroupProject\TriviaNation\Client\User\obj\Debug\User.pdb
+C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\User\bin\Debug\GameComponents.dll
+C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\User\bin\Debug\GameComponents.pdb

@@ -10,8 +10,8 @@ namespace GameComponents
     {
         int questionNum { get; set; }
 
-        string question { get; set; }
+        public string question { get; set; }
 
-        Answer[] answer { get; set; }
+        public Answer[] answers { get; set; }
     }
 }

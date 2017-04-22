@@ -19,3 +19,27 @@ H:\SEII\GroupProject\TriviaNation\Client\MainMenu\obj\Debug\WindowsFormsApplicat
 H:\SEII\GroupProject\TriviaNation\Client\MainMenu\obj\Debug\GUILayer.csproj.GenerateResource.Cache
 H:\SEII\GroupProject\TriviaNation\Client\MainMenu\obj\Debug\WindowsFormsApplication1.exe
 H:\SEII\GroupProject\TriviaNation\Client\MainMenu\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\MainMenu\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\MainMenu\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\MainMenu\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\MainMenu\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\MainMenu\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\MainMenu\bin\Debug\ClassLibrary1.dll
+C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\MainMenu\bin\Debug\NetworkLayerInterfaces.dll
+C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\MainMenu\bin\Debug\SocketIoClientDotNet.dll
+C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\MainMenu\bin\Debug\User.dll
+C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\MainMenu\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\MainMenu\bin\Debug\EngineIoClientDotNet.dll
+C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\MainMenu\bin\Debug\GameComponents.dll
+C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\MainMenu\bin\Debug\WebSocket4Net.dll
+C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\MainMenu\bin\Debug\NetworkLayerInterfaces.pdb
+C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\MainMenu\bin\Debug\ClassLibrary1.pdb
+C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\MainMenu\bin\Debug\User.pdb
+C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\MainMenu\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\MainMenu\bin\Debug\GameComponents.pdb
+C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\MainMenu\obj\Debug\GUILayer.csprojResolveAssemblyReference.cache
+C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\MainMenu\obj\Debug\GUILayer.GameBoard.resources
+C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\MainMenu\obj\Debug\GUILayer.MainMenu.resources
+C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\MainMenu\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\MainMenu\obj\Debug\GUILayer.csproj.GenerateResource.Cache
+C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\MainMenu\obj\Debug\GUILayer.EditGameBoard.resources

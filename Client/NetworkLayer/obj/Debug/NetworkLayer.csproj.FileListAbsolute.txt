@@ -84,3 +84,5 @@ H:\SEII\GroupProject\TriviaNation\Client\NetworkLayer\bin\Debug\Newtonsoft.Json.
 H:\SEII\GroupProject\TriviaNation\Client\NetworkLayer\obj\Debug\NetworkLayer.csprojResolveAssemblyReference.cache
 H:\SEII\GroupProject\TriviaNation\Client\NetworkLayer\obj\Debug\ClassLibrary1.dll
 H:\SEII\GroupProject\TriviaNation\Client\NetworkLayer\obj\Debug\ClassLibrary1.pdb
+C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\NetworkLayer\bin\Debug\GameComponents.dll
+C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\NetworkLayer\bin\Debug\GameComponents.pdb
