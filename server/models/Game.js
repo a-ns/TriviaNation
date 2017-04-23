@@ -6,7 +6,8 @@ var gameSchema = new Schema({
     required: true
   },
   Nations: [ {type: Schema.Types.Mixed} ],
-  Tiles: [ {type: Schema.Types.Mixed} ]
+  Tiles: [ {type: Schema.Types.Mixed} ],
+  Scores: [{type: Number}]
 })
 
 module.exports = mongoose.model('Game', gameSchema)

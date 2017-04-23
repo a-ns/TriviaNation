@@ -589,6 +589,7 @@
             this.answer3.TabIndex = 4;
             this.answer3.Text = "answer3";
             this.answer3.UseVisualStyleBackColor = true;
+            this.answer3.Click += new System.EventHandler(this.answer3_Click);
             // 
             // answer2
             // 
@@ -599,6 +600,7 @@
             this.answer2.TabIndex = 3;
             this.answer2.Text = "answer2";
             this.answer2.UseVisualStyleBackColor = true;
+            this.answer2.Click += new System.EventHandler(this.answer2_Click);
             // 
             // answer1
             // 
@@ -609,6 +611,7 @@
             this.answer1.TabIndex = 2;
             this.answer1.Text = "answer1";
             this.answer1.UseVisualStyleBackColor = true;
+            this.answer1.Click += new System.EventHandler(this.answer1_Click);
             // 
             // answer0
             // 
@@ -619,6 +622,7 @@
             this.answer0.TabIndex = 1;
             this.answer0.Text = "answer0";
             this.answer0.UseVisualStyleBackColor = true;
+            this.answer0.Click += new System.EventHandler(this.answer0_Click);
             // 
             // GameBoard
             // 
@@ -647,6 +651,7 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button[] buttons = new System.Windows.Forms.Button[32];
         private System.Windows.Forms.Button[] teams = new System.Windows.Forms.Button[4];
+        private System.Windows.Forms.Button[] answers = new System.Windows.Forms.Button[4];
         private System.Windows.Forms.Button nation0; // Nation 0
         private System.Windows.Forms.Button tile0;
         private System.Windows.Forms.Button tile1;
