@@ -66,6 +66,7 @@
             this.tile31 = new System.Windows.Forms.Button();
             this.nation3 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.gameNameBox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.saveGameButton = new System.Windows.Forms.Button();
             this.answerCorrect3 = new System.Windows.Forms.CheckBox();
@@ -82,7 +83,6 @@
             this.answersLabel = new System.Windows.Forms.Label();
             this.questionLabel = new System.Windows.Forms.Label();
             this.saveQuestionButton = new System.Windows.Forms.Button();
-            this.gameNameBox = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -579,6 +579,16 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(789, 84);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
+            // gameNameBox
+            // 
+            this.gameNameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gameNameBox.Location = new System.Drawing.Point(3, 3);
+            this.gameNameBox.Multiline = true;
+            this.gameNameBox.Name = "gameNameBox";
+            this.gameNameBox.Size = new System.Drawing.Size(774, 68);
+            this.gameNameBox.TabIndex = 0;
+            this.gameNameBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.saveGameButton);
@@ -746,16 +756,6 @@
             this.saveQuestionButton.Text = "Save Question";
             this.saveQuestionButton.UseVisualStyleBackColor = true;
             this.saveQuestionButton.Click += new System.EventHandler(this.saveQuestionButton_Click);
-            // 
-            // gameNameBox
-            // 
-            this.gameNameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gameNameBox.Location = new System.Drawing.Point(3, 3);
-            this.gameNameBox.Multiline = true;
-            this.gameNameBox.Name = "gameNameBox";
-            this.gameNameBox.Size = new System.Drawing.Size(774, 68);
-            this.gameNameBox.TabIndex = 0;
-            this.gameNameBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // EditGameBoard
             // 

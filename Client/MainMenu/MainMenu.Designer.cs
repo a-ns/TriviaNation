@@ -34,13 +34,14 @@
             this.SignIn = new System.Windows.Forms.Button();
             this.SignUp = new System.Windows.Forms.Button();
             this.Password = new System.Windows.Forms.TextBox();
+            this.loadGameButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CreateMatch
             // 
             this.CreateMatch.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CreateMatch.Location = new System.Drawing.Point(24, 246);
-            this.CreateMatch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CreateMatch.Margin = new System.Windows.Forms.Padding(4);
             this.CreateMatch.Name = "CreateMatch";
             this.CreateMatch.Size = new System.Drawing.Size(305, 76);
             this.CreateMatch.TabIndex = 0;
@@ -51,7 +52,7 @@
             // 
             this.Nickname.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Nickname.Location = new System.Drawing.Point(24, 122);
-            this.Nickname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Nickname.Margin = new System.Windows.Forms.Padding(4);
             this.Nickname.Name = "Nickname";
             this.Nickname.Size = new System.Drawing.Size(304, 37);
             this.Nickname.TabIndex = 1;
@@ -74,7 +75,7 @@
             // 
             this.SignIn.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SignIn.Location = new System.Drawing.Point(24, 414);
-            this.SignIn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SignIn.Margin = new System.Windows.Forms.Padding(4);
             this.SignIn.Name = "SignIn";
             this.SignIn.Size = new System.Drawing.Size(305, 76);
             this.SignIn.TabIndex = 3;
@@ -85,7 +86,7 @@
             // 
             this.SignUp.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SignUp.Location = new System.Drawing.Point(24, 330);
-            this.SignUp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SignUp.Margin = new System.Windows.Forms.Padding(4);
             this.SignUp.Name = "SignUp";
             this.SignUp.Size = new System.Drawing.Size(305, 76);
             this.SignUp.TabIndex = 4;
@@ -96,24 +97,38 @@
             // 
             this.Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Password.Location = new System.Drawing.Point(24, 183);
-            this.Password.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Password.Margin = new System.Windows.Forms.Padding(4);
             this.Password.Name = "Password";
             this.Password.Size = new System.Drawing.Size(304, 37);
             this.Password.TabIndex = 5;
             this.Password.Text = "Enter Password";
             // 
+            // loadGameButton
+            // 
+            this.loadGameButton.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loadGameButton.ForeColor = System.Drawing.Color.Coral;
+            this.loadGameButton.Location = new System.Drawing.Point(23, 498);
+            this.loadGameButton.Margin = new System.Windows.Forms.Padding(4);
+            this.loadGameButton.Name = "loadGameButton";
+            this.loadGameButton.Size = new System.Drawing.Size(305, 76);
+            this.loadGameButton.TabIndex = 6;
+            this.loadGameButton.Text = "LOAD GAME";
+            this.loadGameButton.UseVisualStyleBackColor = true;
+            this.loadGameButton.Click += new System.EventHandler(this.loadGameButton_Click);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(353, 519);
+            this.ClientSize = new System.Drawing.Size(353, 584);
+            this.Controls.Add(this.loadGameButton);
             this.Controls.Add(this.Password);
             this.Controls.Add(this.SignUp);
             this.Controls.Add(this.SignIn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Nickname);
             this.Controls.Add(this.CreateMatch);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Trivia Nation Menu";
@@ -131,7 +146,7 @@
         private System.Windows.Forms.Button SignIn;
         private System.Windows.Forms.Button SignUp;
         private System.Windows.Forms.TextBox Password;
-
+        private System.Windows.Forms.Button loadGameButton;
     }
 }
 

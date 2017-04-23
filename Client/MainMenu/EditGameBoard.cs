@@ -34,6 +34,7 @@ namespace GUILayer
             for (int i = 0; i < NumberOfQuestions; i++)
             {
                 this.tiles[i] = new Tile();
+                this.tiles[i].questionNum = i;
                 this.tiles[i].answers = new Answer[NumberOfAnswers];
                 for (int j = 0; j < NumberOfAnswers; j++)
                     this.tiles[i].answers[j] = new Answer();
@@ -488,6 +489,7 @@ namespace GUILayer
                 this.tiles[currentQNum].answers[2].correct = this.answerCorrect2.Checked;
                 this.tiles[currentQNum].answers[3].answer = this.answerBox3.Text;
                 this.tiles[currentQNum].answers[3].correct = this.answerCorrect3.Checked;
+                this.tiles[currentQNum].title = this.tileNameChange.Text;
                 this.CurrentQuestion.Text = this.tileNameChange.Text;
             }
             else if (this.saveQuestionButton.Text == "Save Nation")

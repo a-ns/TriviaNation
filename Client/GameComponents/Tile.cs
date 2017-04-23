@@ -8,9 +8,11 @@ namespace GameComponents
 {
     public class Tile
     {
-        int questionNum { get; set; }
+        public int questionNum { get; set; }
 
         public string question { get; set; }
+
+        public string title { get; set; }
 
         public Answer[] answers { get; set; }
     }

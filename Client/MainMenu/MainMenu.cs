@@ -81,5 +81,13 @@ namespace GUILayer
             EditGameBoard editGame = new EditGameBoard(this.gameNetwork);
             editGame.Show();
         }
+
+        private void loadGameButton_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("Loading game...");
+
+            GameBoard game = new GameBoard(this.gameNetwork);
+            game.Show();
+        }
     }
 }

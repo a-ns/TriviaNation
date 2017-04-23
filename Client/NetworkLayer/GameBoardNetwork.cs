@@ -13,6 +13,7 @@ namespace NetworkLayer
     public class GameBoardNetwork : IGameBoardNetwork
     {
         TaskCompletionSource<Boolean> promise;
+        Game loadedGame;
         private GameBoardNetwork()
         {
 
@@ -71,6 +72,23 @@ namespace NetworkLayer
                     promise.TrySetResult(false);
                 }
             });
+
+            this._socket.On("loadGame", (data) =>
+            {
+                if (data != null)
+                {
+                    Game foundGame = null;
+                    foundGame = JsonConvert.DeserializeObject<Game>(data.ToString());
+                    Console.WriteLine("The game is " + foundGame.gameName);
+                    loadedGame = foundGame;
+                    promise.TrySetResult(true);
+                }
+                if (data == null)
+                {
+                    Console.WriteLine("The user is null");
+                    promise.TrySetResult(false);
+                }
+            });
         }
 
         public void TileClick(Tile tile)
@@ -93,6 +111,22 @@ namespace NetworkLayer
                 return true;
             else
                 return false;
+        }
+
+        public Game loadGame(string gameName)
+        {
+            loadedGame = new Game();
+            loadedGame.gameName = gameName;
+            this.promise = new TaskCompletionSource<bool>();
+            this._socket.Emit("loadGame", JsonConvert.SerializeObject(loadedGame));
+            promise.Task.Wait();
+            if (this.promise.Task.Result)
+            {
+                Console.WriteLine("Loaded: " + loadedGame.gameName);
+                return loadedGame;
+            }
+            else
+                return null;
         }
 
         private Socket _socket;

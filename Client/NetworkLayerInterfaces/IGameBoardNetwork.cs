@@ -18,5 +18,7 @@ namespace NetworkLayerInterfaces
         void AnswerClick(bool answer);
 
         bool saveGame(Game game);
+
+        Game loadGame(string gameName);
     }
 }

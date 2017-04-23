@@ -61,10 +61,22 @@ var saveGame = function (data) {
 	})
 }
 
+var loadGame = function (data) {
+	var that = this
+	var theData = JSON.parse(data)
+	commandHandlers.loadGame(theData).then(function (loadSuccess){
+		console.log(loadSuccess, 'load success')
+		that.emit('loadGame', loadSuccess)
+	}).catch(function (){
+		console.log('load not successful')
+		that.emit('loadGame', null)
+	})
+}
+
 var connection = function (client) {
   var theData = commandHandlers.connection(client)
   client.emit('message', {message: client.id})
   //client.emit(/*clients.push(client) maybe?*/)
 }
 
-module.exports = {login, signup, scoreUpdate, answerClicked, message, connection, questionClicked, saveGame}
+module.exports = {login, signup, scoreUpdate, answerClicked, message, connection, questionClicked, saveGame, loadGame}
