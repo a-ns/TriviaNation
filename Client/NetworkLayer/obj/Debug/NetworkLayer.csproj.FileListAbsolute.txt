@@ -17,9 +17,7 @@ D:\Documents\School\Software Engineering II\TriviaNation\Client\NetworkLayer\bin
 D:\Documents\School\Software Engineering II\TriviaNation\Client\NetworkLayer\bin\Debug\EngineIoClientDotNet.dll
 D:\Documents\School\Software Engineering II\TriviaNation\Client\NetworkLayer\bin\Debug\Newtonsoft.Json.dll
 D:\Documents\School\Software Engineering II\TriviaNation\Client\NetworkLayer\bin\Debug\SocketIoClientDotNet.dll
-D:\Documents\School\Software Engineering II\TriviaNation\Client\NetworkLayer\bin\Debug\User.dll
 D:\Documents\School\Software Engineering II\TriviaNation\Client\NetworkLayer\bin\Debug\WebSocket4Net.dll
-D:\Documents\School\Software Engineering II\TriviaNation\Client\NetworkLayer\bin\Debug\User.pdb
 D:\Documents\School\Software Engineering II\TriviaNation\Client\NetworkLayer\bin\Debug\Newtonsoft.Json.xml
 D:\Documents\School\Software Engineering II\TriviaNation\Client\NetworkLayer\obj\Debug\NetworkLayer.csprojResolveAssemblyReference.cache
 D:\Documents\School\Software Engineering II\TriviaNation\Client\NetworkLayer\obj\Debug\ClassLibrary1.dll
@@ -84,3 +82,7 @@ H:\SEII\GroupProject\TriviaNation\Client\NetworkLayer\obj\Debug\ClassLibrary1.dl
 H:\SEII\GroupProject\TriviaNation\Client\NetworkLayer\obj\Debug\ClassLibrary1.pdb
 C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\NetworkLayer\bin\Debug\GameComponents.dll
 C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\NetworkLayer\bin\Debug\GameComponents.pdb
+D:\Documents\School\Software Engineering II\TriviaNation\Client\NetworkLayer\bin\Debug\GameComponents.dll
+D:\Documents\School\Software Engineering II\TriviaNation\Client\NetworkLayer\bin\Debug\NetworkLayerInterfaces.dll
+D:\Documents\School\Software Engineering II\TriviaNation\Client\NetworkLayer\bin\Debug\GameComponents.pdb
+D:\Documents\School\Software Engineering II\TriviaNation\Client\NetworkLayer\bin\Debug\NetworkLayerInterfaces.pdb

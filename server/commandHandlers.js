@@ -94,10 +94,10 @@ var saveGame = function (data) {
 	return new Promise(function (resolve, reject){
 		if(data["gameName"].length === 0)
 			reject(false)
-		
+
 		var game = new Game()
 		game.gameName = data.gameName
-		
+
 		Game.findOne({gameName: game.gameName}, function (err, gameFound){
 			if(err){
 				console.log(err)

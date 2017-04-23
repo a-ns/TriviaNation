@@ -3,3 +3,8 @@ C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\Tr
 C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\GameComponents\obj\Debug\GameComponents.csprojResolveAssemblyReference.cache
 C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\GameComponents\obj\Debug\GameComponents.dll
 C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\GameComponents\obj\Debug\GameComponents.pdb
+D:\Documents\School\Software Engineering II\TriviaNation\Client\GameComponents\bin\Debug\GameComponents.dll
+D:\Documents\School\Software Engineering II\TriviaNation\Client\GameComponents\bin\Debug\GameComponents.pdb
+D:\Documents\School\Software Engineering II\TriviaNation\Client\GameComponents\obj\Debug\GameComponents.csprojResolveAssemblyReference.cache
+D:\Documents\School\Software Engineering II\TriviaNation\Client\GameComponents\obj\Debug\GameComponents.dll
+D:\Documents\School\Software Engineering II\TriviaNation\Client\GameComponents\obj\Debug\GameComponents.pdb
