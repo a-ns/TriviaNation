@@ -18,16 +18,16 @@ namespace GUILayer
         Game game;
         Button CurrentQuestion, CurrentNation;
         private int currentQNum, currentNationNum;
+        User user;
         Tile[] tiles;
         Team[] nations;
         private int NumberOfQuestions = 32, NumberOfAnswers = 4, NumberOfNations = 4;
-        public GameBoard(IGameBoardNetwork gameNetwork)
+
+        public GameBoard(IGameBoardNetwork gameNetwork, Game game, User user)
         {
+            this.user = user;
             this.gameNetwork = gameNetwork;
-            this.gameNetwork.gameBoardSetupSocket();
-            this.game = this.gameNetwork.loadGame("Testing Loadability");
-            if (this.game == null)
-                Console.WriteLine("Null...we have a problem");
+            this.game = game;
             this.tiles = this.game.tiles;
             this.nations = this.game.nations;
             InitializeComponent();
@@ -79,6 +79,9 @@ namespace GUILayer
             }
             for (int n = 0; n < NumberOfNations; n++)
                 teams[n].Text = this.nations[n].name;
+
+            //if (this.game.scores == null)
+                //chooseTeams();
         }
 
         private void nation0_Click(object sender, EventArgs e)

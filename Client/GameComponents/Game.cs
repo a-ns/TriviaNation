@@ -11,6 +11,6 @@ namespace GameComponents
         public string gameName { get; set; }
         public Team[] nations { get; set; }
         public Tile[] tiles { get; set; }
-        //public int[] scores { get; set; }
+        public int[] scores { get; set; }
     }
 }

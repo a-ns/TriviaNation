@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using NetworkLayerInterfaces;
+using GameComponents;
+
 namespace GUILayer
 {
     public partial class MainMenu : Form
@@ -15,6 +17,7 @@ namespace GUILayer
         private INetwork endpoint;
         private IMainMenuNetwork mainMenu;
         private IGameBoardNetwork gameNetwork;
+        private User currentUser;
         
 
         public MainMenu(INetwork endpoint, IMainMenuNetwork mainMenu, IGameBoardNetwork gameNetwork)
@@ -28,6 +31,8 @@ namespace GUILayer
             this.SignUp.Click += new System.EventHandler(this.SignUp_Click);
             this.CreateMatch.Click += new System.EventHandler(this.CreateMatch_Click);
             this.CreateMatch.Visible = false;
+            this.loadGameButton.Visible = false;
+            this.loadGameBox.Visible = false;
         }
        
         private void Form1_Load(object sender, EventArgs e)
@@ -52,12 +57,22 @@ namespace GUILayer
             Console.WriteLine("Signing in: " + nickname + " " + password);
             if (this.mainMenu.MainMenuSignIn(nickname, password))
             {
+                currentUser = new User();
+                currentUser.username = nickname;
                 MessageBox.Show("Login Success");
+                this.SignUp.Visible = false;
+                this.SignIn.Visible = false;
+                this.loadGameButton.Visible = true;
+                this.loadGameBox.Visible = true;
                 this.CreateMatch.Visible = true;
             }
             else
             {
+                currentUser = null;
                 this.CreateMatch.Visible = false;
+                this.loadGameButton.Visible = false;
+                this.SignUp.Visible = true;
+                this.loadGameBox.Visible = false;
                 MessageBox.Show("Login Failed, try again");
             }
         }
@@ -68,9 +83,25 @@ namespace GUILayer
             String password = this.Password.Text;
             Console.WriteLine("Signing up: " + nickname + " " + password);
             if (this.mainMenu.MainMenuSignUp(nickname, password))
+            {
+                currentUser = new User();
+                currentUser.username = nickname;
+                this.SignUp.Visible = false;
+                this.SignIn.Visible = false;
+                this.loadGameButton.Visible = true;
+                this.loadGameBox.Visible = true;
+                this.CreateMatch.Visible = true;
                 MessageBox.Show("signup successful for " + nickname);
+            }
             else
+            {
+                currentUser = null;
+                this.CreateMatch.Visible = false;
+                this.loadGameButton.Visible = false;
+                this.SignUp.Visible = true;
+                this.loadGameBox.Visible = false;
                 MessageBox.Show("signup failed for " + nickname);
+            }
         }
 
         private void CreateMatch_Click(object sender, EventArgs e)
@@ -85,9 +116,18 @@ namespace GUILayer
         private void loadGameButton_Click(object sender, EventArgs e)
         {
             Console.WriteLine("Loading game...");
-
-            GameBoard game = new GameBoard(this.gameNetwork);
-            game.Show();
+            string gameName = this.loadGameBox.Text;
+            this.gameNetwork.gameBoardSetupSocket();
+            Game loadedGame = this.gameNetwork.loadGame(gameName);
+            if (loadedGame == null)
+            {
+                MessageBox.Show("Sorry no game found for: " + gameName);
+            }
+            else
+            {
+                GameBoard game = new GameBoard(this.gameNetwork, loadedGame, currentUser);
+                game.Show();
+            }
         }
     }
 }
