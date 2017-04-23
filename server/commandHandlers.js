@@ -1,4 +1,5 @@
 var User = require('./models/User.js')
+var Game = require('./models/Game.js')
 var Promise = require('bluebird')
 var scoreUpdate = function (data) {
   console.log(data)
@@ -89,8 +90,37 @@ var signup = function (data) {
   })
 }
 
+var saveGame = function (data) {
+	return new Promise(function (resolve, reject){
+		if(data["gameName"].length === 0)
+			reject(false)
+		
+		var game = new Game()
+		game.gameName = data.gameName
+		
+		Game.findOne({gameName: game.gameName}, function (err, gameFound){
+			if(err){
+				console.log(err)
+				reject(null)
+			}
+		}).then(function (gameFound) {
+			if(gameFound){
+				reject(null)
+			}
+			else {
+				game.Nations = data.nations
+				game.Tiles = data.tiles
+				game.save(function(err){
+					console.log('saving', game)
+					resolve(game)
+				})
+			}
+		})
+	})
+}
+
 var connection = function (client) {
   console.log(client.id, 'has connected')
 }
 
-module.exports = {login, signup, scoreUpdate, answerClicked, message, connection, questionClicked}
+module.exports = {login, signup, scoreUpdate, answerClicked, message, connection, questionClicked, saveGame}

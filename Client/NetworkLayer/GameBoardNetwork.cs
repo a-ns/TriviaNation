@@ -12,6 +12,7 @@ namespace NetworkLayer
 {
     public class GameBoardNetwork : IGameBoardNetwork
     {
+        TaskCompletionSource<Boolean> promise;
         private GameBoardNetwork()
         {
 
@@ -47,6 +48,29 @@ namespace NetworkLayer
             {
 
             });
+
+            this._socket.On("saveGame", (data) =>
+            {
+                if (data != null)
+                {
+                    Game newGame = null;
+                    try
+                    {
+                        newGame = JsonConvert.DeserializeObject<Game>(data.ToString());
+                        Console.WriteLine("Game: " + newGame.gameName + " successfully created.");
+                        promise.TrySetResult(true);
+                    }
+                    catch (Newtonsoft.Json.JsonReaderException)
+                    {
+                        promise.TrySetResult(false);
+                    }
+                }
+                else if (data == null)
+                {
+                    Console.WriteLine("Game name is already taken.");
+                    promise.TrySetResult(false);
+                }
+            });
         }
 
         public void TileClick(Tile tile)
@@ -58,6 +82,17 @@ namespace NetworkLayer
         public void AnswerClick(bool answer)
         {
             //Emit whether the answer was correct or not so that the server can update the other users gameboards
+        }
+
+        public bool saveGame(Game game)
+        {
+            this.promise = new TaskCompletionSource<bool>();
+            this._socket.Emit("saveGame", JsonConvert.SerializeObject(game));
+            promise.Task.Wait();
+            if (this.promise.Task.Result)
+                return true;
+            else
+                return false;
         }
 
         private Socket _socket;

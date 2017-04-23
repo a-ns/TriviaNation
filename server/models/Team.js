@@ -2,16 +2,16 @@ let mongoose = require('mongoose')
 let Schema = mongoose.Schema
 
 let teamSchema = new Schema({
-  teamName: {
+  name: {
     type: String,
     required: true
   },
-  teamColor: {
+  color: {
     type: String,
     required: true
   },
-  Users: [ {type: Schema.ObjectId, ref: 'User'} ],
-  Tiles: [ {type: Schema.ObjectId, ref: 'Tile'} ]
+  users: [ {type: Schema.ObjectId, ref: 'User'} ],
+  tiles: [ {type: Schema.ObjectId, ref: 'Tile'} ]
 })
 
 let Team = mongoose.model('Team', teamSchema)

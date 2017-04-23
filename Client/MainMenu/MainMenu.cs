@@ -14,12 +14,14 @@ namespace GUILayer
     {
         private INetwork endpoint;
         private IMainMenuNetwork mainMenu;
+        private IGameBoardNetwork gameNetwork;
         
 
-        public MainMenu(INetwork endpoint, IMainMenuNetwork mainMenu)
+        public MainMenu(INetwork endpoint, IMainMenuNetwork mainMenu, IGameBoardNetwork gameNetwork)
         {
             this.endpoint = endpoint;
             this.mainMenu = mainMenu;
+            this.gameNetwork = gameNetwork;
             InitializeComponent();
             this.mainMenu.MainMenuSetupSocket();
             this.SignIn.Click += new System.EventHandler(this.SignIn_Click);
@@ -76,6 +78,8 @@ namespace GUILayer
             String nickname = this.Nickname.Text;
             String password = this.Password.Text;
             Console.WriteLine("Creating match: " + nickname + " " + password);
+            EditGameBoard editGame = new EditGameBoard(this.gameNetwork);
+            editGame.Show();
         }
     }
 }

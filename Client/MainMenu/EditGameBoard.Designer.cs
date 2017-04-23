@@ -65,9 +65,9 @@
             this.tile30 = new System.Windows.Forms.Button();
             this.tile31 = new System.Windows.Forms.Button();
             this.nation3 = new System.Windows.Forms.Button();
-            this.gameName = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.saveGameButton = new System.Windows.Forms.Button();
             this.answerCorrect3 = new System.Windows.Forms.CheckBox();
             this.answerCorrect2 = new System.Windows.Forms.CheckBox();
             this.answerCorrect1 = new System.Windows.Forms.CheckBox();
@@ -82,6 +82,7 @@
             this.answersLabel = new System.Windows.Forms.Label();
             this.questionLabel = new System.Windows.Forms.Label();
             this.saveQuestionButton = new System.Windows.Forms.Button();
+            this.gameNameBox = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -563,26 +564,12 @@
             this.nation3.UseVisualStyleBackColor = false;
             this.nation3.Click += new System.EventHandler(this.nation3_Click);
             // 
-            // gameName
-            // 
-            this.gameName.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.gameName.AutoSize = true;
-            this.gameName.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gameName.Location = new System.Drawing.Point(181, 0);
-            this.gameName.Name = "gameName";
-            this.gameName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.gameName.Size = new System.Drawing.Size(418, 74);
-            this.gameName.TabIndex = 1;
-            this.gameName.Text = "Trivia Nation";
-            this.gameName.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.gameName.Click += new System.EventHandler(this.label1_Click);
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 98.86793F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.132075F));
-            this.tableLayoutPanel1.Controls.Add(this.gameName, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.gameNameBox, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(20, 14);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -594,6 +581,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.saveGameButton);
             this.panel1.Controls.Add(this.answerCorrect3);
             this.panel1.Controls.Add(this.answerCorrect2);
             this.panel1.Controls.Add(this.answerCorrect1);
@@ -613,6 +601,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(459, 752);
             this.panel1.TabIndex = 3;
+            // 
+            // saveGameButton
+            // 
+            this.saveGameButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveGameButton.Location = new System.Drawing.Point(0, 700);
+            this.saveGameButton.Name = "saveGameButton";
+            this.saveGameButton.Size = new System.Drawing.Size(137, 52);
+            this.saveGameButton.TabIndex = 20;
+            this.saveGameButton.Text = "Save Game";
+            this.saveGameButton.UseVisualStyleBackColor = true;
+            this.saveGameButton.Click += new System.EventHandler(this.saveGameButton_Click);
             // 
             // answerCorrect3
             // 
@@ -679,7 +678,7 @@
             // 
             this.tileIdentifier.AutoSize = true;
             this.tileIdentifier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tileIdentifier.Location = new System.Drawing.Point(181, 8);
+            this.tileIdentifier.Location = new System.Drawing.Point(171, 8);
             this.tileIdentifier.Name = "tileIdentifier";
             this.tileIdentifier.Size = new System.Drawing.Size(107, 25);
             this.tileIdentifier.TabIndex = 13;
@@ -739,6 +738,7 @@
             // 
             // saveQuestionButton
             // 
+            this.saveQuestionButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveQuestionButton.Location = new System.Drawing.Point(331, 697);
             this.saveQuestionButton.Name = "saveQuestionButton";
             this.saveQuestionButton.Size = new System.Drawing.Size(128, 55);
@@ -746,6 +746,16 @@
             this.saveQuestionButton.Text = "Save Question";
             this.saveQuestionButton.UseVisualStyleBackColor = true;
             this.saveQuestionButton.Click += new System.EventHandler(this.saveQuestionButton_Click);
+            // 
+            // gameNameBox
+            // 
+            this.gameNameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gameNameBox.Location = new System.Drawing.Point(3, 3);
+            this.gameNameBox.Multiline = true;
+            this.gameNameBox.Name = "gameNameBox";
+            this.gameNameBox.Size = new System.Drawing.Size(774, 68);
+            this.gameNameBox.TabIndex = 0;
+            this.gameNameBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // EditGameBoard
             // 
@@ -808,7 +818,6 @@
         private System.Windows.Forms.Button tile30;
         private System.Windows.Forms.Button tile31;
         private System.Windows.Forms.Button nation3; // Nation 3
-        private System.Windows.Forms.Label gameName;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button saveQuestionButton;
@@ -825,5 +834,7 @@
         private System.Windows.Forms.CheckBox answerCorrect2;
         private System.Windows.Forms.CheckBox answerCorrect1;
         private System.Windows.Forms.CheckBox answerCorrect0;
+        private System.Windows.Forms.Button saveGameButton;
+        private System.Windows.Forms.TextBox gameNameBox;
     }
 }

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using Quobject.SocketIoClientDotNet.Client;
-using PUser;
 using NetworkLayerInterfaces;
 using System.Threading.Tasks;
+using GameComponents;
 
 namespace NetworkLayer
 {

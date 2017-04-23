@@ -1,12 +1,8 @@
-let mongoose = require('mongoose')
-let Schema = mongoose.Schema
+var mongoose = require('mongoose')
+var Schema = mongoose.Schema
 
-let tileSchema = new Schema({
-  x: {
-    type: Number,
-    required: true
-  },
-  y: {
+var tileSchema = new Schema({
+  questionNum: {
     type: Number,
     required: true
   },

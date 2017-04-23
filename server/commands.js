@@ -7,5 +7,6 @@ module.exports = function () {
   commands.push('scoreUpdate')
   commands.push('login')
   commands.push('signup')
+  commands.push('saveGame')
   return commands
 }

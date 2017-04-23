@@ -30,9 +30,7 @@ C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\Tr
 C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\NetworkLayer\bin\Debug\EngineIoClientDotNet.dll
 C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\NetworkLayer\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\NetworkLayer\bin\Debug\SocketIoClientDotNet.dll
-C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\NetworkLayer\bin\Debug\User.dll
 C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\NetworkLayer\bin\Debug\WebSocket4Net.dll
-C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\NetworkLayer\bin\Debug\User.pdb
 C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\NetworkLayer\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\NetworkLayer\obj\Debug\NetworkLayer.csprojResolveAssemblyReference.cache
 C:\Users\Don Kerrigan\Documents\Classes\Software Engineering II\Group Project\TriviaNation\Client\NetworkLayer\obj\Debug\ClassLibrary1.dll

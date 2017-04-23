@@ -16,5 +16,7 @@ namespace NetworkLayerInterfaces
         void TileClick(Tile tile);
 
         void AnswerClick(bool answer);
+
+        bool saveGame(Game game);
     }
 }

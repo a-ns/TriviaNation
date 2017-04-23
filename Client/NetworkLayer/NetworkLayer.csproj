@@ -75,10 +75,6 @@
       <Project>{d37bb702-93b0-4f2c-afed-60322c05724b}</Project>
       <Name>NetworkLayerInterfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\User\PUser.csproj">
-      <Project>{7f18323c-ca9c-402d-9a5c-5b9f909788a9}</Project>
-      <Name>PUser</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

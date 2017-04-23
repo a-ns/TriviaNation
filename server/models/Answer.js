@@ -1,8 +1,8 @@
-let mongoose = require('mongoose')
-let Schema = mongoose.Schema
+var mongoose = require('mongoose')
+var Schema = mongoose.Schema
 
-let answerSchema = new Schema ({
-  text: {
+var answerSchema = new Schema ({
+  answer: {
     type: String,
     required: true
   },

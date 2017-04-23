@@ -49,10 +49,22 @@ var signup = function (data) {
   //data.emit(signUpSuccess)
 }
 
+var saveGame = function (data) {
+	var theData = JSON.parse(data)
+	var that = this
+	commandHandlers.saveGame(theData).then(function (saveSuccess) {
+		console.log(saveSuccess, 'save success')
+		that.emit('saveGame', saveSuccess)
+	}).catch(function () {
+	  //for failure
+	  that.emit('saveGame', null)
+	})
+}
+
 var connection = function (client) {
   var theData = commandHandlers.connection(client)
   client.emit('message', {message: client.id})
   //client.emit(/*clients.push(client) maybe?*/)
 }
 
-module.exports = {login, signup, scoreUpdate, answerClicked, message, connection, questionClicked}
+module.exports = {login, signup, scoreUpdate, answerClicked, message, connection, questionClicked, saveGame}

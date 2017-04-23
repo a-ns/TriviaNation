@@ -20,11 +20,13 @@ namespace GUILayer
             network.SetEndPointLocation("http://localhost:3000");
             IMainMenuNetwork mainMenuNetwork = MainMenuNetwork.Instance;
             mainMenuNetwork.setNetwork(network);
+            IGameBoardNetwork gameNetwork = GameBoardNetwork.Instance;
+            gameNetwork.setGameBoardNetwork(network);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainMenu(network, mainMenuNetwork));
-
-            Application.Run(new EditGameBoard());     // FOR TESTING GAME BOARD
+            Application.Run(new MainMenu(network, mainMenuNetwork, gameNetwork));
+            
+            //Application.Run(new EditGameBoard(gameNetwork));     // FOR TESTING GAME BOARD
         }
     }
 }
