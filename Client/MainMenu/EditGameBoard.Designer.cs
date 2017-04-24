@@ -587,6 +587,7 @@
             this.gameNameBox.Name = "gameNameBox";
             this.gameNameBox.Size = new System.Drawing.Size(774, 68);
             this.gameNameBox.TabIndex = 0;
+            this.gameNameBox.Text = "Enter the Game Name";
             this.gameNameBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel1

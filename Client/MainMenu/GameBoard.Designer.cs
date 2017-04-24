@@ -530,7 +530,7 @@
             this.title.Location = new System.Drawing.Point(181, 0);
             this.title.Name = "title";
             this.title.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.title.Size = new System.Drawing.Size(418, 74);
+            this.title.Size = new System.Drawing.Size(418, 76);
             this.title.TabIndex = 1;
             this.title.Text = "Trivia Nation";
             this.title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -538,6 +538,7 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 98.86793F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.132075F));
@@ -546,9 +547,9 @@
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.28571F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.71429F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(789, 84);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 92.07921F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.920792F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(789, 101);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // panel1
@@ -559,7 +560,7 @@
             this.panel1.Controls.Add(this.answer1);
             this.panel1.Controls.Add(this.answer0);
             this.panel1.Location = new System.Drawing.Point(833, 15);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(459, 752);
             this.panel1.TabIndex = 3;
@@ -583,7 +584,7 @@
             // answer3
             // 
             this.answer3.Location = new System.Drawing.Point(249, 569);
-            this.answer3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.answer3.Margin = new System.Windows.Forms.Padding(4);
             this.answer3.Name = "answer3";
             this.answer3.Size = new System.Drawing.Size(175, 154);
             this.answer3.TabIndex = 4;
@@ -594,7 +595,7 @@
             // answer2
             // 
             this.answer2.Location = new System.Drawing.Point(40, 569);
-            this.answer2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.answer2.Margin = new System.Windows.Forms.Padding(4);
             this.answer2.Name = "answer2";
             this.answer2.Size = new System.Drawing.Size(175, 154);
             this.answer2.TabIndex = 3;
@@ -605,7 +606,7 @@
             // answer1
             // 
             this.answer1.Location = new System.Drawing.Point(249, 407);
-            this.answer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.answer1.Margin = new System.Windows.Forms.Padding(4);
             this.answer1.Name = "answer1";
             this.answer1.Size = new System.Drawing.Size(175, 154);
             this.answer1.TabIndex = 2;
@@ -616,7 +617,7 @@
             // answer0
             // 
             this.answer0.Location = new System.Drawing.Point(40, 407);
-            this.answer0.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.answer0.Margin = new System.Windows.Forms.Padding(4);
             this.answer0.Name = "answer0";
             this.answer0.Size = new System.Drawing.Size(175, 154);
             this.answer0.TabIndex = 1;

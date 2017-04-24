@@ -19,6 +19,7 @@ namespace GUILayer
         Button CurrentQuestion, CurrentNation;
         private int currentQNum, currentNationNum;
         User user;
+        bool yourTurn, gameOver;
         Tile[] tiles;
         Team[] nations;
         private int NumberOfQuestions = 32, NumberOfAnswers = 4, NumberOfNations = 4, NumberOfUsersPerNation = 6;
@@ -28,6 +29,8 @@ namespace GUILayer
             this.user = user;
             this.gameNetwork = gameNetwork;
             this.game = game;
+            yourTurn = false;
+            gameOver = false;
             this.tiles = this.game.tiles;
             this.nations = this.game.nations;
             InitializeComponent();
@@ -401,11 +404,12 @@ namespace GUILayer
             if (this.answer0.Text == this.nation0.Text)
             {
                 if (addUserToNation(nations[0]))
+                {
                     MessageBox.Show("You have joined nation: " + this.nation0.Text);
+                }
             }
             else if (tiles[currentQNum].answers[0].correct)
                 MessageBox.Show("CORRECT!");
-
         }
 
         private void answer1_Click(object sender, EventArgs e)
@@ -441,8 +445,10 @@ namespace GUILayer
                 MessageBox.Show("CORRECT!");
         }
 
+        //Loads the selected tile to the question panel.
         private void loadSelectedTile()
         {
+            this.gameNetwork.TileClick(this.tiles[currentQNum]);
             this.questionLabel.Text = this.tiles[currentQNum].question;
             this.answer0.Text = this.tiles[currentQNum].answers[0].answer;
             this.answer1.Text = this.tiles[currentQNum].answers[1].answer;
@@ -450,6 +456,7 @@ namespace GUILayer
             this.answer3.Text = this.tiles[currentQNum].answers[3].answer;
         }
 
+        //Adds user to nation unless the nation is full.
         private bool addUserToNation(Team nation)
         {
             if (nation.users == null)
@@ -478,6 +485,7 @@ namespace GUILayer
             }
         }
 
+        //Turns the Question panel into a nation selection panel.
         private void chooseTeam()
         {
             disableBoard(true);
@@ -492,6 +500,7 @@ namespace GUILayer
             this.answer3.Text = this.nation3.Text;
         }
 
+        //Disables the entire board for when it is not the users turn.
         private void disableBoard(bool disable)
         {
             if(!disable)
@@ -508,6 +517,7 @@ namespace GUILayer
                 teams[n].Enabled = !disable;
         }
 
+        //Adds all the tiles, nations, and answers buttons to their own respective arrays
         private void setupGameBoard()
         {
             buttons[0] = tile0;
