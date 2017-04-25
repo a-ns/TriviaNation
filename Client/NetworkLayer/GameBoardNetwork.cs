@@ -33,8 +33,18 @@ namespace NetworkLayer
             this._socket = network.getSocket();
         }
 
-        public void gameBoardSetupSocket()
+        public void gameBoardSetupSocket(Action<Team> JoinedTeamCallback)
         {
+            this._socket.On("joinTeam", (data) =>
+            {
+                if (data != null)
+                {
+                    JoinedTeamCallback(JsonConvert.DeserializeObject<Team>(data.ToString()));
+                }
+                else
+                    JoinedTeamCallback(null);
+            });
+
             this._socket.On("answerClicked", (data) =>
             {
 
@@ -44,6 +54,8 @@ namespace NetworkLayer
             {
 
             });
+
+
 
             this._socket.On("scoreUpdate", (data) =>
             {

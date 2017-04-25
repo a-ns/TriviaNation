@@ -579,5 +579,23 @@ namespace GUILayer
                 chooseTeam();
             }
         }
+
+        public void InitializeCommunication()
+        {
+            this.gameNetwork.gameBoardSetupSocket(JoinedTeamCallback);
+        }
+
+        private void JoinedTeamCallback(Team teamTaken)
+        {
+            for (int i=0; i<NumberOfNations; i++)
+            {
+                if(teamTaken.name == nations[i].name)
+                {
+                    nations[i] = teamTaken;
+                    answers[i].Enabled = false;
+                }
+            }
+        }
+
     }
 }

@@ -11,7 +11,7 @@ namespace NetworkLayerInterfaces
     {
         void setGameBoardNetwork(INetwork network);
 
-        void gameBoardSetupSocket();
+        void gameBoardSetupSocket(Action<Team> JoinedTeamCallback);
 
         void TileClick(Tile tile);
 

@@ -141,8 +141,12 @@ var loadGame = function (data) {
 	})
 }
 
+var joinTeam = function (data) {
+	
+}
+
 var connection = function (client) {
   console.log(client.id, 'has connected')
 }
 
-module.exports = {login, signup, scoreUpdate, answerClicked, message, connection, questionClicked, saveGame, loadGame}
+module.exports = {login, signup, scoreUpdate, answerClicked, message, connection, questionClicked, saveGame, loadGame, joinTeam}

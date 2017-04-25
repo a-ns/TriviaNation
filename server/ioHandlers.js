@@ -79,4 +79,9 @@ var connection = function (client) {
   //client.emit(/*clients.push(client) maybe?*/)
 }
 
-module.exports = {login, signup, scoreUpdate, answerClicked, message, connection, questionClicked, saveGame, loadGame}
+var joinTeam = function (data) {
+  
+  socket.broadcast.emit('joinTeam', data)
+}
+
+module.exports = {login, signup, scoreUpdate, answerClicked, message, connection, questionClicked, saveGame, loadGame, joinTeam}
