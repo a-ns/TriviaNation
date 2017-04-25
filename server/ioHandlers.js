@@ -11,8 +11,10 @@ var answerClicked = function (data) {
 }
 
 var questionClicked = function (data) {
-  var returnData = commandHandlers.questionClicked(data)
-
+  //var returnData = commandHandlers.questionClicked(data)
+  console.log('Question Clicked')
+  this.broadcast.emit('questionClicked', data)
+  this.emit('questionClicked', data)
   //everybody.emit(returnData)
 }
 
@@ -80,8 +82,22 @@ var connection = function (client) {
 }
 
 var joinTeam = function (data) {
-  
-  socket.broadcast.emit('joinTeam', data)
+  console.log('broadcasting joinTeam')
+  this.broadcast.emit('joinTeam', data)
+  console.log('sending joinTeam back to sender')
+  this.emit('joinTeam', data) //ONLY FOR TESTING
 }
 
-module.exports = {login, signup, scoreUpdate, answerClicked, message, connection, questionClicked, saveGame, loadGame, joinTeam}
+var startGame = function(data) {
+	console.log('starting game')
+	this.broadcast.emit('startGame', data)
+	this.emit('startGame', data)
+}
+
+var yourTurn = function(data) {
+	console.log('changing turns')
+	this.broadcast.emit('yourTurn', data)
+	this.emit('yourTurn', data)
+}
+
+module.exports = {login, signup, scoreUpdate, answerClicked, message, connection, questionClicked, saveGame, loadGame, joinTeam, startGame, yourTurn}

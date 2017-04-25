@@ -117,7 +117,7 @@ namespace GUILayer
         {
             Console.WriteLine("Loading game...");
             string gameName = this.loadGameBox.Text;
-            this.gameNetwork.gameBoardSetupSocket();
+            this.gameNetwork.editGameBoardSetupSocket();
             Game loadedGame = this.gameNetwork.loadGame(gameName);
             if (loadedGame == null)
             {

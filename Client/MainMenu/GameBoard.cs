@@ -16,20 +16,22 @@ namespace GUILayer
     {
         IGameBoardNetwork gameNetwork;
         Game game;
-        Button CurrentQuestion, CurrentNation;
-        private int currentQNum, currentNationNum;
+        Button CurrentQuestion;
+        private int currentQNum, myNationNum;
         User user;
-        bool yourTurn, gameOver;
+        bool myTurn, gameOver;
         Tile[] tiles;
         Team[] nations;
-        private int NumberOfQuestions = 32, NumberOfAnswers = 4, NumberOfNations = 4, NumberOfUsersPerNation = 6;
+        private int NumberOfQuestions = 32, NumberOfAnswers = 4, NumberOfNations = 4, NumberOfUsersPerNation = 1;
+        
 
         public GameBoard(IGameBoardNetwork gameNetwork, Game game, User user)
         {
             this.user = user;
             this.gameNetwork = gameNetwork;
+            InitializeCommunication();
             this.game = game;
-            yourTurn = false;
+            myTurn = false;
             gameOver = false;
             this.tiles = this.game.tiles;
             this.nations = this.game.nations;
@@ -65,6 +67,7 @@ namespace GUILayer
                 this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile0;
             this.CurrentQuestion.BackColor = Color.Aquamarine;
+            this.gameNetwork.TileClick(tiles[currentQNum]);
             loadSelectedTile();
         }
 
@@ -75,6 +78,7 @@ namespace GUILayer
                 this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile1;
             this.CurrentQuestion.BackColor = Color.Aquamarine;
+            this.gameNetwork.TileClick(tiles[currentQNum]);
             loadSelectedTile();
         }
 
@@ -85,6 +89,7 @@ namespace GUILayer
                 this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile2;
             this.CurrentQuestion.BackColor = Color.Aquamarine;
+            this.gameNetwork.TileClick(tiles[currentQNum]);
             loadSelectedTile();
         }
 
@@ -95,6 +100,7 @@ namespace GUILayer
                 this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile3;
             this.CurrentQuestion.BackColor = Color.Aquamarine;
+            this.gameNetwork.TileClick(tiles[currentQNum]);
             loadSelectedTile();
         }
 
@@ -105,6 +111,7 @@ namespace GUILayer
                 this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile4;
             this.CurrentQuestion.BackColor = Color.Aquamarine;
+            this.gameNetwork.TileClick(tiles[currentQNum]);
             loadSelectedTile();
         }
 
@@ -115,6 +122,7 @@ namespace GUILayer
                 this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile5;
             this.CurrentQuestion.BackColor = Color.Aquamarine;
+            this.gameNetwork.TileClick(tiles[currentQNum]);
             loadSelectedTile();
         }
 
@@ -125,6 +133,7 @@ namespace GUILayer
                 this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile6;
             this.CurrentQuestion.BackColor = Color.Aquamarine;
+            this.gameNetwork.TileClick(tiles[currentQNum]);
             loadSelectedTile();
         }
 
@@ -135,6 +144,7 @@ namespace GUILayer
                 this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile7;
             this.CurrentQuestion.BackColor = Color.Aquamarine;
+            this.gameNetwork.TileClick(tiles[currentQNum]);
             loadSelectedTile();
         }
 
@@ -145,6 +155,7 @@ namespace GUILayer
                 this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile8;
             this.CurrentQuestion.BackColor = Color.Aquamarine;
+            this.gameNetwork.TileClick(tiles[currentQNum]);
             loadSelectedTile();
         }
 
@@ -155,6 +166,7 @@ namespace GUILayer
                 this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile9;
             this.CurrentQuestion.BackColor = Color.Aquamarine;
+            this.gameNetwork.TileClick(tiles[currentQNum]);
             loadSelectedTile();
         }
 
@@ -165,6 +177,7 @@ namespace GUILayer
                 this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile10;
             this.CurrentQuestion.BackColor = Color.Aquamarine;
+            this.gameNetwork.TileClick(tiles[currentQNum]);
             loadSelectedTile();
         }
 
@@ -175,6 +188,7 @@ namespace GUILayer
                 this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile11;
             this.CurrentQuestion.BackColor = Color.Aquamarine;
+            this.gameNetwork.TileClick(tiles[currentQNum]);
             loadSelectedTile();
         }
 
@@ -185,6 +199,7 @@ namespace GUILayer
                 this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile12;
             this.CurrentQuestion.BackColor = Color.Aquamarine;
+            this.gameNetwork.TileClick(tiles[currentQNum]);
             loadSelectedTile();
 
         }
@@ -196,6 +211,7 @@ namespace GUILayer
                 this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile13;
             this.CurrentQuestion.BackColor = Color.Aquamarine;
+            this.gameNetwork.TileClick(tiles[currentQNum]);
             loadSelectedTile();
 
         }
@@ -207,6 +223,7 @@ namespace GUILayer
                 this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile14;
             this.CurrentQuestion.BackColor = Color.Aquamarine;
+            this.gameNetwork.TileClick(tiles[currentQNum]);
             loadSelectedTile();
 
         }
@@ -218,6 +235,7 @@ namespace GUILayer
                 this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile15;
             this.CurrentQuestion.BackColor = Color.Aquamarine;
+            this.gameNetwork.TileClick(tiles[currentQNum]);
             loadSelectedTile();
 
         }
@@ -229,6 +247,7 @@ namespace GUILayer
                 this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile16;
             this.CurrentQuestion.BackColor = Color.Aquamarine;
+            this.gameNetwork.TileClick(tiles[currentQNum]);
             loadSelectedTile();
 
         }
@@ -240,6 +259,7 @@ namespace GUILayer
                 this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile17;
             this.CurrentQuestion.BackColor = Color.Aquamarine;
+            this.gameNetwork.TileClick(tiles[currentQNum]);
             loadSelectedTile();
 
         }
@@ -251,6 +271,7 @@ namespace GUILayer
                 this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile18;
             this.CurrentQuestion.BackColor = Color.Aquamarine;
+            this.gameNetwork.TileClick(tiles[currentQNum]);
             loadSelectedTile();
         }
 
@@ -261,6 +282,7 @@ namespace GUILayer
                 this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile19;
             this.CurrentQuestion.BackColor = Color.Aquamarine;
+            this.gameNetwork.TileClick(tiles[currentQNum]);
             loadSelectedTile();
         }
 
@@ -271,6 +293,7 @@ namespace GUILayer
                 this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile20;
             this.CurrentQuestion.BackColor = Color.Aquamarine;
+            this.gameNetwork.TileClick(tiles[currentQNum]);
             loadSelectedTile();
         }
 
@@ -281,6 +304,7 @@ namespace GUILayer
                 this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile21;
             this.CurrentQuestion.BackColor = Color.Aquamarine;
+            this.gameNetwork.TileClick(tiles[currentQNum]);
             loadSelectedTile();
         }
 
@@ -291,6 +315,7 @@ namespace GUILayer
                 this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile22;
             this.CurrentQuestion.BackColor = Color.Aquamarine;
+            this.gameNetwork.TileClick(tiles[currentQNum]);
             loadSelectedTile();
         }
 
@@ -301,6 +326,7 @@ namespace GUILayer
                 this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile23;
             this.CurrentQuestion.BackColor = Color.Aquamarine;
+            this.gameNetwork.TileClick(tiles[currentQNum]);
             loadSelectedTile();
         }
 
@@ -311,6 +337,7 @@ namespace GUILayer
                 this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile24;
             this.CurrentQuestion.BackColor = Color.Aquamarine;
+            this.gameNetwork.TileClick(tiles[currentQNum]);
             loadSelectedTile();
         }
 
@@ -321,6 +348,7 @@ namespace GUILayer
                 this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile25;
             this.CurrentQuestion.BackColor = Color.Aquamarine;
+            this.gameNetwork.TileClick(tiles[currentQNum]);
             loadSelectedTile();
         }
 
@@ -331,6 +359,7 @@ namespace GUILayer
                 this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile26;
             this.CurrentQuestion.BackColor = Color.Aquamarine;
+            this.gameNetwork.TileClick(tiles[currentQNum]);
             loadSelectedTile();
         }
 
@@ -341,6 +370,7 @@ namespace GUILayer
                 this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile27;
             this.CurrentQuestion.BackColor = Color.Aquamarine;
+            this.gameNetwork.TileClick(tiles[currentQNum]);
             loadSelectedTile();
         }
 
@@ -351,6 +381,7 @@ namespace GUILayer
                 this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile28;
             this.CurrentQuestion.BackColor = Color.Aquamarine;
+            this.gameNetwork.TileClick(tiles[currentQNum]);
             loadSelectedTile();
         }
 
@@ -361,6 +392,7 @@ namespace GUILayer
                 this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile29;
             this.CurrentQuestion.BackColor = Color.Aquamarine;
+            this.gameNetwork.TileClick(tiles[currentQNum]);
             loadSelectedTile();
         }
 
@@ -371,6 +403,7 @@ namespace GUILayer
                 this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile30;
             this.CurrentQuestion.BackColor = Color.Aquamarine;
+            this.gameNetwork.TileClick(tiles[currentQNum]);
             loadSelectedTile();
         }
 
@@ -381,6 +414,7 @@ namespace GUILayer
                 this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile31;
             this.CurrentQuestion.BackColor = Color.Aquamarine;
+            this.gameNetwork.TileClick(tiles[currentQNum]);
             loadSelectedTile();
         }
 
@@ -405,11 +439,29 @@ namespace GUILayer
             {
                 if (addUserToNation(nations[0]))
                 {
+                    myTurn = true;
+                    myNationNum = 0;
+                    disableAnswers(true);
+                    this.gameNetwork.chooseTeam(nations[0]);
+                    startGame();
                     MessageBox.Show("You have joined nation: " + this.nation0.Text);
                 }
             }
             else if (tiles[currentQNum].answers[0].correct)
-                MessageBox.Show("CORRECT!");
+            {
+                myTurn = false;
+                disableAnswers(true);
+                changeTurn();
+                CurrentQuestion.BackColor = Color.Transparent;
+                //MessageBox.Show("CORRECT!");
+            }
+            else if(!tiles[currentQNum].answers[0].correct)
+            {
+                myTurn = false;
+                disableAnswers(true);
+                CurrentQuestion.BackColor = Color.Transparent;
+                changeTurn();
+            }
         }
 
         private void answer1_Click(object sender, EventArgs e)
@@ -417,10 +469,29 @@ namespace GUILayer
             if (this.answer1.Text == this.nation1.Text)
             {
                 if (addUserToNation(nations[1]))
+                {
+                    myNationNum = 1;
+                    disableAnswers(true);
+                    this.gameNetwork.chooseTeam(nations[1]);
+                    startGame();
                     MessageBox.Show("You have joined nation: " + this.nation1.Text);
+                }
             }
             else if (tiles[currentQNum].answers[1].correct)
-                MessageBox.Show("CORRECT!");
+            {
+                myTurn = false;
+                disableAnswers(true);
+                CurrentQuestion.BackColor = Color.Transparent;
+                changeTurn();
+                //MessageBox.Show("CORRECT!");
+            }
+            else if (!tiles[currentQNum].answers[1].correct)
+            {
+                myTurn = false;
+                disableAnswers(true);
+                CurrentQuestion.BackColor = Color.Transparent;
+                changeTurn();
+            }
         }
 
         private void answer2_Click(object sender, EventArgs e)
@@ -428,10 +499,29 @@ namespace GUILayer
             if (this.answer2.Text == this.nation2.Text)
             {
                 if (addUserToNation(nations[2]))
+                {
+                    myNationNum = 2;
+                    disableAnswers(true);
+                    this.gameNetwork.chooseTeam(nations[2]);
+                    startGame();
                     MessageBox.Show("You have joined nation: " + this.nation2.Text);
+                }
             }
             else if (tiles[currentQNum].answers[2].correct)
-                MessageBox.Show("CORRECT!");
+            {
+                myTurn = false;
+                disableAnswers(true);
+                CurrentQuestion.BackColor = Color.Transparent;
+                changeTurn();
+                //MessageBox.Show("CORRECT!");
+            }
+            else if (!tiles[currentQNum].answers[2].correct)
+            {
+                myTurn = false;
+                disableAnswers(true);
+                CurrentQuestion.BackColor = Color.Transparent;
+                changeTurn();
+            }
         }
 
         private void answer3_Click(object sender, EventArgs e)
@@ -439,16 +529,47 @@ namespace GUILayer
             if (this.answer3.Text == this.nation3.Text)
             {
                 if (addUserToNation(nations[3]))
+                {
+                    myNationNum = 3;
+                    disableAnswers(true);
+                    this.gameNetwork.chooseTeam(nations[3]);
+                    startGame();
                     MessageBox.Show("You have joined nation: " + this.nation3.Text);
+                }
             }
             else if (tiles[currentQNum].answers[3].correct)
-                MessageBox.Show("CORRECT!");
+            {
+                myTurn = false;
+                disableAnswers(true);
+                CurrentQuestion.BackColor = Color.Transparent;
+                changeTurn();
+                //MessageBox.Show("CORRECT!");
+            }
+            else if (!tiles[currentQNum].answers[3].correct)
+            {
+                myTurn = false;
+                disableAnswers(true);
+                CurrentQuestion.BackColor = Color.Transparent;
+                changeTurn();
+            }
         }
 
         //Loads the selected tile to the question panel.
         private void loadSelectedTile()
         {
-            this.gameNetwork.TileClick(this.tiles[currentQNum]);
+            if (InvokeRequired)
+            {
+                Console.WriteLine("Repeating?");
+                Invoke(new Action(loadSelectedTile));
+                return;
+            }
+            if (myTurn)
+                disableAnswers(false);
+            if(CurrentQuestion != null)
+                CurrentQuestion.BackColor = Color.Transparent;
+            CurrentQuestion = buttons[currentQNum];
+            buttons[currentQNum].BackColor = Color.Aquamarine;
+            //this.gameNetwork.TileClick(this.tiles[currentQNum]);
             this.questionLabel.Text = this.tiles[currentQNum].question;
             this.answer0.Text = this.tiles[currentQNum].answers[0].answer;
             this.answer1.Text = this.tiles[currentQNum].answers[1].answer;
@@ -463,14 +584,15 @@ namespace GUILayer
             {
                 nation.users = new User[NumberOfUsersPerNation];
                 nation.users[0] = this.user;
-                disableBoard(false);
                 return true;
             }
             else
             {
                 int i = 0;
-                while (nation.users[i] != null)
-                    i++;
+                while (i<NumberOfUsersPerNation)
+                    if (nation.users[i] != null)
+                        i++;
+
                 if (i == NumberOfUsersPerNation)
                 {
                     MessageBox.Show("Sorry this nation is full, choose another nation");
@@ -503,18 +625,80 @@ namespace GUILayer
         //Disables the entire board for when it is not the users turn.
         private void disableBoard(bool disable)
         {
-            if(!disable)
+            if (InvokeRequired)
             {
-                for(int a=0; a<NumberOfAnswers; a++)
+                Invoke(new Action<bool>(disableBoard), myTurn);
+                return;
+            }
+            
+            if (myTurn)
+            {
+                for (int a = 0; a < NumberOfAnswers; a++)
                 {
                     answers[a].BackColor = Color.Transparent;
-                    answers[a].Text = "";
+                    answers[a].Text = " ";
                 }
             }
             for (int i = 0; i < NumberOfQuestions; i++)
-                buttons[i].Enabled = !disable;
+                buttons[i].Enabled = myTurn;
             for (int n = 0; n < NumberOfNations; n++)
-                teams[n].Enabled = !disable;
+                teams[n].Enabled = myTurn;
+        }
+
+        /*private void disableBoard(bool disable)
+        {
+            if (answers[0].InvokeRequired)
+            {
+                Console.WriteLine("disable board background");
+                this.backgroundWorker.RunWorkerAsync();
+            }
+            else if (!disable)
+            {
+                
+                for (int a = 0; a < NumberOfAnswers; a++)
+                {
+                    answers[a].BackColor = Color.Transparent;
+                    answers[a].Text = " ";
+                }
+            }
+            if (!answers[0].InvokeRequired)
+            {
+                Console.WriteLine("disable not background");
+                for (int i = 0; i < NumberOfQuestions; i++)
+                    buttons[i].Enabled = !disable;
+                for (int n = 0; n < NumberOfNations; n++)
+                    teams[n].Enabled = !disable;
+            //}
+        }*/
+
+        public void disableAnswers(bool active)
+        {
+            if (InvokeRequired)
+            {
+                Invoke(new Action<bool>(disableAnswers), active);
+                return;
+            }
+            for (int i = 0; i < NumberOfAnswers; i++)   //Uncomment when testing on multiple machines
+                answers[i].Enabled = !active;
+        }
+
+        public void startGame()
+        {
+            bool start = false;
+            for (int i = 0; i < NumberOfNations; i++)
+            {
+                if (nations[i].users != null)
+                {
+                    if (i == NumberOfNations - 1)
+                        start = true;
+                }
+                else break;
+            }
+            if (start)
+            {
+                disableBoard(myTurn);
+                this.gameNetwork.beginGame();
+            }
         }
 
         //Adds all the tiles, nations, and answers buttons to their own respective arrays
@@ -580,10 +764,44 @@ namespace GUILayer
             }
         }
 
+        private void changeTurn()
+        {
+            if (myNationNum == NumberOfNations - 1)
+                this.gameNetwork.yourTurn(nations[0]);
+            else
+                this.gameNetwork.yourTurn(nations[myNationNum+1]);
+        }
+
         public void InitializeCommunication()
         {
-            this.gameNetwork.gameBoardSetupSocket(JoinedTeamCallback);
+            this.gameNetwork.gameBoardSetupSocket(JoinedTeamCallback, StartGameCallback, TileClickCallback, YourTurnCallback);
         }
+
+        private void YourTurnCallback(Team thisTeamsTurn)
+        {
+            Console.WriteLine("Turn Callback");
+            if (nations[myNationNum].name == thisTeamsTurn.name)
+            {
+                Console.WriteLine("My Turn: " + nations[myNationNum].name);
+                myTurn = true;
+            }
+            disableBoard(myTurn);
+        }
+
+        private void TileClickCallback(Tile tileClicked)
+        {
+            this.currentQNum = tileClicked.questionNum;
+            Console.WriteLine("Tile revieved: " + currentQNum);
+            loadSelectedTile();
+        }
+
+        private void StartGameCallback(bool result)
+        {
+            Console.WriteLine("Start Game Callback");
+            //MessageBox.Show("Game is Starting");
+            disableBoard(myTurn);
+        }
+
 
         private void JoinedTeamCallback(Team teamTaken)
         {
@@ -591,8 +809,8 @@ namespace GUILayer
             {
                 if(teamTaken.name == nations[i].name)
                 {
+                    Console.WriteLine("Someone Joined!!!!!!");
                     nations[i] = teamTaken;
-                    answers[i].Enabled = false;
                 }
             }
         }

@@ -1,4 +1,6 @@
-﻿namespace GUILayer
+﻿
+
+namespace GUILayer
 {
     partial class GameBoard
     {
@@ -121,7 +123,7 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(795, 654);
             this.flowLayoutPanel1.TabIndex = 0;
-            // 
+           // 
             // nation0
             // 
             this.nation0.BackColor = System.Drawing.Color.OrangeRed;

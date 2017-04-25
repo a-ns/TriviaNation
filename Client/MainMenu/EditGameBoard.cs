@@ -25,7 +25,7 @@ namespace GUILayer
         public EditGameBoard(IGameBoardNetwork gameNetwork)
         {
             this.gameNetwork = gameNetwork;
-            this.gameNetwork.gameBoardSetupSocket();
+            this.gameNetwork.editGameBoardSetupSocket();
             this.game = new Game();
             this.tiles = new Tile[NumberOfQuestions];
             this.nations = new Team[NumberOfNations];
