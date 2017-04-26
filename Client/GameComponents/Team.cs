@@ -12,6 +12,8 @@ namespace GameComponents
 
         public string color { get; set; }
 
+        public int score { get; set; }
+
         public User[] users { get; set; }
 
         public Tile[] tiles { get; set; }

@@ -75,6 +75,10 @@ namespace GUILayer
             this.answer2 = new System.Windows.Forms.Button();
             this.answer1 = new System.Windows.Forms.Button();
             this.answer0 = new System.Windows.Forms.Button();
+            this.nation0ScoreLabel = new System.Windows.Forms.Label();
+            this.nation1ScoreLabel = new System.Windows.Forms.Label();
+            this.nation2ScoreLabel = new System.Windows.Forms.Label();
+            this.nation3ScoreLabel = new System.Windows.Forms.Label();
             this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -123,7 +127,7 @@ namespace GUILayer
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(795, 654);
             this.flowLayoutPanel1.TabIndex = 0;
-           // 
+            // 
             // nation0
             // 
             this.nation0.BackColor = System.Drawing.Color.OrangeRed;
@@ -556,6 +560,10 @@ namespace GUILayer
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.nation3ScoreLabel);
+            this.panel1.Controls.Add(this.nation2ScoreLabel);
+            this.panel1.Controls.Add(this.nation1ScoreLabel);
+            this.panel1.Controls.Add(this.nation0ScoreLabel);
             this.panel1.Controls.Add(this.questionLabel);
             this.panel1.Controls.Add(this.answer3);
             this.panel1.Controls.Add(this.answer2);
@@ -627,6 +635,47 @@ namespace GUILayer
             this.answer0.UseVisualStyleBackColor = true;
             this.answer0.Click += new System.EventHandler(this.answer0_Click);
             // 
+            // nation0ScoreLabel
+            // 
+            this.nation0ScoreLabel.AutoSize = true;
+            this.nation0ScoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nation0ScoreLabel.Location = new System.Drawing.Point(3, 195);
+            this.nation0ScoreLabel.Name = "nation0ScoreLabel";
+            this.nation0ScoreLabel.Size = new System.Drawing.Size(268, 39);
+            this.nation0ScoreLabel.TabIndex = 5;
+            this.nation0ScoreLabel.Text = "nation0: (score)";
+            // 
+            // nation1ScoreLabel
+            // 
+            this.nation1ScoreLabel.AutoSize = true;
+            this.nation1ScoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nation1ScoreLabel.Location = new System.Drawing.Point(3, 238);
+            this.nation1ScoreLabel.Name = "nation1ScoreLabel";
+            this.nation1ScoreLabel.Size = new System.Drawing.Size(268, 39);
+            this.nation1ScoreLabel.TabIndex = 6;
+            this.nation1ScoreLabel.Text = "nation1: (score)";
+            this.nation1ScoreLabel.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // nation2ScoreLabel
+            // 
+            this.nation2ScoreLabel.AutoSize = true;
+            this.nation2ScoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nation2ScoreLabel.Location = new System.Drawing.Point(3, 277);
+            this.nation2ScoreLabel.Name = "nation2ScoreLabel";
+            this.nation2ScoreLabel.Size = new System.Drawing.Size(268, 39);
+            this.nation2ScoreLabel.TabIndex = 7;
+            this.nation2ScoreLabel.Text = "nation2: (score)";
+            // 
+            // nation3ScoreLabel
+            // 
+            this.nation3ScoreLabel.AutoSize = true;
+            this.nation3ScoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nation3ScoreLabel.Location = new System.Drawing.Point(3, 316);
+            this.nation3ScoreLabel.Name = "nation3ScoreLabel";
+            this.nation3ScoreLabel.Size = new System.Drawing.Size(268, 39);
+            this.nation3ScoreLabel.TabIndex = 8;
+            this.nation3ScoreLabel.Text = "nation3: (score)";
+            // 
             // GameBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -655,6 +704,7 @@ namespace GUILayer
         private System.Windows.Forms.Button[] buttons = new System.Windows.Forms.Button[32];
         private System.Windows.Forms.Button[] teams = new System.Windows.Forms.Button[4];
         private System.Windows.Forms.Button[] answers = new System.Windows.Forms.Button[4];
+        private System.Windows.Forms.Label[] teamScores = new System.Windows.Forms.Label[4];
         private System.Windows.Forms.Button nation0; // Nation 0
         private System.Windows.Forms.Button tile0;
         private System.Windows.Forms.Button tile1;
@@ -699,5 +749,9 @@ namespace GUILayer
         private System.Windows.Forms.Button answer1;
         private System.Windows.Forms.Button answer0;
         private System.Windows.Forms.Label questionLabel;
+        private System.Windows.Forms.Label nation3ScoreLabel;
+        private System.Windows.Forms.Label nation2ScoreLabel;
+        private System.Windows.Forms.Label nation1ScoreLabel;
+        private System.Windows.Forms.Label nation0ScoreLabel;
     }
 }

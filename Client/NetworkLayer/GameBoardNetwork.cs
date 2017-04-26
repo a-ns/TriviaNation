@@ -33,7 +33,7 @@ namespace NetworkLayer
             this._socket = network.getSocket();
         }
 
-        public void gameBoardSetupSocket(Action<Team> JoinedTeamCallback, Action<bool> StartGameCallback, Action<Tile> TileClickCallback, Action<Team> YourTurnCallback)
+        public void gameBoardSetupSocket(Action<Team> JoinedTeamCallback, Action<bool> StartGameCallback, Action<Tile> TileClickCallback, Action<Team> YourTurnCallback, Action<Team> ScoreUpdateCallback)
         {
             this._socket.On("joinTeam", (data) =>
             {
@@ -87,7 +87,10 @@ namespace NetworkLayer
 
             this._socket.On("scoreUpdate", (data) =>
             {
-
+                if(data != null)
+                {
+                    ScoreUpdateCallback(JsonConvert.DeserializeObject<Team>(data.ToString()));
+                }
             });
         }
 
@@ -187,6 +190,11 @@ namespace NetworkLayer
         public void yourTurn(Team yourTurn)
         {
             this._socket.Emit("yourTurn", JsonConvert.SerializeObject(yourTurn));
+        }
+
+        public void scoreUpdate(Team updatedScore)
+        {
+            this._socket.Emit("scoreUpdate", JsonConvert.SerializeObject(updatedScore));
         }
 
         private Socket _socket;

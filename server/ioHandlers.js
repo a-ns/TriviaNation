@@ -1,7 +1,8 @@
 var commandHandlers = require('./commandHandlers.js')
 var Promise = require('bluebird')
 var scoreUpdate = function (data) {
-  var theData = commandHandlers.scoreUpdate(data)
+  this.broadcast.emit('scoreUpdate', data)
+  this.emit('scoreUpdate', data)
   //emit theData
 }
 

@@ -11,7 +11,7 @@ namespace NetworkLayerInterfaces
     {
         void setGameBoardNetwork(INetwork network);
 
-        void gameBoardSetupSocket(Action<Team> JoinedTeamCallback, Action<bool> StartGameCallback, Action<Tile> TileClickCallback, Action<Team> YourTurnCallback);
+        void gameBoardSetupSocket(Action<Team> JoinedTeamCallback, Action<bool> StartGameCallback, Action<Tile> TileClickCallback, Action<Team> YourTurnCallback, Action<Team> ScoreUpdateCallback);
 
         void editGameBoardSetupSocket();
 
@@ -28,5 +28,7 @@ namespace NetworkLayerInterfaces
         void beginGame();
 
         void yourTurn(Team yourTurn);
+
+        void scoreUpdate(Team updatedScore);
     }
 }

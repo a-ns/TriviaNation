@@ -17,12 +17,13 @@ namespace GUILayer
         IGameBoardNetwork gameNetwork;
         Game game;
         Button CurrentQuestion;
-        private int currentQNum, myNationNum;
+        private int currentQNum, myNationNum, TURN;
         User user;
-        bool myTurn, gameOver;
+        bool myTurn;
         Tile[] tiles;
+        Tile[] lostTiles;
         Team[] nations;
-        private int NumberOfQuestions = 32, NumberOfAnswers = 4, NumberOfNations = 4, NumberOfUsersPerNation = 1;
+        private int NumberOfQuestions = 32, NumberOfAnswers = 4, NumberOfNations = 4, NumberOfUsersPerNation = 1, WinningScore = 8;
         
 
         public GameBoard(IGameBoardNetwork gameNetwork, Game game, User user)
@@ -32,7 +33,8 @@ namespace GUILayer
             InitializeCommunication();
             this.game = game;
             myTurn = false;
-            gameOver = false;
+            TURN = 0;
+            this.lostTiles = new Tile[NumberOfQuestions];
             this.tiles = this.game.tiles;
             this.nations = this.game.nations;
             InitializeComponent();
@@ -63,143 +65,130 @@ namespace GUILayer
         private void tile0_Click(object sender, EventArgs e)
         {
             this.currentQNum = 0;
-            if (CurrentQuestion != null)
-                this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile0;
-            this.CurrentQuestion.BackColor = Color.Aquamarine;
+            buttons[currentQNum].BackColor = Color.Aquamarine;
             this.gameNetwork.TileClick(tiles[currentQNum]);
+            disableBoard(false);
             loadSelectedTile();
         }
 
         private void tile1_Click(object sender, EventArgs e)
         {
             this.currentQNum = 1;
-            if (CurrentQuestion != null)
-                this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile1;
-            this.CurrentQuestion.BackColor = Color.Aquamarine;
+            buttons[currentQNum].BackColor = Color.Aquamarine;
             this.gameNetwork.TileClick(tiles[currentQNum]);
+            disableBoard(false);
             loadSelectedTile();
         }
 
         private void tile2_Click(object sender, EventArgs e)
         {
             this.currentQNum = 2;
-            if (CurrentQuestion != null)
-                this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile2;
-            this.CurrentQuestion.BackColor = Color.Aquamarine;
+            buttons[currentQNum].BackColor = Color.Aquamarine;
             this.gameNetwork.TileClick(tiles[currentQNum]);
+            disableBoard(false);
             loadSelectedTile();
         }
 
         private void tile3_Click(object sender, EventArgs e)
         {
             this.currentQNum = 3;
-            if (CurrentQuestion != null)
-                this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile3;
-            this.CurrentQuestion.BackColor = Color.Aquamarine;
+            buttons[currentQNum].BackColor = Color.Aquamarine;
             this.gameNetwork.TileClick(tiles[currentQNum]);
+            disableBoard(false);
             loadSelectedTile();
         }
 
         private void tile4_Click(object sender, EventArgs e)
         {
             this.currentQNum = 4;
-            if (CurrentQuestion != null)
-                this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile4;
-            this.CurrentQuestion.BackColor = Color.Aquamarine;
+            buttons[currentQNum].BackColor = Color.Aquamarine;
             this.gameNetwork.TileClick(tiles[currentQNum]);
+            disableBoard(false);
             loadSelectedTile();
         }
 
         private void tile5_Click(object sender, EventArgs e)
         {
             this.currentQNum = 5;
-            if (CurrentQuestion != null)
-                this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile5;
-            this.CurrentQuestion.BackColor = Color.Aquamarine;
+            buttons[currentQNum].BackColor = Color.Aquamarine;
             this.gameNetwork.TileClick(tiles[currentQNum]);
+            disableBoard(false);
             loadSelectedTile();
         }
 
         private void tile6_Click(object sender, EventArgs e)
         {
             this.currentQNum = 6;
-            if (CurrentQuestion != null)
-                this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile6;
-            this.CurrentQuestion.BackColor = Color.Aquamarine;
+            buttons[currentQNum].BackColor = Color.Aquamarine;
             this.gameNetwork.TileClick(tiles[currentQNum]);
+            disableBoard(false);
             loadSelectedTile();
         }
 
         private void tile7_Click(object sender, EventArgs e)
         {
             this.currentQNum = 7;
-            if (CurrentQuestion != null)
-                this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile7;
-            this.CurrentQuestion.BackColor = Color.Aquamarine;
+            buttons[currentQNum].BackColor = Color.Aquamarine;
             this.gameNetwork.TileClick(tiles[currentQNum]);
+            disableBoard(false);
             loadSelectedTile();
         }
 
         private void tile8_Click(object sender, EventArgs e)
         {
             this.currentQNum = 8;
-            if (CurrentQuestion != null)
-                this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile8;
-            this.CurrentQuestion.BackColor = Color.Aquamarine;
+            buttons[currentQNum].BackColor = Color.Aquamarine;
             this.gameNetwork.TileClick(tiles[currentQNum]);
+            disableBoard(false);
             loadSelectedTile();
         }
 
         private void tile9_Click(object sender, EventArgs e)
         {
             this.currentQNum = 9;
-            if (CurrentQuestion != null)
-                this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile9;
-            this.CurrentQuestion.BackColor = Color.Aquamarine;
+            buttons[currentQNum].BackColor = Color.Aquamarine;
             this.gameNetwork.TileClick(tiles[currentQNum]);
+            disableBoard(false);
             loadSelectedTile();
         }
 
         private void tile10_Click(object sender, EventArgs e)
         {
             this.currentQNum = 10;
-            if (CurrentQuestion != null)
-                this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile10;
-            this.CurrentQuestion.BackColor = Color.Aquamarine;
+            buttons[currentQNum].BackColor = Color.Aquamarine;
             this.gameNetwork.TileClick(tiles[currentQNum]);
+            disableBoard(false);
             loadSelectedTile();
         }
 
         private void tile11_Click(object sender, EventArgs e)
         {
             this.currentQNum = 11;
-            if (CurrentQuestion != null)
-                this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile11;
-            this.CurrentQuestion.BackColor = Color.Aquamarine;
+            buttons[currentQNum].BackColor = Color.Aquamarine;
             this.gameNetwork.TileClick(tiles[currentQNum]);
+            disableBoard(false);
             loadSelectedTile();
         }
 
         private void tile12_Click(object sender, EventArgs e)
         {
             this.currentQNum = 12;
-            if (CurrentQuestion != null)
-                this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile12;
-            this.CurrentQuestion.BackColor = Color.Aquamarine;
+            buttons[currentQNum].BackColor = Color.Aquamarine;
             this.gameNetwork.TileClick(tiles[currentQNum]);
+            disableBoard(false);
             loadSelectedTile();
 
         }
@@ -207,11 +196,10 @@ namespace GUILayer
         private void tile13_Click(object sender, EventArgs e)
         {
             this.currentQNum = 13;
-            if (CurrentQuestion != null)
-                this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile13;
-            this.CurrentQuestion.BackColor = Color.Aquamarine;
+            buttons[currentQNum].BackColor = Color.Aquamarine;
             this.gameNetwork.TileClick(tiles[currentQNum]);
+            disableBoard(false);
             loadSelectedTile();
 
         }
@@ -219,11 +207,10 @@ namespace GUILayer
         private void tile14_Click(object sender, EventArgs e)
         {
             this.currentQNum = 14;
-            if (CurrentQuestion != null)
-                this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile14;
-            this.CurrentQuestion.BackColor = Color.Aquamarine;
+            buttons[currentQNum].BackColor = Color.Aquamarine;
             this.gameNetwork.TileClick(tiles[currentQNum]);
+            disableBoard(false);
             loadSelectedTile();
 
         }
@@ -231,11 +218,10 @@ namespace GUILayer
         private void tile15_Click(object sender, EventArgs e)
         {
             this.currentQNum = 15;
-            if (CurrentQuestion != null)
-                this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile15;
-            this.CurrentQuestion.BackColor = Color.Aquamarine;
+            buttons[currentQNum].BackColor = Color.Aquamarine;
             this.gameNetwork.TileClick(tiles[currentQNum]);
+            disableBoard(false);
             loadSelectedTile();
 
         }
@@ -243,11 +229,10 @@ namespace GUILayer
         private void tile16_Click(object sender, EventArgs e)
         {
             this.currentQNum = 16;
-            if (CurrentQuestion != null)
-                this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile16;
-            this.CurrentQuestion.BackColor = Color.Aquamarine;
+            buttons[currentQNum].BackColor = Color.Aquamarine;
             this.gameNetwork.TileClick(tiles[currentQNum]);
+            disableBoard(false);
             loadSelectedTile();
 
         }
@@ -255,11 +240,10 @@ namespace GUILayer
         private void tile17_Click(object sender, EventArgs e)
         {
             this.currentQNum = 17;
-            if (CurrentQuestion != null)
-                this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile17;
-            this.CurrentQuestion.BackColor = Color.Aquamarine;
+            buttons[currentQNum].BackColor = Color.Aquamarine;
             this.gameNetwork.TileClick(tiles[currentQNum]);
+            disableBoard(false);
             loadSelectedTile();
 
         }
@@ -267,154 +251,140 @@ namespace GUILayer
         private void tile18_Click(object sender, EventArgs e)
         {
             this.currentQNum = 18;
-            if (CurrentQuestion != null)
-                this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile18;
-            this.CurrentQuestion.BackColor = Color.Aquamarine;
+            buttons[currentQNum].BackColor = Color.Aquamarine;
             this.gameNetwork.TileClick(tiles[currentQNum]);
+            disableBoard(false);
             loadSelectedTile();
         }
 
         private void tile19_Click(object sender, EventArgs e)
         {
             this.currentQNum = 19;
-            if (CurrentQuestion != null)
-                this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile19;
-            this.CurrentQuestion.BackColor = Color.Aquamarine;
+            buttons[currentQNum].BackColor = Color.Aquamarine;
             this.gameNetwork.TileClick(tiles[currentQNum]);
+            disableBoard(false);
             loadSelectedTile();
         }
 
         private void tile20_Click(object sender, EventArgs e)
         {
             this.currentQNum = 20;
-            if (CurrentQuestion != null)
-                this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile20;
-            this.CurrentQuestion.BackColor = Color.Aquamarine;
+            buttons[currentQNum].BackColor = Color.Aquamarine;
             this.gameNetwork.TileClick(tiles[currentQNum]);
+            disableBoard(false);
             loadSelectedTile();
         }
 
         private void tile21_Click(object sender, EventArgs e)
         {
             this.currentQNum = 21;
-            if (CurrentQuestion != null)
-                this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile21;
-            this.CurrentQuestion.BackColor = Color.Aquamarine;
+            buttons[currentQNum].BackColor = Color.Aquamarine;
             this.gameNetwork.TileClick(tiles[currentQNum]);
+            disableBoard(false);
             loadSelectedTile();
         }
 
         private void tile22_Click(object sender, EventArgs e)
         {
             this.currentQNum = 22;
-            if (CurrentQuestion != null)
-                this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile22;
-            this.CurrentQuestion.BackColor = Color.Aquamarine;
+            buttons[currentQNum].BackColor = Color.Aquamarine;
             this.gameNetwork.TileClick(tiles[currentQNum]);
+            disableBoard(false);
             loadSelectedTile();
         }
 
         private void tile23_Click(object sender, EventArgs e)
         {
             this.currentQNum = 23;
-            if (CurrentQuestion != null)
-                this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile23;
-            this.CurrentQuestion.BackColor = Color.Aquamarine;
+            buttons[currentQNum].BackColor = Color.Aquamarine;
             this.gameNetwork.TileClick(tiles[currentQNum]);
+            disableBoard(false);
             loadSelectedTile();
         }
 
         private void tile24_Click(object sender, EventArgs e)
         {
             this.currentQNum = 24;
-            if (CurrentQuestion != null)
-                this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile24;
-            this.CurrentQuestion.BackColor = Color.Aquamarine;
+            buttons[currentQNum].BackColor = Color.Aquamarine;
             this.gameNetwork.TileClick(tiles[currentQNum]);
+            disableBoard(false);
             loadSelectedTile();
         }
 
         private void tile25_Click(object sender, EventArgs e)
         {
             this.currentQNum = 25;
-            if (CurrentQuestion != null)
-                this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile25;
-            this.CurrentQuestion.BackColor = Color.Aquamarine;
+            buttons[currentQNum].BackColor = Color.Aquamarine;
             this.gameNetwork.TileClick(tiles[currentQNum]);
+            disableBoard(false);
             loadSelectedTile();
         }
 
         private void tile26_Click(object sender, EventArgs e)
         {
             this.currentQNum = 26;
-            if (CurrentQuestion != null)
-                this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile26;
-            this.CurrentQuestion.BackColor = Color.Aquamarine;
+            buttons[currentQNum].BackColor = Color.Aquamarine;
             this.gameNetwork.TileClick(tiles[currentQNum]);
+            disableBoard(false);
             loadSelectedTile();
         }
 
         private void tile27_Click(object sender, EventArgs e)
         {
             this.currentQNum = 27;
-            if (CurrentQuestion != null)
-                this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile27;
-            this.CurrentQuestion.BackColor = Color.Aquamarine;
+            buttons[currentQNum].BackColor = Color.Aquamarine;
             this.gameNetwork.TileClick(tiles[currentQNum]);
+            disableBoard(false);
             loadSelectedTile();
         }
 
         private void tile28_Click(object sender, EventArgs e)
         {
             this.currentQNum = 28;
-            if (CurrentQuestion != null)
-                this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile28;
-            this.CurrentQuestion.BackColor = Color.Aquamarine;
+            buttons[currentQNum].BackColor = Color.Aquamarine;
             this.gameNetwork.TileClick(tiles[currentQNum]);
+            disableBoard(false);
             loadSelectedTile();
         }
 
         private void tile29_Click(object sender, EventArgs e)
         {
             this.currentQNum = 29;
-            if (CurrentQuestion != null)
-                this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile29;
-            this.CurrentQuestion.BackColor = Color.Aquamarine;
+            buttons[currentQNum].BackColor = Color.Aquamarine;
             this.gameNetwork.TileClick(tiles[currentQNum]);
+            disableBoard(false);
             loadSelectedTile();
         }
 
         private void tile30_Click(object sender, EventArgs e)
         {
             this.currentQNum = 30;
-            if (CurrentQuestion != null)
-                this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile30;
-            this.CurrentQuestion.BackColor = Color.Aquamarine;
+            buttons[currentQNum].BackColor = Color.Aquamarine;
             this.gameNetwork.TileClick(tiles[currentQNum]);
+            disableBoard(false);
             loadSelectedTile();
         }
 
         private void tile31_Click(object sender, EventArgs e)
         {
             this.currentQNum = 31;
-            if (CurrentQuestion != null)
-                this.CurrentQuestion.BackColor = Color.Transparent;
             this.CurrentQuestion = this.tile31;
-            this.CurrentQuestion.BackColor = Color.Aquamarine;
+            buttons[currentQNum].BackColor = Color.Aquamarine;
             this.gameNetwork.TileClick(tiles[currentQNum]);
+            disableBoard(false);
             loadSelectedTile();
         }
 
@@ -450,16 +420,22 @@ namespace GUILayer
             else if (tiles[currentQNum].answers[0].correct)
             {
                 myTurn = false;
+                addTileToNation(tiles[currentQNum]);
+                Team temp = nations[myNationNum];
+                temp.score = nations[myNationNum].score + 1;
+                this.gameNetwork.scoreUpdate(temp);
                 disableAnswers(true);
                 changeTurn();
-                CurrentQuestion.BackColor = Color.Transparent;
-                //MessageBox.Show("CORRECT!");
+                CurrentQuestion.BackColor = teams[myNationNum].BackColor;
+                MessageBox.Show("CORRECT!");
             }
             else if(!tiles[currentQNum].answers[0].correct)
             {
                 myTurn = false;
+                addDisabledTile(tiles[currentQNum]);
+                this.gameNetwork.scoreUpdate(nations[myNationNum]);
                 disableAnswers(true);
-                CurrentQuestion.BackColor = Color.Transparent;
+                CurrentQuestion.BackColor = Color.Black;
                 changeTurn();
             }
         }
@@ -480,16 +456,22 @@ namespace GUILayer
             else if (tiles[currentQNum].answers[1].correct)
             {
                 myTurn = false;
+                addTileToNation(tiles[currentQNum]);
+                Team temp = nations[myNationNum];
+                temp.score = nations[myNationNum].score + 1;
+                this.gameNetwork.scoreUpdate(temp);
                 disableAnswers(true);
-                CurrentQuestion.BackColor = Color.Transparent;
+                CurrentQuestion.BackColor = teams[myNationNum].BackColor;
                 changeTurn();
-                //MessageBox.Show("CORRECT!");
+                MessageBox.Show("CORRECT!");
             }
             else if (!tiles[currentQNum].answers[1].correct)
             {
                 myTurn = false;
+                addDisabledTile(tiles[currentQNum]);
+                this.gameNetwork.scoreUpdate(nations[myNationNum]);
                 disableAnswers(true);
-                CurrentQuestion.BackColor = Color.Transparent;
+                CurrentQuestion.BackColor = Color.Black;
                 changeTurn();
             }
         }
@@ -510,16 +492,22 @@ namespace GUILayer
             else if (tiles[currentQNum].answers[2].correct)
             {
                 myTurn = false;
+                addTileToNation(tiles[currentQNum]);
+                Team temp = nations[myNationNum];
+                temp.score = nations[myNationNum].score + 1;
+                this.gameNetwork.scoreUpdate(temp);
                 disableAnswers(true);
-                CurrentQuestion.BackColor = Color.Transparent;
+                CurrentQuestion.BackColor = teams[myNationNum].BackColor;
                 changeTurn();
-                //MessageBox.Show("CORRECT!");
+                MessageBox.Show("CORRECT!");
             }
             else if (!tiles[currentQNum].answers[2].correct)
             {
                 myTurn = false;
+                addDisabledTile(tiles[currentQNum]);
+                this.gameNetwork.scoreUpdate(nations[myNationNum]);
                 disableAnswers(true);
-                CurrentQuestion.BackColor = Color.Transparent;
+                CurrentQuestion.BackColor = Color.Black;
                 changeTurn();
             }
         }
@@ -540,16 +528,22 @@ namespace GUILayer
             else if (tiles[currentQNum].answers[3].correct)
             {
                 myTurn = false;
+                addTileToNation(tiles[currentQNum]);
+                Team temp = nations[myNationNum];
+                temp.score = nations[myNationNum].score + 1;
+                this.gameNetwork.scoreUpdate(temp);
                 disableAnswers(true);
-                CurrentQuestion.BackColor = Color.Transparent;
+                CurrentQuestion.BackColor = teams[myNationNum].BackColor;
                 changeTurn();
-                //MessageBox.Show("CORRECT!");
+                MessageBox.Show("CORRECT!");
             }
             else if (!tiles[currentQNum].answers[3].correct)
             {
                 myTurn = false;
+                addDisabledTile(tiles[currentQNum]);
+                this.gameNetwork.scoreUpdate(nations[myNationNum]);
                 disableAnswers(true);
-                CurrentQuestion.BackColor = Color.Transparent;
+                CurrentQuestion.BackColor = Color.Black;
                 changeTurn();
             }
         }
@@ -559,17 +553,15 @@ namespace GUILayer
         {
             if (InvokeRequired)
             {
-                Console.WriteLine("Repeating?");
                 Invoke(new Action(loadSelectedTile));
                 return;
             }
             if (myTurn)
                 disableAnswers(false);
-            if(CurrentQuestion != null)
-                CurrentQuestion.BackColor = Color.Transparent;
+            //if(CurrentQuestion != null)
+                //CurrentQuestion.BackColor = Color.Transparent;
             CurrentQuestion = buttons[currentQNum];
             buttons[currentQNum].BackColor = Color.Aquamarine;
-            //this.gameNetwork.TileClick(this.tiles[currentQNum]);
             this.questionLabel.Text = this.tiles[currentQNum].question;
             this.answer0.Text = this.tiles[currentQNum].answers[0].answer;
             this.answer1.Text = this.tiles[currentQNum].answers[1].answer;
@@ -584,6 +576,7 @@ namespace GUILayer
             {
                 nation.users = new User[NumberOfUsersPerNation];
                 nation.users[0] = this.user;
+                nation.tiles = new Tile[NumberOfQuestions / NumberOfNations];
                 return true;
             }
             else
@@ -607,10 +600,29 @@ namespace GUILayer
             }
         }
 
+        private void addDisabledTile(Tile disabledTile)
+        {
+            for (int i = 0; i < NumberOfQuestions; i++)
+            {
+                if (lostTiles[i] == null)
+                {
+                    lostTiles[i] = disabledTile;
+                    break;
+                }
+            }
+        }
+
+        private void addTileToNation(Tile tile)
+        {
+            for (int i=0; i < nations[myNationNum].score+1; i++)
+                if (nations[myNationNum].tiles[i] == null)
+                    nations[myNationNum].tiles[i] = tile;
+        }
+
         //Turns the Question panel into a nation selection panel.
         private void chooseTeam()
         {
-            disableBoard(true);
+            disableBoard(false);
             this.questionLabel.Text = "Please select a nation from the options below: ";
             this.answer0.BackColor = this.nation0.BackColor;
             this.answer0.Text = this.nation0.Text;
@@ -627,11 +639,11 @@ namespace GUILayer
         {
             if (InvokeRequired)
             {
-                Invoke(new Action<bool>(disableBoard), myTurn);
+                Invoke(new Action<bool>(disableBoard), disable);
                 return;
             }
             
-            if (myTurn)
+            if (disable)
             {
                 for (int a = 0; a < NumberOfAnswers; a++)
                 {
@@ -640,36 +652,58 @@ namespace GUILayer
                 }
             }
             for (int i = 0; i < NumberOfQuestions; i++)
-                buttons[i].Enabled = myTurn;
+            {
+                if (buttons[i].BackColor == Color.Black)
+                    buttons[i].Enabled = false;
+                else
+                    buttons[i].Enabled = disable;
+            }
             for (int n = 0; n < NumberOfNations; n++)
-                teams[n].Enabled = myTurn;
+            {
+                teamScores[n].Text = teams[n].Text + ": " + nations[n].score;
+                teams[n].Enabled = disable;
+            }
+            
+            markNationTiles();
+            markDisabledTiles();
         }
 
-        /*private void disableBoard(bool disable)
+        private void markNationTiles()
         {
-            if (answers[0].InvokeRequired)
-            {
-                Console.WriteLine("disable board background");
-                this.backgroundWorker.RunWorkerAsync();
-            }
-            else if (!disable)
-            {
-                
-                for (int a = 0; a < NumberOfAnswers; a++)
+            for (int n = 0; n < NumberOfNations; n++)
+                if (nations[n].tiles != null)
                 {
-                    answers[a].BackColor = Color.Transparent;
-                    answers[a].Text = " ";
+                    for (int i = 0; i < nations[n].tiles.Length; i++)
+                        if (nations[n].tiles[i] != null)
+                        {
+                            buttons[nations[n].tiles[i].questionNum].Enabled = false;
+                            buttons[nations[n].tiles[i].questionNum].BackColor = teams[n].BackColor;
+                        }
                 }
-            }
-            if (!answers[0].InvokeRequired)
+                else break;
+                
+        }
+
+        private void markDisabledTiles()
+        {
+            for (int i = 0; i < NumberOfQuestions; i++)
+                if (lostTiles[i] != null)
+                {
+                    buttons[lostTiles[i].questionNum].BackColor = Color.Black;
+                    buttons[lostTiles[i].questionNum].Enabled = false;
+                }
+        }
+
+        private void disableTile()
+        {
+            if (InvokeRequired)
             {
-                Console.WriteLine("disable not background");
-                for (int i = 0; i < NumberOfQuestions; i++)
-                    buttons[i].Enabled = !disable;
-                for (int n = 0; n < NumberOfNations; n++)
-                    teams[n].Enabled = !disable;
-            //}
-        }*/
+                Invoke(new Action(disableTile));
+                return;
+            }
+            addDisabledTile(tiles[currentQNum]);
+            //buttons[currentQNum].BackColor = Color.Black;
+        }
 
         public void disableAnswers(bool active)
         {
@@ -678,7 +712,7 @@ namespace GUILayer
                 Invoke(new Action<bool>(disableAnswers), active);
                 return;
             }
-            for (int i = 0; i < NumberOfAnswers; i++)   //Uncomment when testing on multiple machines
+            for (int i = 0; i < NumberOfAnswers; i++)
                 answers[i].Enabled = !active;
         }
 
@@ -744,13 +778,20 @@ namespace GUILayer
             answers[1] = answer1;
             answers[2] = answer2;
             answers[3] = answer3;
+            teamScores[0] = nation0ScoreLabel;
+            teamScores[1] = nation1ScoreLabel;
+            teamScores[2] = nation2ScoreLabel;
+            teamScores[3] = nation3ScoreLabel;
 
             for (int i = 0; i < NumberOfQuestions; i++)
             {
                 buttons[i].Text = this.tiles[i].title;
             }
             for (int n = 0; n < NumberOfNations; n++)
+            {
                 teams[n].Text = this.nations[n].name;
+                teamScores[n].Text = this.nations[n].name + ": ";
+            }
             Console.WriteLine(this.game.scores);
             try
             {
@@ -760,6 +801,8 @@ namespace GUILayer
             catch(IndexOutOfRangeException)
             { 
                 Console.WriteLine("Choosing Teams");
+                for (int s = 0; s < NumberOfNations; s++)
+                    teamScores[s].Text += nations[s].score;
                 chooseTeam();
             }
         }
@@ -772,13 +815,42 @@ namespace GUILayer
                 this.gameNetwork.yourTurn(nations[myNationNum+1]);
         }
 
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
         public void InitializeCommunication()
         {
-            this.gameNetwork.gameBoardSetupSocket(JoinedTeamCallback, StartGameCallback, TileClickCallback, YourTurnCallback);
+            this.gameNetwork.gameBoardSetupSocket(JoinedTeamCallback, StartGameCallback, TileClickCallback, YourTurnCallback, ScoreUpdateCallback);
+        }
+
+        private void ScoreUpdateCallback(Team updatedScore)
+        {
+            Console.WriteLine("Updating Score");
+            for(int i=0; i<NumberOfNations; i++)
+            {
+                if (nations[i].name == updatedScore.name)
+                {
+                    if (updatedScore.score == nations[i].score)
+                    {
+                        nations[i] = updatedScore;
+                        if(i != myNationNum)
+                            disableTile();
+                    }
+
+                    else
+                        nations[i] = updatedScore;
+                }
+            }
+            disableBoard(myTurn);
         }
 
         private void YourTurnCallback(Team thisTeamsTurn)
         {
+            TURN++;
+            if (TURN == 32)
+                whoWins();
             Console.WriteLine("Turn Callback");
             if (nations[myNationNum].name == thisTeamsTurn.name)
             {
@@ -791,6 +863,7 @@ namespace GUILayer
         private void TileClickCallback(Tile tileClicked)
         {
             this.currentQNum = tileClicked.questionNum;
+            this.CurrentQuestion = buttons[currentQNum];
             Console.WriteLine("Tile revieved: " + currentQNum);
             loadSelectedTile();
         }
@@ -815,5 +888,43 @@ namespace GUILayer
             }
         }
 
+        private void whoWins()
+        {
+            if (InvokeRequired)
+            {
+                Invoke(new Action(whoWins));
+                return;
+            }
+            Team winner = nations[0], temp=null;
+            for(int i=0; i<NumberOfNations-1; i++)
+            {
+                if (winner.score < nations[i + 1].score)
+                {
+                    winner = nations[i + 1];
+                    temp = null;
+                }
+                else if (winner.score == nations[i + 1].score)
+                    temp = nations[i + 1];
+            }
+            if (winner != null && temp != null)
+                GameOver(null);
+            else
+                GameOver(winner);
+        }
+
+        private void GameOver(Team winner)
+        {
+            if (InvokeRequired)
+            {
+                Invoke(new Action<Team>(GameOver), winner);
+                return;
+            }
+            disableBoard(false);
+            disableAnswers(true);
+            if(winner==null)
+                MessageBox.Show("We have a Tie!");
+            else
+                MessageBox.Show(winner.name + " Wins!");
+        }
     }
 }

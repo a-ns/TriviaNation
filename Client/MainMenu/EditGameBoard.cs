@@ -495,6 +495,7 @@ namespace GUILayer
             else if (this.saveQuestionButton.Text == "Save Nation")
             {
                 this.nations[currentNationNum].name = this.tileNameChange.Text;
+                this.nations[currentNationNum].score = 0;
                 this.CurrentNation.Text = this.tileNameChange.Text;
                 this.nations[currentNationNum].color = CurrentNation.BackColor.ToString();
             }
@@ -553,6 +554,7 @@ namespace GUILayer
             this.game.tiles = this.tiles;
             this.game.nations = this.nations;
             this.game.gameName = this.gameNameBox.Text;
+            
             if (this.gameNetwork.saveGame(this.game))
                 MessageBox.Show("Saved game successful for: " + this.game.gameName);
             else
