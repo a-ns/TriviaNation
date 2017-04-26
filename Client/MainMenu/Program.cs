@@ -25,8 +25,6 @@ namespace GUILayer
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainMenu(network, mainMenuNetwork, gameNetwork));
-            
-            //Application.Run(new EditGameBoard(gameNetwork));     // FOR TESTING GAME BOARD
         }
     }
 }

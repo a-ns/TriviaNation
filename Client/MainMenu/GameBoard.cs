@@ -23,7 +23,7 @@ namespace GUILayer
         Tile[] tiles;
         Tile[] lostTiles;
         Team[] nations;
-        private int NumberOfQuestions = 32, NumberOfAnswers = 4, NumberOfNations = 4, NumberOfUsersPerNation = 1, WinningScore = 8;
+        private int NumberOfQuestions = 32, NumberOfAnswers = 4, NumberOfNations = 4, NumberOfUsersPerNation = 1;
         
 
         public GameBoard(IGameBoardNetwork gameNetwork, Game game, User user)
@@ -388,17 +388,7 @@ namespace GUILayer
             loadSelectedTile();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void GameBoard_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
         {
 
         }
@@ -552,7 +542,7 @@ namespace GUILayer
             }
         }
 
-        //Loads the selected tile to the question panel.
+        //Loads the currently selected tile to the question panel.
         private void loadSelectedTile()
         {
             if (InvokeRequired)
@@ -562,8 +552,6 @@ namespace GUILayer
             }
             if (myTurn)
                 disableAnswers(false);
-            //if(CurrentQuestion != null)
-                //CurrentQuestion.BackColor = Color.Transparent;
             CurrentQuestion = buttons[currentQNum];
             buttons[currentQNum].BackColor = Color.Aquamarine;
             this.questionTitle.Text = buttons[currentQNum].Text;
@@ -574,7 +562,7 @@ namespace GUILayer
             this.answer3.Text = this.tiles[currentQNum].answers[3].answer;
         }
 
-        //Adds user to nation unless the nation is full.
+        //Adds user to nation selected unless the nation is full.
         private bool addUserToNation(Team nation)
         {
             if (nation.users == null)
@@ -605,8 +593,14 @@ namespace GUILayer
             }
         }
 
+        //Adds the passed tile to the disabled list (used for when a user gets a question wrong)
         private void addDisabledTile(Tile disabledTile)
         {
+            if (InvokeRequired)
+            {
+                Invoke(new Action<Tile>(addDisabledTile), disabledTile);
+                return;
+            }
             for (int i = 0; i < NumberOfQuestions; i++)
             {
                 if (lostTiles[i] == null)
@@ -617,6 +611,7 @@ namespace GUILayer
             }
         }
 
+        //This adds the passed tile to the nations claimed territory to be passed and marked on other users boards.
         private void addTileToNation(Tile tile)
         {
             for (int i=0; i < nations[myNationNum].score+1; i++)
@@ -639,7 +634,7 @@ namespace GUILayer
             this.answer3.Text = this.nation3.Text;
         }
 
-        //Disables the entire board for when it is not the users turn.
+        //Disables or enables the entire board for when it is and is not the users turn. (also used when reloading the board after an event)
         private void disableBoard(bool disable)
         {
             if (InvokeRequired)
@@ -647,7 +642,6 @@ namespace GUILayer
                 Invoke(new Action<bool>(disableBoard), disable);
                 return;
             }
-            
             if (disable)
             {
                 for (int a = 0; a < NumberOfAnswers; a++)
@@ -673,6 +667,7 @@ namespace GUILayer
             markDisabledTiles();
         }
 
+        //Goes through and marks all of the tiles that each nation has claimed throughout the game up to this point.
         private void markNationTiles()
         {
             for (int n = 0; n < NumberOfNations; n++)
@@ -689,6 +684,7 @@ namespace GUILayer
                 
         }
 
+        //Goes through and marks all of the tiles that have been selected and marked as lost
         private void markDisabledTiles()
         {
             for (int i = 0; i < NumberOfQuestions; i++)
@@ -699,17 +695,7 @@ namespace GUILayer
                 }
         }
 
-        private void disableTile()
-        {
-            if (InvokeRequired)
-            {
-                Invoke(new Action(disableTile));
-                return;
-            }
-            addDisabledTile(tiles[currentQNum]);
-            //buttons[currentQNum].BackColor = Color.Black;
-        }
-
+        //Disables or enables use of answer buttons
         public void disableAnswers(bool active)
         {
             if (InvokeRequired)
@@ -721,6 +707,7 @@ namespace GUILayer
                 answers[i].Enabled = !active;
         }
 
+        //Checks if all nations have a user and either returns or broadcasts to all clients to start the game
         public void startGame()
         {
             bool start = false;
@@ -740,7 +727,10 @@ namespace GUILayer
             }
         }
 
-        //Adds all the tiles, nations, and answers buttons to their own respective arrays
+        /*
+         * Adds all the tiles, nations, and answers buttons to their own respective arrays, adds correct information to each
+         * corresponding tile and nation and starts the choosing team process.
+        */
         private void setupGameBoard()
         {
             buttons[0] = tile0;
@@ -789,29 +779,20 @@ namespace GUILayer
             teamScores[3] = nation3ScoreLabel;
 
             for (int i = 0; i < NumberOfQuestions; i++)
-            {
                 buttons[i].Text = this.tiles[i].title;
-            }
+
             for (int n = 0; n < NumberOfNations; n++)
             {
                 teams[n].Text = this.nations[n].name;
                 teamScores[n].Text = this.nations[n].name + ": ";
             }
-            Console.WriteLine(this.game.scores);
-            try
-            {
-                Console.WriteLine(this.game.scores[0]);
+            for (int s = 0; s < NumberOfNations; s++)
+                teamScores[s].Text += nations[s].score;
 
-            }
-            catch(IndexOutOfRangeException)
-            { 
-                Console.WriteLine("Choosing Teams");
-                for (int s = 0; s < NumberOfNations; s++)
-                    teamScores[s].Text += nations[s].score;
-                chooseTeam();
-            }
+            chooseTeam();
         }
 
+        //Signals all clients who's turn it is
         private void changeTurn()
         {
             if (myNationNum == NumberOfNations - 1)
@@ -819,20 +800,16 @@ namespace GUILayer
             else
                 this.gameNetwork.yourTurn(nations[myNationNum+1]);
         }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
+        
+        //Defines the network layer communication for gameplay
         public void InitializeCommunication()
         {
             this.gameNetwork.gameBoardSetupSocket(JoinedTeamCallback, StartGameCallback, TileClickCallback, YourTurnCallback, ScoreUpdateCallback);
         }
 
+        //This callback is executed when the network layer recieves a score update from the server
         private void ScoreUpdateCallback(Team updatedScore)
         {
-            Console.WriteLine("Updating Score");
             for(int i=0; i<NumberOfNations; i++)
             {
                 if (nations[i].name == updatedScore.name)
@@ -841,9 +818,8 @@ namespace GUILayer
                     {
                         nations[i] = updatedScore;
                         if(i != myNationNum)
-                            disableTile();
+                            addDisabledTile(tiles[currentQNum]);
                     }
-
                     else
                         nations[i] = updatedScore;
                 }
@@ -851,48 +827,43 @@ namespace GUILayer
             disableBoard(myTurn);
         }
 
+        //This callback executes when the network layer receives a new turn signal from the server
         private void YourTurnCallback(Team thisTeamsTurn)
         {
             TURN++;
             if (TURN == 32)
                 whoWins();
+
             Console.WriteLine("Turn Callback");
             if (nations[myNationNum].name == thisTeamsTurn.name)
-            {
-                Console.WriteLine("My Turn: " + nations[myNationNum].name);
                 myTurn = true;
-            }
+
             disableBoard(myTurn);
         }
 
+        //This callback executes when the network layer receives a tile selection from the server.
         private void TileClickCallback(Tile tileClicked)
         {
             this.currentQNum = tileClicked.questionNum;
             this.CurrentQuestion = buttons[currentQNum];
-            Console.WriteLine("Tile revieved: " + currentQNum);
             loadSelectedTile();
         }
 
+        //This callback executes when the network layer receives a signal to start the game.
         private void StartGameCallback(bool result)
         {
-            Console.WriteLine("Start Game Callback");
-            //MessageBox.Show("Game is Starting");
             disableBoard(myTurn);
         }
 
-
+        //This callback executes when the network layer receives a new join signal from the server
         private void JoinedTeamCallback(Team teamTaken)
         {
             for (int i=0; i<NumberOfNations; i++)
-            {
                 if(teamTaken.name == nations[i].name)
-                {
-                    Console.WriteLine("Someone Joined!!!!!!");
                     nations[i] = teamTaken;
-                }
-            }
         }
 
+        //This method determines who won or if there was a tie and calls GameOver(result)
         private void whoWins()
         {
             if (InvokeRequired)
@@ -917,6 +888,7 @@ namespace GUILayer
                 GameOver(winner);
         }
 
+        //This method disables the board and informs the user of a winner or a tie
         private void GameOver(Team winner)
         {
             if (InvokeRequired)

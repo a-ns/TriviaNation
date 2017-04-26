@@ -541,7 +541,6 @@ namespace GUILayer
             this.title.TabIndex = 1;
             this.title.Text = "Trivia Nation";
             this.title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.title.Click += new System.EventHandler(this.label1_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -606,7 +605,6 @@ namespace GUILayer
             this.nation1ScoreLabel.Size = new System.Drawing.Size(268, 39);
             this.nation1ScoreLabel.TabIndex = 6;
             this.nation1ScoreLabel.Text = "nation1: (score)";
-            this.nation1ScoreLabel.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // nation0ScoreLabel
             // 
