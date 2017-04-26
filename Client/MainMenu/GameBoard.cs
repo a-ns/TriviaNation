@@ -411,6 +411,7 @@ namespace GUILayer
                 {
                     myTurn = true;
                     myNationNum = 0;
+                    teamScores[myNationNum].BackColor = teams[myNationNum].BackColor;
                     disableAnswers(true);
                     this.gameNetwork.chooseTeam(nations[0]);
                     startGame();
@@ -447,6 +448,7 @@ namespace GUILayer
                 if (addUserToNation(nations[1]))
                 {
                     myNationNum = 1;
+                    teamScores[myNationNum].BackColor = teams[myNationNum].BackColor;
                     disableAnswers(true);
                     this.gameNetwork.chooseTeam(nations[1]);
                     startGame();
@@ -483,6 +485,7 @@ namespace GUILayer
                 if (addUserToNation(nations[2]))
                 {
                     myNationNum = 2;
+                    teamScores[myNationNum].BackColor = teams[myNationNum].BackColor;
                     disableAnswers(true);
                     this.gameNetwork.chooseTeam(nations[2]);
                     startGame();
@@ -519,6 +522,7 @@ namespace GUILayer
                 if (addUserToNation(nations[3]))
                 {
                     myNationNum = 3;
+                    teamScores[myNationNum].BackColor = teams[myNationNum].BackColor;
                     disableAnswers(true);
                     this.gameNetwork.chooseTeam(nations[3]);
                     startGame();
@@ -562,6 +566,7 @@ namespace GUILayer
                 //CurrentQuestion.BackColor = Color.Transparent;
             CurrentQuestion = buttons[currentQNum];
             buttons[currentQNum].BackColor = Color.Aquamarine;
+            this.questionTitle.Text = buttons[currentQNum].Text;
             this.questionLabel.Text = this.tiles[currentQNum].question;
             this.answer0.Text = this.tiles[currentQNum].answers[0].answer;
             this.answer1.Text = this.tiles[currentQNum].answers[1].answer;
