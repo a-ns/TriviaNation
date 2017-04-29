@@ -10,6 +10,10 @@ let teamSchema = new Schema({
     type: String,
     required: true
   },
+  score: {
+	type: Number,
+	required: true
+  }
   users: [ {type: Schema.ObjectId, ref: 'User'} ],
   tiles: [ {type: Schema.ObjectId, ref: 'Tile'} ]
 })

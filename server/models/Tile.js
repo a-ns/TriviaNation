@@ -10,6 +10,10 @@ var tileSchema = new Schema({
     type: String,
     required: true
   },
+  title: {
+    type: String,
+    required: true
+  },
   answers: [ {type: Schema.ObjectId, ref: 'Answer'} ]
 })
 

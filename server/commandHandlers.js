@@ -94,10 +94,10 @@ var saveGame = function (data) {
 	return new Promise(function (resolve, reject){
 		if(data["gameName"].length === 0)
 			reject(false)
-		
+
 		var game = new Game()
 		game.gameName = data.gameName
-		
+
 		Game.findOne({gameName: game.gameName}, function (err, gameFound){
 			if(err){
 				console.log(err)
@@ -119,8 +119,34 @@ var saveGame = function (data) {
 	})
 }
 
+var loadGame = function (data) {
+	return new Promise(function (resolve, reject){
+		Game.findOne({gameName: data.gameName}, function (err, gameFound) {
+			if (err){
+				console.log(err)
+				reject(null)
+			}
+		}).then(function (gameFound) {
+			if(!gameFound){
+				console.log('game not found')
+				reject(null);
+			}
+			if(gameFound){
+				console.log('game found')
+				resolve(gameFound)
+			}
+			else 
+				reject(null)
+		})
+	})
+}
+
+var joinTeam = function (data) {
+	
+}
+
 var connection = function (client) {
   console.log(client.id, 'has connected')
 }
 
-module.exports = {login, signup, scoreUpdate, answerClicked, message, connection, questionClicked, saveGame}
+module.exports = {login, signup, scoreUpdate, answerClicked, message, connection, questionClicked, saveGame, loadGame, joinTeam}

@@ -11,9 +11,5 @@ var userSchema = new Schema({
   }
 })
 
-// userSchema.methods.comparePassword = function (candidatePassword, cb) {
-//   //put bcrypt stuff in here later maybe
-//   return (candidatePassword === this.password)
-// }
 
 module.exports = mongoose.model('User', userSchema)
