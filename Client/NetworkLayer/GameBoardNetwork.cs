@@ -33,23 +33,69 @@ namespace NetworkLayer
             this._socket = network.getSocket();
         }
 
-        public void gameBoardSetupSocket()
+        public void gameBoardSetupSocket(Action<Team> JoinedTeamCallback, Action<bool> StartGameCallback, Action<Tile> TileClickCallback, Action<Team> YourTurnCallback, Action<Team> ScoreUpdateCallback)
         {
+            this._socket.On("joinTeam", (data) =>
+            {
+                if (data != null)
+                {
+                    JoinedTeamCallback(JsonConvert.DeserializeObject<Team>(data.ToString()));
+                }
+                else
+                    JoinedTeamCallback(null);
+            });
+
+            this._socket.On("startGame", (data) =>
+            {
+                if (data != null)
+                {
+                    StartGameCallback(JsonConvert.DeserializeObject<bool>(data.ToString()));
+                }
+                else
+                    StartGameCallback(false);
+            });
+
             this._socket.On("answerClicked", (data) =>
             {
+                if(data != null)
+                {
 
+                }
+
+                
             });
 
             this._socket.On("questionClicked", (data) =>
             {
+                if (data != null)
+                {
+                    TileClickCallback(JsonConvert.DeserializeObject<Tile>(data.ToString()));
+                }
+                else
+                    TileClickCallback(null);
+            });
 
+            this._socket.On("yourTurn", (data) =>
+            {
+                if (data != null)
+                {
+                    YourTurnCallback(JsonConvert.DeserializeObject<Team>(data.ToString()));
+                }
+                else
+                    YourTurnCallback(null);
             });
 
             this._socket.On("scoreUpdate", (data) =>
             {
-
+                if(data != null)
+                {
+                    ScoreUpdateCallback(JsonConvert.DeserializeObject<Team>(data.ToString()));
+                }
             });
+        }
 
+        public void editGameBoardSetupSocket()
+        {
             this._socket.On("saveGame", (data) =>
             {
                 if (data != null)
@@ -100,6 +146,7 @@ namespace NetworkLayer
         public void AnswerClick(bool answer)
         {
             //Emit whether the answer was correct or not so that the server can update the other users gameboards
+            this._socket.Emit("answerClicked", JsonConvert.SerializeObject(answer));
         }
 
         public bool saveGame(Game game)
@@ -127,6 +174,27 @@ namespace NetworkLayer
             }
             else
                 return null;
+        }
+
+        public void chooseTeam(Team chosenTeam)
+        {
+            this._socket.Emit("joinTeam", JsonConvert.SerializeObject(chosenTeam));
+        }
+
+        public void beginGame()
+        {
+            bool start = true;
+            this._socket.Emit("startGame", JsonConvert.SerializeObject(start));
+        }
+
+        public void yourTurn(Team yourTurn)
+        {
+            this._socket.Emit("yourTurn", JsonConvert.SerializeObject(yourTurn));
+        }
+
+        public void scoreUpdate(Team updatedScore)
+        {
+            this._socket.Emit("scoreUpdate", JsonConvert.SerializeObject(updatedScore));
         }
 
         private Socket _socket;
