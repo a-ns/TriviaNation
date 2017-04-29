@@ -5,8 +5,8 @@ var gameSchema = new Schema({
     type: String,
     required: true
   },
-  Nations: [ {type: Schema.ObjectId, ref: 'Team'} ],
-  Tiles: [ {type: Schema.ObjectId, ref: 'Tile'} ],
+  Nations: [ {type: Schema.Types.Mixed} ],
+  Tiles: [ {type: Schema.Types.Mixed} ],
   Scores: [{type: Number}]
 })
 

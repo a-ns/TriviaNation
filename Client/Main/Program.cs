@@ -18,7 +18,7 @@ namespace Main
         static void Main()
         {
             INetwork network = Network.Instance;
-            network.SetEndPointLocation("http://trivianation.herokuapp.com");
+            network.SetEndPointLocation("http://localhost:3000");
             IMainMenuNetwork mainMenuNetwork = MainMenuNetwork.Instance;
             mainMenuNetwork.setNetwork(network);
             IGameBoardNetwork gameNetwork = GameBoardNetwork.Instance;
