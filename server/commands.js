@@ -8,9 +8,5 @@ module.exports = function () {
   commands.push('login')
   commands.push('signup')
   commands.push('saveGame')
-  commands.push('loadGame')
-  commands.push('joinTeam')
-  commands.push('startGame')
-  commands.push('yourTurn')
   return commands
 }

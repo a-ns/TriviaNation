@@ -1,8 +1,7 @@
 var commandHandlers = require('./commandHandlers.js')
 var Promise = require('bluebird')
 var scoreUpdate = function (data) {
-  this.broadcast.emit('scoreUpdate', data)
-  this.emit('scoreUpdate', data)
+  var theData = commandHandlers.scoreUpdate(data)
   //emit theData
 }
 
@@ -12,10 +11,8 @@ var answerClicked = function (data) {
 }
 
 var questionClicked = function (data) {
-  //var returnData = commandHandlers.questionClicked(data)
-  console.log('Question Clicked')
-  this.broadcast.emit('questionClicked', data)
-  this.emit('questionClicked', data)
+  var returnData = commandHandlers.questionClicked(data)
+
   //everybody.emit(returnData)
 }
 
@@ -64,41 +61,10 @@ var saveGame = function (data) {
 	})
 }
 
-var loadGame = function (data) {
-	var that = this
-	var theData = JSON.parse(data)
-	commandHandlers.loadGame(theData).then(function (loadSuccess){
-		console.log(loadSuccess, 'load success')
-		that.emit('loadGame', loadSuccess)
-	}).catch(function (){
-		console.log('load not successful')
-		that.emit('loadGame', null)
-	})
-}
-
 var connection = function (client) {
   var theData = commandHandlers.connection(client)
   client.emit('message', {message: client.id})
   //client.emit(/*clients.push(client) maybe?*/)
 }
 
-var joinTeam = function (data) {
-  console.log('broadcasting joinTeam')
-  this.broadcast.emit('joinTeam', data)
-  console.log('sending joinTeam back to sender')
-  this.emit('joinTeam', data) //ONLY FOR TESTING
-}
-
-var startGame = function(data) {
-	console.log('starting game')
-	this.broadcast.emit('startGame', data)
-	this.emit('startGame', data)
-}
-
-var yourTurn = function(data) {
-	console.log('changing turns')
-	this.broadcast.emit('yourTurn', data)
-	this.emit('yourTurn', data)
-}
-
-module.exports = {login, signup, scoreUpdate, answerClicked, message, connection, questionClicked, saveGame, loadGame, joinTeam, startGame, yourTurn}
+module.exports = {login, signup, scoreUpdate, answerClicked, message, connection, questionClicked, saveGame}
