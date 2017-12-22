@@ -1,0 +1,11 @@
+{
+  "name": "trivianation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alex Lindemann <exmann94@gmail.com> (http://github.com/a-ns)",
+  "license": "ISC"
+}
