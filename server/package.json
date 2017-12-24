@@ -4,8 +4,8 @@
   "description": "",
   "main": "./src/index.js",
   "scripts": {
-    "start": "./node_modules/.bin/nodemon.cmd",
-    "build": "./node_modules/.bin/babel.cmd src --out-dir lib"
+    "start": "./node_modules/.bin/nodemon",
+    "build": "./node_modules/.bin/babel src --out-dir lib"
   },
   "author": "Alex Lindemann <exmann94@gmail.com> (http://github.com/a-ns)",
   "license": "ISC",
@@ -15,7 +15,6 @@
   },
   "dependencies": {
     "express": "^4.16.2",
-    "socket.io": "^2.0.4",
-    "socket.io-react": "^1.2.0"
+    "socket.io": "^2.0.4"
   }
 }

@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-
 const colors = {
   red: "#D50000",
   purple: "#AA00FF",
@@ -9,20 +8,20 @@ const colors = {
   black: "#212121",
   white: "#ECEFF1"
 };
-const Tile = styled.span`
-  margin: 2px;
-  text-align: center;
-  border: 2px solid ${props => colors[props.owner]};
-  background-color: ${colors.white};
+const Button = styled.button`
+  background-color: ${props => colors[props.backgroundColor]};
+  font-size: 3em;
   border-radius: 2px;
+  border: none;
+  color: ${colors.white};
+  text-align: center;
+  text-decoration: none;
+  min-width: 50px;
+  margin: 5px;
   &:hover {
     transform: translate(0px, -2px);
     box-shadow: 2px 2px 8px ${colors.black};
   }
-  &:focus {
-    transform: translate(0px, 0px);
-    box-shadow: 1px 1px 2px ${colors.black};
-  }
 `;
 
-export default Tile;
+export default Button;

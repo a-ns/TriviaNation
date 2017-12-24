@@ -4,8 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./node_modules/.bin/concurrently \"cd ./client && npm start \" \" cd ./server && npm start \" ",
+    "build": "./node_modules/.bin/concurrently \"cd ./client && npm run build\" \" cd ./server && npm run build\" "
   },
   "author": "Alex Lindemann <exmann94@gmail.com> (http://github.com/a-ns)",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^3.5.1"
+  }
 }

@@ -44,7 +44,3 @@
   display: grid;
   grid-template-areas: "board board board display";
 }
-
-#display {
-  grid-area: display;
-}
