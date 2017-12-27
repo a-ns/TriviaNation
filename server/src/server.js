@@ -7,26 +7,29 @@ io.on("connection", socket => {
   socket.on("disconnect", () => {
     console.log(socket.id, "has disconnected");
   });
-  socket.on("tile/info/req", (data, fn) => {
-    let num = data.num;
-    const rv = {
-      num,
-      title: `History Question ${num}`,
-      question: `What is the answer to this question ${num}?`,
-      answers: ["A", "B", "C", "D"]
-    };
-    console.log("emitting", rv, "to", socket.id);
-    fn(rv);
-  });
-  socket.on("tiles/titles/req", (data, fn) => {
-    console.log("hi");
-    const rv = {
-      0: { num: 0, title: "History 1" },
-      1: { num: 1, title: "History 3" },
-      2: { num: 2, title: "Math 4" },
-      3: { num: 3, title: "Science 2" }
-    };
-    fn(rv);
+  socket.on("action", data => {
+    switch (data.type) {
+      case "tiles/titles/req": {
+        const rv = {
+          0: { num: 0, title: "History 1" },
+          1: { num: 1, title: "History 3" },
+          2: { num: 2, title: "Math 4" },
+          3: { num: 3, title: "Science 2" },
+        };
+        socket.emit("action", { type: "tiles/titles/suc", payload: rv });
+        break;
+      }
+      case 'tile/info/req': {
+        let num = data.tileNum;
+        const rv = {
+          num,
+          question: `What is the answer to this question ${num}?`,
+          answers: ["A", "B", "C", "D"]
+        };
+        socket.emit('action', {type: 'tile/info/suc', payload: rv})
+        break;
+      }
+    }
   });
 });
 

@@ -2,15 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
+import { Provider } from "react-redux";
 import registerServiceWorker from "./registerServiceWorker";
-import io from "socket.io-client";
-import { SocketProvider } from "socket.io-react";
-
-const socket = io.connect("http://localhost:8080");
+import configureStore from "./redux/store";
+let store = configureStore();
 ReactDOM.render(
-  <SocketProvider socket={socket}>
+  <Provider store={store}>
     <App />
-  </SocketProvider>,
+  </Provider>,
   document.getElementById("root")
 );
 registerServiceWorker();
