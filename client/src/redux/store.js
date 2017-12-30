@@ -1,5 +1,6 @@
 import { createStore, applyMiddleware } from "redux";
 import { createLogger } from "redux-logger";
+import thunkMiddleware from "redux-thunk";
 import reducer from "./reducer";
 import io from "socket.io-client";
 import socketMiddleware from "./middlewares/socket";
@@ -9,7 +10,10 @@ const configureStore = persistedState => {
     reducer,
     persistedState,
     applyMiddleware(
-      socketMiddleware(io.connect(process.env.SOCKET_URL || "http://localhost:8080")),
+      thunkMiddleware,
+      socketMiddleware(
+        io.connect(process.env.SOCKET_URL || "http://localhost:8080")
+      ),
       loggerMiddleware
     )
   );
