@@ -1,12 +1,12 @@
 import React, { Fragment } from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
-import Button from "../../../Button/components/"
+import Button from "../../../Button/components/";
 const Display = styled.div`
   grid-area: display;
   text-align: center;
 `;
-class Container extends React.Component {
+class EditingDisplay extends React.Component {
   render() {
     return (
       <Display>
@@ -17,19 +17,14 @@ class Container extends React.Component {
         <ul>
           {this.props.selectedItem.answers.map(answer => {
             return (
-              <Fragment>
+              <Fragment key={Math.random()}>
                 <input type="radio" />
                 <textarea />
               </Fragment>
             );
           })}
         </ul>
-        <Button
-          backgroundColor="blue"
-          onClick={() =>
-            this.props.dispatch({ type: "display/answers/append" })
-          }
-        >
+        <Button backgroundColor="blue" onClick={() => {}}>
           +
         </Button>
       </Display>
@@ -40,4 +35,4 @@ class Container extends React.Component {
 const mapStateToProps = state => ({
   selectedItem: state.editingTiles[state.selectedItem]
 });
-export default connect(mapStateToProps)(Container);
+export default connect(mapStateToProps)(EditingDisplay);

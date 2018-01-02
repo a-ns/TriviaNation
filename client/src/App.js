@@ -3,7 +3,7 @@ import "./App.css";
 import Tile from "./Tile/components/";
 import { connect } from "react-redux";
 import Display from "./Display";
-import Board from "./Board/components";
+import Board from "./Board/";
 
 class App extends Component {
   click(num) {
