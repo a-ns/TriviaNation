@@ -9,7 +9,7 @@ const colors = {
   white: "#ECEFF1"
 };
 const Button = styled.button`
-  background-color: ${props => colors[props.backgroundColor]};
+  background-color: ${props => colors[props.backgroundColor] || colors.blue};
   font-size: 3em;
   border-radius: 2px;
   border: none;

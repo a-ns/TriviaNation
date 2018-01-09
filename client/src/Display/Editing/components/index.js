@@ -7,6 +7,7 @@ const Display = styled.div`
   text-align: center;
 `;
 class EditingDisplay extends React.Component {
+
   render() {
     return (
       <Display>

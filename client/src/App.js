@@ -4,22 +4,14 @@ import Tile from "./Tile/components/";
 import { connect } from "react-redux";
 import Display from "./Display";
 import Board from "./Board/";
-
+import Button from './Button/components'
 class App extends Component {
-  click(num) {
+  submitBoard(board){
     this.props.dispatch({
-      meta: "socket",
-      type: "tile/info/req",
-      tileNum: num
-    });
-    this.props.dispatch({
-      type: "selectedItemIndex",
-      payload: num
-    });
-  }
-
-  componentDidMount() {
-    this.props.dispatch({ meta: "socket", type: "tiles/titles/req" });
+      meta: 'socket',
+      type: 'board/submit',
+      payload: {tiles: board}
+    })
   }
   render() {
     return (
@@ -27,13 +19,15 @@ class App extends Component {
         <Board />
 
         <Display/>
+        <Button onClick={() => this.submitBoard(this.props.editingTiles)}>
+          Save Board
+          </Button>
       </div>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  tiles: state.tiles,
-  selectedItem: state.selectedItem
+  editingTiles: state.editingTiles
 });
 export default connect(mapStateToProps)(App);

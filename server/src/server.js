@@ -1,14 +1,20 @@
 const app = require("express")();
 const http = require("http").Server(app);
 const io = require("socket.io")(http);
+const axios = require('axios')
+axios.defaults.headers.common['Authorization'] = '3tYAVjBMjmJKjTcXfwsHWn';
 
+axios.get('https://api.quizlet.com/2.0/users/neonaleksandr')
+  .then(res => res.data)
+  .then(data => console.log(data))
+  .catch(err => console.log(err))
 io.on("connection", socket => {
   console.log(socket.id, "connected");
   socket.on("disconnect", () => {
     console.log(socket.id, "has disconnected");
   });
-  socket.on("action", data => {
-    switch (data.type) {
+  socket.on("action", action => {
+    switch (action.type) {
       case "tiles/titles/req": {
         const rv = {
           0: { num: 0, title: "History 1" },
@@ -20,13 +26,35 @@ io.on("connection", socket => {
         break;
       }
       case 'tile/info/req': {
-        let num = data.tileNum;
+        let num = action.tileNum;
         const rv = {
           num,
           question: `What is the answer to this question ${num}?`,
           answers: ["A", "B", "C", "D"]
         };
         socket.emit('action', {type: 'tile/info/suc', payload: rv})
+        break;
+      }
+      case 'board/submit': {
+        let errors = []
+        console.log(action)
+        Object.values(action.payload.tiles).map(tile => {
+          if(tile.num === 0 || tile.num === 5 || tile.num === 30 || tile.num === 35) {
+            //skip, it's a Team tile
+          }
+          else if(!tile.answers || tile.answers.length === 0 || tile.answers.length === 1) {
+            errors.push({tile, error: 'A tile must have at least two answers'})
+          }
+        })
+        if(errors.length > 0) {
+          console.log('error have occured in board/submit')
+          socket.emit('action', {type:'board/submit/err', payload: errors})
+        }
+        else {
+          /* All tiles are ok */
+          /* Save tiles and send back tiles*/
+          socket.emit('action', {type: 'board/submit/suc', payload: action.payload})
+        }
         break;
       }
     }

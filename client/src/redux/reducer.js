@@ -20,15 +20,19 @@ const defaultEditingTiles = () => {
     };
   }
   tiles[0] = {
+    num: 0,
     title: "Team 1"
   };
   tiles[5] = {
+    num: 5,
     title: "Team 2"
   };
   tiles[30] = {
+    num: 30,
     title: "Team 3"
   };
   tiles[35] = {
+    num: 35,
     title: "Team 4"
   };
   return tiles;
