@@ -1,13 +1,7 @@
 const app = require("express")();
 const http = require("http").Server(app);
 const io = require("socket.io")(http);
-const axios = require('axios')
-axios.defaults.headers.common['Authorization'] = '3tYAVjBMjmJKjTcXfwsHWn';
 
-axios.get('https://api.quizlet.com/2.0/users/neonaleksandr')
-  .then(res => res.data)
-  .then(data => console.log(data))
-  .catch(err => console.log(err))
 io.on("connection", socket => {
   console.log(socket.id, "connected");
   socket.on("disconnect", () => {
