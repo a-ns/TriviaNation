@@ -16,7 +16,7 @@ const defaultEditingTiles = () => {
       num: i,
       title: `Click to edit title`,
       question: `click to edit question`,
-      answers: ["click to edit answers"]
+      answers: ["click to edit answers", "click to edit answers"]
     };
   }
   tiles[0] = {
@@ -51,6 +51,17 @@ export default (state = initialState, action) => {
   switch (type) {
     case "tiles/titles/suc": {
       return { ...state, tiles: { ...state.tiles, ...payload } };
+    }
+    case "editingTiles/answers/update": {
+      return { ...state, 
+      editingTiles: {
+        ...state.editingTiles,
+        [payload.num]: {
+          ...state.editingTiles[payload.num],
+          answers: payload.answers,
+          correctAnswers: payload.correctAnswers
+        }
+      }}
     }
     case "tile/info/suc": {
       return {

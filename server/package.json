@@ -2,20 +2,27 @@
   "name": "trivianation-server",
   "version": "1.0.0",
   "description": "",
-  "main": "./src/index.js",
+  "main": "/lib/index",
+  "types": "lib/index",
   "scripts": {
-    "start": "./node_modules/.bin/nodemon",
-    "build": "./node_modules/.bin/babel src --out-dir lib"
+    "start": "npm run build:live",
+    "build:live": "./node_modules/.bin/nodemon --exec ./node_modules/.bin/ts-node ./src/index.ts"
   },
   "author": "Alex Lindemann <exmann94@gmail.com> (http://github.com/a-ns)",
   "license": "ISC",
   "devDependencies": {
+    "@types/express": "^4.11.1",
+    "@types/node": "^9.4.6",
+    "@types/redux": "^3.6.0",
+    "@types/socket.io": "^1.4.31",
     "babel-cli": "^6.26.0",
-    "nodemon": "^1.14.1"
+    "nodemon": "^1.14.1",
+    "ts-node": "^4.1.0",
+    "typescript": "^2.7.2"
   },
   "dependencies": {
-    "axios": "^0.17.1",
     "express": "^4.16.2",
+    "redux": "^3.7.2",
     "socket.io": "^2.0.4"
   }
 }

@@ -12,7 +12,7 @@ const configureStore = persistedState => {
     applyMiddleware(
       thunkMiddleware,
       socketMiddleware(
-        io.connect(process.env.SOCKET_URL || "http://localhost:8080")
+        io.connect(process.env.SOCKET_URL || "http://localhost:8081")
       ),
       loggerMiddleware
     )

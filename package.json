@@ -11,8 +11,6 @@
   "author": "Alex Lindemann <exmann94@gmail.com> (http://github.com/a-ns)",
   "license": "ISC",
   "dependencies": {
-    "concurrently": "^3.5.1",
-    "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.2.0"
+    "concurrently": "^3.5.1"
   }
 }
