@@ -5,5 +5,6 @@ export interface Answer {
 export interface Tile {
     num: number,
     question: string,
-    answers: Array<Answer>
+    answers: Array<Answer>,
+    title: string
 }

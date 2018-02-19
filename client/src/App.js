@@ -17,7 +17,6 @@ class App extends Component {
     return (
       <div id="container">
         <Board />
-
         <Display/>
         <Button onClick={() => this.submitBoard(this.props.editingTiles)}>
           Save Board

@@ -3,22 +3,32 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "formik": "^0.11.7",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
+    "react-scripts-ts": "2.13.0",
     "redux": "^3.7.2",
     "socket.io-client": "^2.0.4",
     "socket.io-react": "^1.2.0",
     "styled-components": "^2.3.3"
   },
   "devDependencies": {
-    "react-scripts": "1.0.17"
+    "@types/jest": "^22.1.3",
+    "@types/node": "^9.4.6",
+    "@types/react": "^16.0.38",
+    "@types/react-dom": "^16.0.4",
+    "@types/react-redux": "^5.0.15",
+    "@types/redux-thunk": "^2.1.0",
+    "patch-package": "^5.1.1",
+    "postinstall-prepare": "^1.0.1",
+    "react-scripts": "1.0.17",
+    "typescript": "^2.7.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "start": "react-scripts-ts start",
+    "build": "react-scripts-ts build",
+    "test": "react-scripts-ts test --env=jsdom",
+    "eject": "react-scripts-ts eject",
+    "prepare": "patch-package"
   }
 }
