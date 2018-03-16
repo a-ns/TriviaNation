@@ -1,22 +1,23 @@
 import {Tile} from '../../../shared/Tile'
 
 export enum Players {
-    RED, BLUE, YELLOW, GREEN
+    ONE, TWO, THREE, FOUR
 }
 
 export interface State {
-    tiles: {[k: number]: Tile},
-    currentPlayer: Players.RED | Players.BLUE | Players.YELLOW | Players.GREEN,
+    tiles: Array<Tile>,
+    currentPlayer: Players.ONE | Players.TWO | Players.THREE | Players.FOUR,
     teams: any,
 }
+
 export const initialState: State = {
-    tiles: {},
-    currentPlayer: Players.BLUE,
+    tiles: [],
+    currentPlayer: Players.TWO,
     teams: {
-        'blue': {},
-        'yellow': {},
-        'red': {},
-        'green': {},
+        [Players.ONE]: {},
+        [Players.TWO]: {},
+        [Players.THREE]: {},
+        [Players.FOUR]: {},
     }
 }
 

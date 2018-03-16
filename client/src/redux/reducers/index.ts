@@ -1,8 +1,7 @@
-import { Tile } from '../../../shared/Tile';
-
-interface TileReturner {
-  (): Array<Tile>
-}
+import { combineReducers } from 'redux'
+import { Tile } from '../../../../shared/Tile';
+import { TileReturner } from './types'
+import { editingReducer } from './editing'
 
 const defaultPlayingTiles: TileReturner = () => {
   let tiles: Array<Tile> = []
@@ -13,18 +12,6 @@ const defaultPlayingTiles: TileReturner = () => {
       question: `what is the answer to this question ${i}`,
       answers: []
     })
-  }
-  return tiles;
-};
-const defaultEditingTiles: TileReturner = () => {
-  let tiles: Array<Tile> = [];
-  for (let i = 0; i < 36; i++) {
-    tiles.push({
-      num: i,
-      title: `Click to edit title`,
-      question: `click to edit question`,
-      answers: [{desc: 'click to edit answers', isCorrect: false}, {isCorrect: false, desc: 'click to edit answers'}]
-    });
   }
   tiles[0] = {
     num: 0,
@@ -56,33 +43,19 @@ const defaultEditingTiles: TileReturner = () => {
 export interface InitialState {
   tiles: Array<Tile>,
   selectedItem: number,
-  editingMode: boolean;
-  editingTiles: Array<Tile>
 }
 const initialState: InitialState = {
   tiles: defaultPlayingTiles(),
   selectedItem: 1,
-  editingMode: true,
-  editingTiles: defaultEditingTiles()
 };
 
-export default (state = initialState, action) => {
+const reducer = (state = initialState, action: any) => {
   const { payload, type } = action;
   switch (type) {
     case 'tiles/titles/suc': {
       return { ...state, tiles: { ...state.tiles, ...payload } };
     }
-    case 'editingTiles/answers/update': {
-      return { ...state, 
-      editingTiles: {
-        ...state.editingTiles,
-        [payload.num]: {
-          ...state.editingTiles[payload.num],
-          answers: payload.answers,
-          correctAnswers: payload.correctAnswers
-        }
-      }};
-    }
+    
     case 'tile/info/suc': {
       return {
         ...state,
@@ -95,25 +68,20 @@ export default (state = initialState, action) => {
         }
       };
     }
+    
     case 'selectedItemIndex': {
       return {
         ...state,
         selectedItem: payload
       };
     }
-    case 'editingTile/title/update': {
-      return {
-        ...state,
-        editingTiles: {
-          ...state.editingTiles,
-          [payload.num]: {
-            ...state.editingTiles[payload.num],
-            title: payload.content
-          }
-        }
-      };
-    }
+    
     default:
       return state;
   }
 };
+
+export default combineReducers({
+  default: reducer,
+  editing: editingReducer
+})

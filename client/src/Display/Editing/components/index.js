@@ -2,101 +2,80 @@ import React, { Fragment } from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import Button from "../../../Button/components/";
+import {saveCurrentAnswersAction, toggleCorrectForTileAndAnswer, updateAnswerDesc} from '../actions'
+
+const Li = styled.li`
+  padding: 10px;
+  margin: 5px;
+  list-style-type: none;
+`
+const Input = styled.input`
+  border: 1px solid black;
+  padding: 5px;
+  margin: 5px;
+  width: 90%;
+`
 const Display = styled.div`
   grid-area: display;
   text-align: center;
+  margin: 10px;
 `;
+
+const Ul = styled.ul`
+  border: 2px solid #005cb2;
+  height: 100%;
+  background-color: #1e88e5
+`
+
+const Textarea = styled.textarea`
+  width: 100%;
+  margin: 0 auto;
+
+`
 class EditingDisplay extends React.Component {
-  constructor(props){
-    super(props)
-    let optionCount
-    if(props.selectedItem.answers && props.selectedItem.answers.length > 1)
-      optionCount = props.selectedItem.answers.length
-      else {
-        optionCount = 2
-      }
-    this.state = {
-      optionCount
-    }
-    this.optionRefs = {}
-  }
-  componentWillReceiveProps(nextProps){
-    console.log('updating component', this.props.selectedItem.num, nextProps.selectedItem.num)
-    if(this.props.selectedItem.num !== nextProps.selectedItem.num){
-      
-    }
-  }
+
   render() {
     return (
       <Display>
-        <h1>{this.props.selectedItem.title}</h1>
+        Title:
+        <input type='text' value={this.props.title} 
+          onChange={(e) => {
+            e.preventDefault()
+            this.props.dispatch({type: 'editingTile/title/update', payload: {num: this.props.num, content: e.target.value}});
+          }}
+        />
+        <br />
         Question:
-        <textarea placeholder={this.props.selectedItem.question}/>
+        <Textarea placeholder={this.props.question}/>
         <div>Answers:</div>
-        <ul>
-           {/* {this.props.selectedItem.answers.map(answer => {
-            return (
-              <li key={Math.random()} ref={(ref) => this.refs.push(ref)}>
-                <input type="checkbox" />
-                <textarea >
-                  {answer}
-                </textarea>
-              </li>
-            );
-          })}  */}
+        <Ul id='answers'>
           {this.renderOptions()}
-    
-
-        </ul>
+        </Ul>
       </Display>
     );
   }
-
-  renderOptions(){
-    let optionCount = this.state.optionCount
-    let options = []
-
-    for(let i = 0 ; i < optionCount; i++){
-      let index = i + 1
-      let addOption
-      let removeOption
-
-      if(index === optionCount){
-        addOption = this.addOption.bind(this)
-      }
-      if(index === optionCount - 1){
-        removeOption = this.removeOption.bind(this)
-      }
-      const optionInput = (
-        <li key = {index} >
-          <input type="checkbox" />
-          <input
-            type="text"
-            ref={(ref) => this.optionRefs[`option${index}`] = ref}
-            placeholder="Enter an answer"
-            onFocus={addOption}
-            onBlur={removeOption}
+  renderOptions() {
+    return this.props.answers.map(answer => {
+      return ( 
+        <Li key={`${this.props.num}${answer.id}`}>
+          <Input type='checkbox' defaultChecked={answer.isCorrect} onChange={(e) => this.props.dispatch(toggleCorrectForTileAndAnswer(this.props.num, answer.id))}/>
+          <Textarea type='text' value={answer.desc} 
+            onChange={(e) => {
+              e.preventDefault()
+              this.props.dispatch(updateAnswerDesc(this.props.num, answer.id, e.target.value)); 
+              this.forceUpdate()
+            }}
+            onFocus={(e) => {
+              e.preventDefault()
+            }}
           />
-        </li>
+        </Li>
       )
-      options.push(optionInput)
-    }
-    return options
-  }
-
-  addOption(){
-    this.setState({optionCount: this.state.optionCount + 1})
-  }
-
-  removeOption(){
-    const optionCount = this.state.optionCount
-    const option = this.optionRefs[`option${optionCount - 1}`].value
-    if(optionCount > 2 && !option)
-      this.setState({optionCount: this.state.optionCount - 1})
+    })
   }
 }
 
 const mapStateToProps = state => ({
-  selectedItem: state.editingTiles[state.selectedItem]
+  ...state.editing.tiles[state.default.selectedItem]
 });
 export default connect(mapStateToProps)(EditingDisplay);

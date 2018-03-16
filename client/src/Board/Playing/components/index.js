@@ -2,6 +2,9 @@ import React, {Fragment} from "react";
 import {connect} from 'react-redux'
 import Tile from '../../../Tile/components'
 class PlayingBoard extends React.Component {
+  click(index){
+    //display this tile's info
+  }
   render() {
     return (
       <Fragment>
@@ -22,5 +25,7 @@ class PlayingBoard extends React.Component {
     );
   }
 }
-
-export default PlayingBoard;
+const mapStateToProps = state => ({
+  tiles: state.tiles
+})
+export default connect(mapStateToProps)(PlayingBoard);

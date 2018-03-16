@@ -13,22 +13,14 @@ const Board = styled.span`
   grid-template-rows: repeat(6, 1fr);
 `;
 
-export default connect(state => ({ editingMode: state.editingMode }))(
+export default connect(state => ({ editingMode: state.editing.isEditing }))(
   class extends React.Component {
     render() {
-      if (this.props.editingMode)
-        return (
-          <Board>
-            <EditingBoard />
-          </Board>
-        );
-      else {
-        return (
-          <Board>
-            <PlayingBoard />
-          </Board>
-        );
-      }
+      return (
+        <Board>
+          {this.props.editingMode ?  <EditingBoard /> : <PlayingBoard />}
+        </Board>
+      )
     }
   }
 );

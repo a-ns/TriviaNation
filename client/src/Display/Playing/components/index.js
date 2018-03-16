@@ -8,15 +8,18 @@ const Display = styled.div`
 `;
 
 class PlayingDisplay extends React.Component {
+  handleAnswerClick(answer){
+    //Do something, send to sever to see if it's right
+  }
   render() {
     return (
       <Display>
-        <h1>{this.props.selectedItem.question}</h1>
+        <h1>{this.props.question}</h1>
         <ul>
-          {this.props.selectedItem.answers &&
-            this.props.selectedItem.answers.map(answer => (
+          {this.props.answers &&
+            this.props.answers.map(answer => (
               <div key={answer}>
-                <Button backgroundColor={"blue"} onClick={() => alert(answer)}>
+                <Button backgroundColor={"blue"} onClick={() => this.handleAnswerClick(answer)}>
                   {answer}
                 </Button>
               </div>
@@ -27,6 +30,6 @@ class PlayingDisplay extends React.Component {
   }
 }
 const mapStateToProps = state => ({
-  selectedItem: state.playingTiles[state.selectedItem]
+  ...state.tiles[state.selectedItem]
 });
 export default connect(mapStateToProps)(PlayingDisplay);

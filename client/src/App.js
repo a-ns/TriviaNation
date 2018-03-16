@@ -4,23 +4,20 @@ import Tile from "./Tile/components/";
 import { connect } from "react-redux";
 import Display from "./Display";
 import Board from "./Board/";
-import Button from './Button/components'
+import Button from "./Button/components";
 class App extends Component {
-  submitBoard(board){
+  submitBoard(board) {
     this.props.dispatch({
-      meta: 'socket',
-      type: 'board/submit',
-      payload: {tiles: board}
-    })
+      meta: "socket",
+      type: "board/submit",
+      payload: { tiles: board }
+    });
   }
   render() {
     return (
       <div id="container">
         <Board />
-        <Display/>
-        <Button onClick={() => this.submitBoard(this.props.editingTiles)}>
-          Save Board
-          </Button>
+        <Display />
       </div>
     );
   }

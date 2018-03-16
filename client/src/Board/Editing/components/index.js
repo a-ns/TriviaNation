@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { connect } from "react-redux";
 import Tile from "../../../Tile/components";
 class EditingBoard extends React.Component {
-
   editTileTitle(e, index) {
     e.preventDefault();
     this.props.dispatch({
@@ -36,6 +35,7 @@ class EditingBoard extends React.Component {
                 type="text"
                 value={tile.title}
                 onChange={e => this.editTileTitle(e, tile.num)}
+                onFocus={e => this.selectTile(tile.num)}
               />
             </Tile>
           );
@@ -45,6 +45,6 @@ class EditingBoard extends React.Component {
   }
 }
 const mapStateToProps = state => ({
-  editingTiles: state.editingTiles
+  editingTiles: state.editing.tiles
 });
 export default connect(mapStateToProps)(EditingBoard);

@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware } from "redux";
 import { createLogger } from "redux-logger";
 import thunkMiddleware from "redux-thunk";
-import reducer from "./reducer";
+import reducer from "./reducers";
 import io from "socket.io-client";
 import socketMiddleware from "./middlewares/socket";
 let loggerMiddleware = createLogger();
