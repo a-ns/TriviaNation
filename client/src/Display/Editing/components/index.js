@@ -76,6 +76,6 @@ class EditingDisplay extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  ...state.editing.tiles[state.default.selectedItem]
+  ...state.editing.tiles[state.selectedItem]
 });
 export default connect(mapStateToProps)(EditingDisplay);
