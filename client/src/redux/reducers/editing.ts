@@ -10,7 +10,7 @@ const defaultEditingTiles = () => {
         {
           id: 0,
           desc: 'click to edit answers',
-          isCorrect: false
+          isCorrect: true
         },
         {
           id: 1,
@@ -62,7 +62,7 @@ const initialState = {
   tiles: defaultEditingTiles()
 };
 
-type InitialState = typeof initialState
+export type InitialState = typeof initialState
 export const editingReducer = (state: InitialState = initialState, action: {type: string, payload: any }) => {
   const { type, payload } = action;
   switch (type) {

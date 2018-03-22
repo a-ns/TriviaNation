@@ -1,15 +1,18 @@
-import React from "react";
-import styled from "styled-components";
+import styled from 'styled-components'
 const colors = {
-  red: "#D50000",
-  purple: "#AA00FF",
-  blue: "#1565C0",
-  green: "#388E3C",
-  black: "#212121",
-  white: "#ECEFF1"
+  red: '#D50000',
+  purple: '#AA00FF',
+  blue: '#1565C0',
+  green: '#388E3C',
+  black: '#212121',
+  white: '#ECEFF1'
 };
+interface Props {
+  backgroundColor: string,
+  onClick(_: any): void
+}
 const Button = styled.button`
-  background-color: ${props => colors[props.backgroundColor] || colors.blue};
+  background-color: ${(props: Props ) => colors[props.backgroundColor] || colors.blue};
   font-size: 3em;
   border-radius: 2px;
   border: none;
@@ -23,5 +26,4 @@ const Button = styled.button`
     box-shadow: 2px 2px 8px ${colors.black};
   }
 `;
-
 export default Button;

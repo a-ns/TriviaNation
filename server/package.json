@@ -23,6 +23,7 @@
   "dependencies": {
     "express": "^4.16.2",
     "redux": "^3.7.2",
-    "socket.io": "^2.0.4"
+    "socket.io": "^2.0.4",
+    "ts-deepcopy": "^0.1.4"
   }
 }

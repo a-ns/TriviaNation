@@ -19,4 +19,5 @@ const configureStore = persistedState => {
   );
   return store;
 };
+
 export default configureStore;

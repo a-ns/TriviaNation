@@ -1,5 +1,6 @@
+export type InitialState = number
 export const selectedReducer = (
-  state: number = 1,
+  state: InitialState = 1,
   action: { type: string; payload: number }
 ) => {
   switch (action.type) {
