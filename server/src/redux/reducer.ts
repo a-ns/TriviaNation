@@ -65,8 +65,12 @@ export const reducer = (state: State = initialState, action: any) => {
     }
     case 'team/select': {
       const selectedTeam: Players = action.payload.selectedTeam
-      const stateCopy = deepcopy(state)
       const {  player } = action.payload;
+      if(playerAlreadySelected(state, player)){
+        return state
+      }
+      
+      const stateCopy = deepcopy(state)
       const nextState = {
         ...stateCopy,
         teams: {
@@ -95,3 +99,11 @@ export const reducer = (state: State = initialState, action: any) => {
       return state;
   }
 };
+
+function playerAlreadySelected(state: State, player: string) {
+  if(state.teams[Players.ONE].members.find(element => element == player)) return true
+  if(state.teams[Players.TWO].members.find(element => element == player)) return true
+  if(state.teams[Players.THREE].members.find(element => element == player)) return true
+  if(state.teams[Players.FOUR].members.find(element => element == player)) return true
+  return false
+}

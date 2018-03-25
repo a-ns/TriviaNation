@@ -1,6 +1,6 @@
 import store from './redux/store'
 import * as Server from './server'
-
-const server: Server.Server = new Server.Server(store).get();
+import { actionHandler } from './ActionHandler'
+const server: Server.Server = new Server.Server(store, actionHandler).get();
 
 export default server

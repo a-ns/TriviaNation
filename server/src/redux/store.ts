@@ -1,6 +1,9 @@
 import {createStore} from 'redux'
-import {reducer} from './reducer'
-
-const store: any = createStore(reducer as any)
+import {reducer, State} from './reducer'
+export interface Store {
+    dispatch(action: { type: string; payload: any; meta?: any }): any;
+    getState(): State;
+}
+const store: Store = createStore(reducer as any)
 
 export default store

@@ -11,7 +11,6 @@ const Container = styled.div`
   left: 45%;
 `
 const TeamSelect = (props: any) => {
-  console.log(props)
   if (!props.teams) {
     return <div>Loading</div>
   }
