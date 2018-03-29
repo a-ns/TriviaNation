@@ -1,6 +1,6 @@
 const initialState = {
     selectedTeam: -1,
-    amountOnEachTeam: undefined
+    amountOnEachTeam: [] as Array<number>
 }
 type InitialState = typeof initialState
 export const teamSelectReducer = (state: InitialState = initialState, action: any) => {

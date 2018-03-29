@@ -15,12 +15,15 @@ const TeamSelect = (props: any) => {
     return <div>Loading</div>
   }
   return (
+    <React.Fragment>
     <Container>
       <Button onClick={(_: any) => props.selectTeam(0)} backgroundColor="red">Team 1 {props.teams[0]}</Button>
       <Button onClick={(_: any) => props.selectTeam(1)} backgroundColor="purple">Team 2 {props.teams[1]}</Button>
       <Button onClick={(_: any) => props.selectTeam(2)} backgroundColor="blue">Team 3 {props.teams[2]}</Button>
       <Button onClick={(_: any) => props.selectTeam(3)} backgroundColor="green">Team 4 {props.teams[3]}</Button>
     </Container>
+    <div style={{backgroundColor: 'rgba(0,0,0,.88)', width: window.outerWidth, height: window.outerHeight}} />
+    </React.Fragment>
   );
 };
 

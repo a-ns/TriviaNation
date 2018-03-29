@@ -39,6 +39,11 @@ const defaultPlayingTiles = () => {
 const initialState = {
   tiles: defaultPlayingTiles()
 };
+export const TILE_TITLE_SUC = 'tiles/titles/suc'
+export const TILE_INFO_SUC = 'tile/info/suc'
+export const Actions = {
+  
+}
 export type InitialState = typeof initialState;
 export const playingReducer = (
   state: InitialState = initialState,

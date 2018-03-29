@@ -17,6 +17,7 @@ function getMemberLengthOfTeams(teams: any) {
     [Players.FOUR]: teams[Players.FOUR].members.length
   };
 }
+type foo = ReturnType<typeof getMemberLengthOfTeams>
 export class Server {
   io: SocketIO.Server;
   http: any;
@@ -28,10 +29,9 @@ export class Server {
     this.http = require("http").Server(this.app);
     this.io = require("socket.io")(this.http);
     this.store = store;
-    this.actionHandler = actionHandler.bind(this)
+    this.actionHandler = actionHandler
     this.listen();
   }
-
   private listen(): void {
     this.io.on("connection", (socket: SocketIO.Socket) => {
       this.io.emit("action", { type: "team/members", payload: getMemberLengthOfTeams(this.store.getState().teams) });
