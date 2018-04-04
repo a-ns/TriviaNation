@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-import { actions } from '../../actions';
+import { Actions } from '../../actions';
 
 const Li = styled.li`
   padding: 10px;
@@ -44,7 +44,7 @@ class EditingDisplay extends React.Component<any, any> {
           onChange={e => {
             e.preventDefault();
             this.props.dispatch(
-              actions.updateTitle(e.target.value, this.props.num)
+              Actions.updateTitle(e.target.value, this.props.num)
             );
           }}
         />
@@ -56,7 +56,7 @@ class EditingDisplay extends React.Component<any, any> {
           onChange={(e: any) => {
             e.preventDefault();
             this.props.dispatch(
-              actions.updateQuestion(this.props.num, e.target.value)
+              Actions.updateQuestion(this.props.num, e.target.value)
             );
             this.forceUpdate();
           }}
@@ -75,7 +75,7 @@ class EditingDisplay extends React.Component<any, any> {
             defaultChecked={answer.isCorrect}
             onChange={e =>
               this.props.dispatch(
-                actions.updateTileCorrectAnswer(this.props.num, answer.id)
+                Actions.updateTileCorrectAnswer(this.props.num, answer.id)
               )
             }
           />
@@ -85,7 +85,7 @@ class EditingDisplay extends React.Component<any, any> {
             onChange={(e: any) => {
               e.preventDefault();
               this.props.dispatch(
-                actions.updateTextForAnswer(
+                Actions.updateTextForAnswer(
                   this.props.num,
                   answer.id,
                   e.target.value
