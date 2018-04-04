@@ -126,6 +126,7 @@ export const editingReducer = (
     }
     case ActionTypes.EDITING_TILE_QUESTION_UPDATE: {
       const { payload } = action
+      
       let tiles = [...state.tiles];
       tiles[payload.tileId].question = payload.value
       return {

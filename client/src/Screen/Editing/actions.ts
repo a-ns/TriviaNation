@@ -8,7 +8,7 @@ export enum ActionTypes {
   EDITING_TILE_QUESTION_UPDATE = 'editingTile/question/update'
 }
 
-export const actions = {
+export const Actions = {
   updateTitle: (title: string, num: number) =>
     createAction(ActionTypes.EDITING_TILE_TITLE_UPDATE, { title, num }),
   updateTileCorrectAnswer: (tileId: number, answerId: number) =>
@@ -25,4 +25,4 @@ export const actions = {
     createAction(ActionTypes.EDITING_TILE_QUESTION_UPDATE, { tileId, value })
 };
 
-export type Actions = ActionsUnion<typeof actions>;
+export type Actions = ActionsUnion<typeof Actions>;

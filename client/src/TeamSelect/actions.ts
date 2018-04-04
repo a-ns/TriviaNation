@@ -1,6 +1,6 @@
 /* For now this file is not used. These actions 
-are sent directly from the server. Should create a
-middleware for these or put them in socket middleware
+are sent directly from the server and intercepted by the socket middleware. Should create a
+middleware for these or refactor socket middleware
 */
 import { ActionsUnion, createAction } from '../helpers/action-helpers';
 
@@ -10,9 +10,9 @@ export enum ActionTypes {
   TEAM_MEMBERS = 'team/members'
 }
 
-export const actions = {
+export const Actions = {
   updateTeamMembers: (teams: Array<number>) =>
     createAction(ActionTypes.TEAM_MEMBERS, { teams })
 };
 
-export type Action = ActionsUnion<typeof actions>;
+export type Action = ActionsUnion<typeof Actions>;

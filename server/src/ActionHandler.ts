@@ -1,7 +1,23 @@
 import { Tile } from "../../shared/Tile";
 import { State, Players } from "./redux/reducer";
 import { Store } from './redux/store'
+import * as ActionHelpers from './helpers/action-helpers'
 import { LocalFileSystemSaver } from "./GameSaver/LocalFileSystemSaver";
+export const TILES_TITLES_REQ = 'tiles/titles/req'
+export const BOARD_SUBMIT_REQ = 'board/submit'
+export const ANSWER_SUBMITTED = 'answer/submit'
+export const TEAM_SELECTED = 'team/select'
+export const TILE_INFO_REQ = 'tile/info/req'
+
+export const Actions = {
+  sendTilesInfo: () => ActionHelpers.createAction(TILES_TITLES_REQ),
+  boardSubmit: (tiles: Array<Tile>) => ActionHelpers.createAction(BOARD_SUBMIT_REQ, {tiles}),
+  answerSubmit: (player: number, tileId: number, answerId: number) => ActionHelpers.createAction(ANSWER_SUBMITTED, {player, tileId, answerId}),
+  teamSelect: (selectedTeam: number, player: string) => ActionHelpers.createAction(TEAM_SELECTED, {selectedTeam, player}),
+  sendTileInfo: (tileId: number) => ActionHelpers.createAction(TILE_INFO_REQ, {tileId})
+}
+export type Actions = ActionHelpers.ActionsUnion<typeof Actions>
+
 export interface ActionHandler {
   (
     {
@@ -9,19 +25,19 @@ export interface ActionHandler {
       io,
       action,
       store
-    }: { socket: SocketIO.Socket; io: SocketIO.Server; action: any; store: Store }
+    }: { socket: SocketIO.Socket; io: SocketIO.Server; action: Actions; store: Store }
   ): void;
 }
 
 export const actionHandler: ActionHandler = ({ socket, io, action, store }) => {
   switch (action.type) {
-    case "tiles/titles/req": {
+    case TILES_TITLES_REQ: {
       const rv = store.getState().tiles;
       socket.emit("action", { type: "tiles/titles/suc", payload: rv });
       break;
     }
-    case "tile/info/req": {
-      let num = action.tileNum;
+    case TILE_INFO_REQ: {
+      let num = action.payload.tileId;
       let tiles = store.getState().tiles;
       let rv;
       tiles.forEach((tile: Tile) => {
@@ -78,7 +94,7 @@ export const actionHandler: ActionHandler = ({ socket, io, action, store }) => {
       }
       break;
     }
-    case "answer/submit": {
+    case ANSWER_SUBMITTED: {
       //check to see if it is that person's turn
       if (store.getState().currentPlayer !== action.payload.player) {
         // do nothing
@@ -106,7 +122,7 @@ export const actionHandler: ActionHandler = ({ socket, io, action, store }) => {
         break;
       }
     }
-    case "team/select": {
+    case TEAM_SELECTED: {
       // person has selected a team to be on
       store.dispatch({
         type: "team/select",

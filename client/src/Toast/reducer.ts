@@ -2,7 +2,7 @@ import { Toast } from './type';
 import { ActionTypes, Actions } from './actions'
 const initialState = [] as Array<Toast>;
 type State = typeof initialState;
-const Toasts = (state: State = initialState, action: Actions): State => {
+const Toasts = (state = initialState, action: Actions): State => {
   switch (action.type) {
     case ActionTypes.TOAST_ADD: {
       const { payload } = action
